@@ -7,7 +7,7 @@ import beer6 from "../img/beer6.png";
 
 let lastId = 0;
 
-const goods = [
+export const mainGoods = [
   {
     id: ++lastId,
     brand: "Cantillon",
@@ -70,4 +70,109 @@ const goods = [
   },
 ];
 
-export default goods;
+export const additionalGoods = [
+  {
+    id: ++lastId,
+    brand: "Mystic Ales",
+    name: "Mystic Ales - Enchanted Elixir (2023)",
+    price: 22.99,
+    description:
+      "A mystical concoction brewed under a full moon, featuring rare herbs and enchanted botanicals. This elixir offers a harmonious blend of earthy flavors and ethereal aromas.",
+    rating: 4.9,
+    // img: beer7,
+  },
+  {
+    id: ++lastId,
+    brand: "Ethereal Brews",
+    name: "Ethereal Brews - Stardust Saison",
+    price: 14.49,
+    description:
+      "Brewed with stardust harvested from a comet's tail, this saison offers a celestial blend of cosmic fruitiness and a hint of intergalactic spices.",
+    rating: 4.7,
+    // img: beer8,
+  },
+  {
+    id: ++lastId,
+    brand: "Whimsy Spirits",
+    name: "Whimsy Spirits - Faerie Fizz (Limited Edition)",
+    price: 19.99,
+    description:
+      "Bottled with the laughter of forest faeries, this limited edition brew delights with notes of enchanted berries and a touch of pixie mischief.",
+    rating: 4.6,
+    // img: beer9,
+  },
+  {
+    id: ++lastId,
+    brand: "AetherCraft",
+    name: "AetherCraft - Nebula Nectar IPA",
+    price: 17.99,
+    description:
+      "Brewed using rare hops cultivated in the heart of a distant nebula, this IPA bursts with nebulous flavors and a cosmic burst of tropical fruitiness.",
+    rating: 4.8,
+    // img: beer10,
+  },
+  {
+    id: ++lastId,
+    brand: "Sorcerer's Sips",
+    name: "Sorcerer's Sips - Arcane Amaretto Ale",
+    price: 15.79,
+    description:
+      "Infused with the essence of ancient amaretto spells, this ale offers a magical blend of nutty sweetness and a whisper of enchanting spices.",
+    rating: 4.7,
+    // img: beer11,
+  },
+  {
+    id: ++lastId,
+    brand: "Alchemy Ales",
+    name: "Alchemy Ales - Ephemeral Euphoria",
+    price: 21.49,
+    description:
+      "Crafted with ephemeral essences harvested at dawn, this ale delivers fleeting moments of blissful flavors, leaving behind a trace of ethereal satisfaction.",
+    rating: 4.9,
+    // img: beer12,
+  },
+  {
+    id: ++lastId,
+    brand: "Dreamweaver Brews",
+    name: "Dreamweaver Brews - Luminous Lullaby Porter",
+    price: 16.49,
+    description:
+      "Brewed to capture the essence of starlit dreams, this porter enchants with velvety notes of dark chocolate, roasted marshmallows, and a touch of moonlit vanilla.",
+    rating: 4.8,
+    // img: beer13,
+  },
+  {
+    id: ++lastId,
+    brand: "Mythos Libations",
+    name: "Mythos Libations - Centaur's Cyser (2023)",
+    price: 24.99,
+    description:
+      "A blend of honey mead and celestial apple nectar, this cyser pays homage to ancient centaur traditions, offering a harmonious balance of honeyed sweetness and crisp apple tang.",
+    rating: 4.7,
+    // img: beer14,
+  },
+  {
+    id: ++lastId,
+    brand: "Druid's Delight",
+    name: "Druid's Delight - Enchanted Elderflower Elixir",
+    price: 18.99,
+    description:
+      "Brewed with elderflowers harvested at the peak of a solstice sunrise, this elixir delights with the delicate essence of ancient woodland blooms and a hint of druidic wisdom.",
+    rating: 4.6,
+    // img: beer15,
+  },
+  {
+    id: ++lastId,
+    brand: "Celestial Sours",
+    name: "Celestial Sours - Moonlit Mulberry Sour",
+    price: 15.79,
+    description:
+      "Infused with the luminescent glow of moonlit mulberries, this sour ale dances on the palate with a symphony of tartness and a touch of midnight magic.",
+    rating: 4.8,
+    // img: beer16,
+  },
+];
+
+const allGoods = mainGoods.concat(additionalGoods);
+
+export default allGoods;
