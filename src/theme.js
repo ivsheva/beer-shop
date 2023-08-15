@@ -10,6 +10,9 @@ const theme = extendTheme({
     red: "#E40053",
     darkgreen: "#023D32",
   },
+  fonts: {
+    body: "Work Sans, sans-serif",
+  },
 });
 
 export default theme;

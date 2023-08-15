@@ -16,6 +16,7 @@ const Advantages = () => {
       paddingY="14px"
       bgColor="darkgreen"
       color="#fff"
+      fontWeight="500"
     >
       <List display="flex" columnGap="56px" flexWrap="wrap">
         <ListItem>
