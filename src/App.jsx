@@ -1,5 +1,11 @@
+import Advantages from "./components/Advantages";
+
 function App() {
-  return <div></div>;
+  return (
+    <div>
+      <Advantages />
+    </div>
+  );
 }
 
 export default App;
