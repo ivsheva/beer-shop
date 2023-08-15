@@ -17,8 +17,14 @@ const Advantages = () => {
       bgColor="darkgreen"
       color="#fff"
       fontWeight="500"
+      flexWrap="wrap"
     >
-      <List display="flex" columnGap="56px" flexWrap="wrap">
+      <List
+        display={{ base: "none", md: "flex" }}
+        columnGap="56px"
+        flexWrap="wrap"
+        margin="auto"
+      >
         <ListItem>
           <HStack>
             <PiTruck size="24" />
@@ -38,7 +44,7 @@ const Advantages = () => {
           </HStack>
         </ListItem>
       </List>
-      <HStack display="flex" alignItems="center">
+      <HStack display="flex" alignItems="center" margin="auto">
         <Image src={TrustMark} height="26px" marginBottom="6px" />
         <Text>4.8</Text>
         <HStack spacing="0.5">
