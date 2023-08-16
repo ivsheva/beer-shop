@@ -1,10 +1,23 @@
-import { HStack, List, ListItem, Text, Image, Box } from "@chakra-ui/react";
-import { PiTruck } from "react-icons/pi";
-import { AiFillStar } from "react-icons/ai";
+import {
+  Box,
+  HStack,
+  Image,
+  List,
+  ListItem,
+  Text,
+  VStack,
+} from "@chakra-ui/react";
+import {
+  AiFillStar,
+  AiOutlineHeart,
+  AiOutlineShoppingCart,
+} from "react-icons/ai";
+import { BiUserCircle } from "react-icons/bi";
 import { LuBox } from "react-icons/lu";
+import { PiTruck } from "react-icons/pi";
 import TrustMark from "../img/img/TrustMark.png";
-import star from "../img/svg/star.svg";
 import lastStar from "../img/svg/lastStar.svg";
+import star from "../img/svg/star.svg";
 
 const Advantages = () => {
   return (
@@ -12,7 +25,6 @@ const Advantages = () => {
       display="flex"
       alignItems="center"
       justifyContent="space-between"
-      paddingX="132px"
       paddingY="14px"
       bgColor="darkgreen"
       color="#fff"
@@ -54,6 +66,25 @@ const Advantages = () => {
           <Image src={star} boxSize="20px" />
           <Image src={lastStar} boxSize="20px" />
         </HStack>
+      </HStack>
+      <HStack
+        display={{ base: "flex", md: "none" }}
+        margin="auto"
+        columnGap="16px"
+        marginTop={{ base: "8px", md: "unset" }}
+      >
+        <VStack spacing="0">
+          <BiUserCircle size="28" />
+          <Text>Login</Text>
+        </VStack>
+        <VStack spacing="0">
+          <AiOutlineHeart size="28" />
+          <Text>Wish List</Text>
+        </VStack>
+        <VStack spacing="0">
+          <AiOutlineShoppingCart size="28" />
+          <Text>Cart</Text>
+        </VStack>
       </HStack>
     </Box>
   );
