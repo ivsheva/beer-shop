@@ -32,7 +32,7 @@ const Advantages = () => {
       flexWrap="wrap"
     >
       <List
-        display={{ base: "none", md: "flex" }}
+        display={{ base: "none", lg: "flex" }}
         columnGap="56px"
         flexWrap="wrap"
         margin="auto"
@@ -68,10 +68,10 @@ const Advantages = () => {
         </HStack>
       </HStack>
       <HStack
-        display={{ base: "flex", md: "none" }}
+        display={{ base: "flex", lg: "none" }}
         margin="auto"
         columnGap="16px"
-        marginTop={{ base: "8px", md: "unset" }}
+        marginTop={{ base: "8px", lg: "unset" }}
       >
         <VStack spacing="0">
           <BiUserCircle size="28" />
