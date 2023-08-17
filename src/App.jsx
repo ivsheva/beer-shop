@@ -2,6 +2,7 @@ import { Box } from "@chakra-ui/react";
 import Advantages from "./components/Advantages";
 import Header from "./components/Header";
 import ImageSlider from "./components/ImageSLider";
+import TrustMark from "./components/TrustMark";
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <Advantages />
       <Header />
       <ImageSlider />
+      <TrustMark />
     </Box>
   );
 }
