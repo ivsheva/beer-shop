@@ -53,7 +53,12 @@ const UserControl = () => {
       <Image
         src={logo}
         alt="BEERDOME"
-        marginLeft={{ base: "20px", lg: "-110px", "2xl": "-180px" }}
+        marginLeft={{
+          base: "20px",
+          lg: "-80px",
+          xl: "-100px",
+          "2xl": "-180px",
+        }}
         marginRight="20px"
         maxWidth="100%"
         height="auto"
@@ -78,7 +83,7 @@ const UserControl = () => {
           <Text>Cart</Text>
         </VStack>
       </HStack>
-      <Show below="lg">
+      <Show breakpoint="(max-width: 990px)">
         <HiMagnifyingGlass size={32} />
       </Show>
     </Box>
