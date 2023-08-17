@@ -3,9 +3,11 @@ import {
   HStack,
   Image,
   Input,
+  InputRightAddon,
   Show,
   Text,
   VStack,
+  InputGroup,
 } from "@chakra-ui/react";
 import { AiOutlineHeart, AiOutlineShoppingCart } from "react-icons/ai";
 import { BiUserCircle } from "react-icons/bi";
@@ -21,28 +23,37 @@ const UserControl = () => {
       justifyContent="space-between"
       flexWrap="wrap"
       paddingY="20px"
-      paddingX={{ base: "2%", md: "2%", xl: "14%" }}
+      paddingX={{ base: "2%", md: "2%", xl: "12%" }}
       width="100%"
     >
-      <Show below="lg">
+      <Show breakpoint="(max-width: 990px)">
         <GiHamburgerMenu size={32} />
       </Show>
-      <Input
-        display={{ base: "none", lg: "flex" }}
-        placeholder="Search..."
-        borderColor="lightgrey"
-        padding="32px 96px 32px 32px"
-        fontSize="20px"
-        width="unset"
-        sx={{ "::placeholder": { color: "black" } }}
-        _hover={{ borderColor: "lightgrey" }}
-        _focus={{ borderColor: "lightgrey" }}
-        readOnly
-      />
+      <InputGroup width="unset" display={{ base: "none", lg: "flex" }}>
+        <Input
+          placeholder="Search..."
+          borderColor="lightgrey"
+          borderRight="transparent"
+          padding="32px 96px 32px 32px"
+          fontSize="20px"
+          sx={{ "::placeholder": { color: "black" } }}
+          _hover={{ borderColor: "lightgrey" }}
+          _focus={{ borderColor: "lightgrey" }}
+          readOnly
+        />
+        <InputRightAddon
+          height="inherit"
+          bgColor="transparent"
+          borderLeft="transparent"
+          borderColor="lightgrey"
+        >
+          <HiMagnifyingGlass size={32} />
+        </InputRightAddon>
+      </InputGroup>
       <Image
         src={logo}
         alt="BEERDOME"
-        marginLeft={{ base: "20px", lg: "-120px", "2xl": "-180px" }}
+        marginLeft={{ base: "20px", lg: "-110px", "2xl": "-180px" }}
         marginRight="20px"
         maxWidth="100%"
         height="auto"
