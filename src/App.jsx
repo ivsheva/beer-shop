@@ -3,6 +3,7 @@ import Advantages from "./components/Advantages";
 import Header from "./components/Header";
 import ImageSlider from "./components/ImageSLider";
 import TrustMark from "./components/TrustMark";
+import Posters from "./components/Posters";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Header />
       <ImageSlider />
       <TrustMark />
+      <Posters />
     </Box>
   );
 }
