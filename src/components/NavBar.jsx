@@ -25,6 +25,7 @@ const NavBar = () => {
             bgColor={navItem.highlight ? "green" : "inherit"}
             padding={navItem.highlight ? "2px 10px" : "unset"}
             color={navItem.highlight ? "white" : "black"}
+            _hover={navItem.highlight ? {} : { borderBottom: "2px" }}
           >
             {navItem.title}
           </ListItem>

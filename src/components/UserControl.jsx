@@ -74,17 +74,15 @@ const UserControl = () => {
         justifyContent="center"
         spacing="4"
       >
-        <VStack spacing="0">
+        <VStack spacing="0" onClick={onOpen} cursor="pointer">
           <BiUserCircle size="28" />
-          <Text cursor="pointer" onClick={onOpen}>
-            Login
-          </Text>
+          <Text>Login</Text>
         </VStack>
-        <VStack spacing="0">
+        <VStack spacing="0" cursor="pointer">
           <AiOutlineHeart size="28" />
           <Text>Wishlist</Text>
         </VStack>
-        <VStack spacing="0">
+        <VStack spacing="0" cursor="pointer">
           <AiOutlineShoppingCart size="28" />
           <Text>Cart</Text>
         </VStack>
