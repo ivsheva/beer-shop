@@ -3,19 +3,23 @@ import {
   HStack,
   Image,
   Input,
+  InputGroup,
   InputRightAddon,
   Show,
   Text,
   VStack,
-  InputGroup,
+  useDisclosure,
 } from "@chakra-ui/react";
 import { AiOutlineHeart, AiOutlineShoppingCart } from "react-icons/ai";
 import { BiUserCircle } from "react-icons/bi";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { HiMagnifyingGlass } from "react-icons/hi2";
 import logo from "../img/img/beerdome-logo-black.png";
+import AuthDrawer from "./AuthDrawer";
 
 const UserControl = () => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
   return (
     <Box
       display="flex"
@@ -72,7 +76,9 @@ const UserControl = () => {
       >
         <VStack spacing="0">
           <BiUserCircle size="28" />
-          <Text>Login</Text>
+          <Text cursor="pointer" onClick={onOpen}>
+            Login
+          </Text>
         </VStack>
         <VStack spacing="0">
           <AiOutlineHeart size="28" />
@@ -86,6 +92,8 @@ const UserControl = () => {
       <Show breakpoint="(max-width: 990px)">
         <HiMagnifyingGlass size={32} />
       </Show>
+
+      <AuthDrawer isOpen={isOpen} onClose={onClose} />
     </Box>
   );
 };
