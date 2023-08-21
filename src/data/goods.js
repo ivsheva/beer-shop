@@ -1,9 +1,15 @@
-import beer1 from "../img/beer1.png";
-import beer2 from "../img/beer2.png";
-import beer3 from "../img/beer3.png";
-import beer4 from "../img/beer4.png";
-import beer5 from "../img/beer5.png";
-import beer6 from "../img/beer6.png";
+import beer1 from "../img/img/beer1.png";
+import beer2 from "../img/img/beer2.png";
+import beer3 from "../img/img/beer3.png";
+import beer4 from "../img/img/beer4.png";
+import beer5 from "../img/img/beer5.jpg";
+import beer6 from "../img/img/beer6.jpg";
+import beer7 from "../img/img/beer7.jpg";
+import beer8 from "../img/img/beer8.jpg";
+import beer9 from "../img/img/beer9.jpg";
+import beer10 from "../img/img/beer10.jpg";
+import beer11 from "../img/img/beer11.jpg";
+import beer12 from "../img/img/beer12.jpg";
 
 let lastId = 0;
 
@@ -73,103 +79,62 @@ export const mainGoods = [
 export const additionalGoods = [
   {
     id: ++lastId,
-    brand: "Mystic Ales",
-    name: "Mystic Ales - Enchanted Elixir (2023)",
-    price: 22.99,
+    brand: "Side Project",
+    name: "Shared - Parallels",
+    price: 71.99,
     description:
-      "A mystical concoction brewed under a full moon, featuring rare herbs and enchanted botanicals. This elixir offers a harmonious blend of earthy flavors and ethereal aromas.",
+      "A double BA version of the Parfait base - a blend of barrel aged &amp; oak aged Imperial Stouts which were blended and then racked back (double barrel aged) into Willett Barrels. Finished with fresh ground cinnamon sticks, vanilla and barrel aged maple syrup.",
     rating: 4.9,
-    // img: beer7,
+    img: beer7,
   },
   {
     id: ++lastId,
-    brand: "Ethereal Brews",
-    name: "Ethereal Brews - Stardust Saison",
-    price: 14.49,
+    brand: "Folkingbrew",
+    name: "Folkingbrew - Dreamscape",
+    price: 6.49,
     description:
-      "Brewed with stardust harvested from a comet's tail, this saison offers a celestial blend of cosmic fruitiness and a hint of intergalactic spices.",
+      "Double New England IPA hopped with Simcoe, Nelson Sauvin & Citra",
     rating: 4.7,
-    // img: beer8,
+    img: beer8,
   },
   {
     id: ++lastId,
-    brand: "Whimsy Spirits",
-    name: "Whimsy Spirits - Faerie Fizz (Limited Edition)",
-    price: 19.99,
+    brand: "Croma",
+    name: "Croma - Follow Me (Bourbon Barrel Aged)",
+    price: 28.99,
     description:
-      "Bottled with the laughter of forest faeries, this limited edition brew delights with notes of enchanted berries and a touch of pixie mischief.",
+      "This adjunct-free Imperial Stout offers a distinctive mix of chocolate, coffee and toasted oak flavors, thanks to aging in Four Roses and Woodford Reserve Bourbon barrels. Subtle hints of vanilla and caramel, smooth texture.",
     rating: 4.6,
-    // img: beer9,
+    img: beer9,
   },
   {
     id: ++lastId,
-    brand: "AetherCraft",
-    name: "AetherCraft - Nebula Nectar IPA",
-    price: 17.99,
-    description:
-      "Brewed using rare hops cultivated in the heart of a distant nebula, this IPA bursts with nebulous flavors and a cosmic burst of tropical fruitiness.",
+    brand: "Spartacus",
+    name: "Spartacus - Wolf inside",
+    price: 6.49,
+    description: "Triple New England IPA with Motueka, Citra and Galaxy hops.",
     rating: 4.8,
-    // img: beer10,
+    img: beer10,
   },
   {
     id: ++lastId,
-    brand: "Sorcerer's Sips",
-    name: "Sorcerer's Sips - Arcane Amaretto Ale",
-    price: 15.79,
+    brand: "Folkingbrew",
+    name: "Folkingbrew - Under the Sea",
+    price: 6.49,
     description:
-      "Infused with the essence of ancient amaretto spells, this ale offers a magical blend of nutty sweetness and a whisper of enchanting spices.",
+      "Tropical New England IPA brewed with Cascade and Strata hops, imparting citrus and pine notes. Dry-hopped with Strata, Citra, El Dorado, and Talus, creating juicy fruitiness with flavors of mango, passion fruit and citrus.",
     rating: 4.7,
-    // img: beer11,
+    img: beer11,
   },
   {
     id: ++lastId,
-    brand: "Alchemy Ales",
-    name: "Alchemy Ales - Ephemeral Euphoria",
-    price: 21.49,
+    brand: "Spartacus",
+    name: "Folkingbrew - Under the Stars",
+    price: 6.99,
     description:
-      "Crafted with ephemeral essences harvested at dawn, this ale delivers fleeting moments of blissful flavors, leaving behind a trace of ethereal satisfaction.",
-    rating: 4.9,
-    // img: beer12,
-  },
-  {
-    id: ++lastId,
-    brand: "Dreamweaver Brews",
-    name: "Dreamweaver Brews - Luminous Lullaby Porter",
-    price: 16.49,
-    description:
-      "Brewed to capture the essence of starlit dreams, this porter enchants with velvety notes of dark chocolate, roasted marshmallows, and a touch of moonlit vanilla.",
-    rating: 4.8,
-    // img: beer13,
-  },
-  {
-    id: ++lastId,
-    brand: "Mythos Libations",
-    name: "Mythos Libations - Centaur's Cyser (2023)",
-    price: 24.99,
-    description:
-      "A blend of honey mead and celestial apple nectar, this cyser pays homage to ancient centaur traditions, offering a harmonious balance of honeyed sweetness and crisp apple tang.",
+      "TDH Triple New England IPA with Nelson, Galaxy, Simcoe Cryo & Mosaic Lupomax®",
     rating: 4.7,
-    // img: beer14,
-  },
-  {
-    id: ++lastId,
-    brand: "Druid's Delight",
-    name: "Druid's Delight - Enchanted Elderflower Elixir",
-    price: 18.99,
-    description:
-      "Brewed with elderflowers harvested at the peak of a solstice sunrise, this elixir delights with the delicate essence of ancient woodland blooms and a hint of druidic wisdom.",
-    rating: 4.6,
-    // img: beer15,
-  },
-  {
-    id: ++lastId,
-    brand: "Celestial Sours",
-    name: "Celestial Sours - Moonlit Mulberry Sour",
-    price: 15.79,
-    description:
-      "Infused with the luminescent glow of moonlit mulberries, this sour ale dances on the palate with a symphony of tartness and a touch of midnight magic.",
-    rating: 4.8,
-    // img: beer16,
+    img: beer12,
   },
 ];
 
