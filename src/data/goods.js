@@ -10,6 +10,10 @@ import beer9 from "../img/img/beer9.jpg";
 import beer10 from "../img/img/beer10.jpg";
 import beer11 from "../img/img/beer11.jpg";
 import beer12 from "../img/img/beer12.jpg";
+import beer13 from "../img/img/beer13.jpg";
+import beer14 from "../img/img/beer14.jpg";
+import beer15 from "../img/img/beer15.jpg";
+import beer16 from "../img/img/beer16.jpg";
 
 let lastId = 0;
 
@@ -74,6 +78,25 @@ export const mainGoods = [
     rating: 4.8,
     img: beer6,
   },
+  {
+    id: ++lastId,
+    brand: "Puhaste",
+    name: "Pühaste - Surmapatt Sauternes/Port/Whisky BA (Silver Series)",
+    price: 9.79,
+    description: "Triple barrel aged version of Surmapatt imperial porter.",
+    rating: 4.8,
+    img: beer7,
+  },
+  {
+    id: ++lastId,
+    brand: "Basqueland",
+    name: "Basqueland - Prime Time",
+    price: 25.49,
+    description:
+      "Triple IPA with a dry-hop of Mosaic, Vista, Idaho7 and Mosaic Cryo hops for massive aromas: ripe tropical fruit with layers of yellow peach, mandarin zest, pear compote, orange marmalade and green tea.",
+    rating: 4.8,
+    img: beer8,
+  },
 ];
 
 export const additionalGoods = [
@@ -85,7 +108,7 @@ export const additionalGoods = [
     description:
       "A double BA version of the Parfait base - a blend of barrel aged &amp; oak aged Imperial Stouts which were blended and then racked back (double barrel aged) into Willett Barrels. Finished with fresh ground cinnamon sticks, vanilla and barrel aged maple syrup.",
     rating: 4.9,
-    img: beer7,
+    img: beer9,
   },
   {
     id: ++lastId,
@@ -95,7 +118,7 @@ export const additionalGoods = [
     description:
       "Double New England IPA hopped with Simcoe, Nelson Sauvin & Citra",
     rating: 4.7,
-    img: beer8,
+    img: beer10,
   },
   {
     id: ++lastId,
@@ -105,7 +128,7 @@ export const additionalGoods = [
     description:
       "This adjunct-free Imperial Stout offers a distinctive mix of chocolate, coffee and toasted oak flavors, thanks to aging in Four Roses and Woodford Reserve Bourbon barrels. Subtle hints of vanilla and caramel, smooth texture.",
     rating: 4.6,
-    img: beer9,
+    img: beer11,
   },
   {
     id: ++lastId,
@@ -114,7 +137,7 @@ export const additionalGoods = [
     price: 6.49,
     description: "Triple New England IPA with Motueka, Citra and Galaxy hops.",
     rating: 4.8,
-    img: beer10,
+    img: beer12,
   },
   {
     id: ++lastId,
@@ -124,17 +147,36 @@ export const additionalGoods = [
     description:
       "Tropical New England IPA brewed with Cascade and Strata hops, imparting citrus and pine notes. Dry-hopped with Strata, Citra, El Dorado, and Talus, creating juicy fruitiness with flavors of mango, passion fruit and citrus.",
     rating: 4.7,
-    img: beer11,
+    img: beer13,
   },
   {
     id: ++lastId,
-    brand: "Spartacus",
-    name: "Folkingbrew - Under the Stars",
+    brand: "FrauGruber",
+    name: "FrauGruber - Back To It",
+    price: 6.79,
+    description: "Double New England IPA with HBC 630.",
+    rating: 4.7,
+    img: beer14,
+  },
+  {
+    id: ++lastId,
+    brand: "CRAK",
+    name: "CRAK - Take Me Home",
     price: 6.99,
     description:
-      "TDH Triple New England IPA with Nelson, Galaxy, Simcoe Cryo & Mosaic Lupomax®",
+      "Take me home, from the Veneto 'para casa', the last beer of the evening, the one you drink before going home. Dense and oily Imperial Stout, with notes of coffee and chocolate and a delicate roasted bitterness at the end.",
     rating: 4.7,
-    img: beer12,
+    img: beer15,
+  },
+  {
+    id: ++lastId,
+    brand: "Basqueland",
+    name: "Basqueland - Trailblazer",
+    price: 6.99,
+    description:
+      "Walk on this innovative path with dried passion fruit-fused hop blend, Kohia Nelson, from New Zealand. This New England IPA unfolds brilliant aromas and flavors of sweet passion fruit and zesty tangerine that will blow your mind.",
+    rating: 4.7,
+    img: beer16,
   },
 ];
 

@@ -21,6 +21,7 @@ const BeerSlider = () => {
           cursor="pointer"
           onClick={() => setActiveHeading(0)}
           color={activeHeading === 0 ? "black" : "middlegrey"}
+          transition="all 0.2s ease-in"
           as="h3"
         >
           NEW ARRIVALS
@@ -29,6 +30,7 @@ const BeerSlider = () => {
           cursor="pointer"
           onClick={() => setActiveHeading(1)}
           color={activeHeading === 1 ? "black" : "middlegrey"}
+          transition="all 0.2s ease-in"
           as="h3"
         >
           Popular products
