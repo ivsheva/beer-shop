@@ -8,6 +8,7 @@ import TrustMark from "./components/TrustMark";
 import LoyaltyProgram from "./components/LoyaltyProgram";
 import ProductCards from "./components/ProductCards";
 import Story from "./components/Story";
+import Posts from "./components/Posts";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
       <LoyaltyProgram />
       <ProductCards />
       <Story />
+      <Posts />
     </Box>
   );
 }
