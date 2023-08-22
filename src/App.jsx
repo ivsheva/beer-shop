@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import ImageSlider from "./components/ImageSLider";
 import Posters from "./components/Posters";
 import TrustMark from "./components/TrustMark";
+import LoyaltyProgram from "./components/LoyaltyProgram";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <TrustMark />
       <Posters />
       <BeerSlider />
+      <LoyaltyProgram />
     </Box>
   );
 }
