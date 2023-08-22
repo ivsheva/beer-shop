@@ -35,6 +35,8 @@ const LoyaltyProgram = () => {
           fontFamily="Questrial, sans-serif"
           fontSize={{ base: "28px", md: "48px" }}
           textAlign="center"
+          fontWeight="700"
+          lineHeight="120%"
         >
           Are you a Beerdome Lover?
         </Text>
