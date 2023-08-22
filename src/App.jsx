@@ -7,6 +7,7 @@ import Posters from "./components/Posters";
 import TrustMark from "./components/TrustMark";
 import LoyaltyProgram from "./components/LoyaltyProgram";
 import ProductCards from "./components/ProductCards";
+import Story from "./components/Story";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <BeerSlider />
       <LoyaltyProgram />
       <ProductCards />
+      <Story />
     </Box>
   );
 }
