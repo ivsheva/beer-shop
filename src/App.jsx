@@ -9,6 +9,7 @@ import LoyaltyProgram from "./components/LoyaltyProgram";
 import ProductCards from "./components/ProductCards";
 import Story from "./components/Story";
 import Posts from "./components/Posts";
+import Subscription from "./components/Subscription";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
       <ProductCards />
       <Story />
       <Posts />
+      <Subscription />
     </Box>
   );
 }
