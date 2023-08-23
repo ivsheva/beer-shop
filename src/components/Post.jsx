@@ -12,8 +12,8 @@ const Post = ({ img, description, link }) => {
   return (
     <Link href={link} target="_blank">
       <Box
-        maxW="385px"
-        maxH="385px"
+        maxW="450px"
+        maxH="450px"
         position="relative"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
@@ -27,7 +27,7 @@ const Post = ({ img, description, link }) => {
             width="100%"
             p="4"
             overflow="hidden"
-            height="70%"
+            height="50%"
           >
             <Text
               fontSize="14px"

@@ -15,7 +15,6 @@ const Posts = () => {
       maxWidth="80%"
       margin="0 auto"
       marginTop="84px"
-      marginBottom="240px"
     >
       <Text
         fontFamily="Questrial, sans-serif"
@@ -37,7 +36,7 @@ const Posts = () => {
         {posts.map((post) => (
           <SwiperSlide
             key={post.id}
-            style={{ maxWidth: "300px", maxHeight: "200px" }}
+            style={{ maxWidth: "450px", maxHeight: "450px" }}
           >
             <Post
               img={post.img}
