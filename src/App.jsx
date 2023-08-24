@@ -1,15 +1,15 @@
 import { Box } from "@chakra-ui/react";
 import Advantages from "./components/Advantages";
 import BeerSlider from "./components/BeerSlider";
+import Footer from "./components/Footer";
 import Header from "./components/Header";
 import ImageSlider from "./components/ImageSLider";
-import Posters from "./components/Posters";
-import TrustMark from "./components/TrustMark";
 import LoyaltyProgram from "./components/LoyaltyProgram";
+import Posters from "./components/Posters";
+import Posts from "./components/Posts";
 import ProductCards from "./components/ProductCards";
 import Story from "./components/Story";
-import Posts from "./components/Posts";
-import Subscription from "./components/Subscription";
+import TrustMark from "./components/TrustMark";
 
 function App() {
   return (
@@ -24,7 +24,7 @@ function App() {
       <ProductCards />
       <Story />
       <Posts />
-      <Subscription />
+      <Footer />
     </Box>
   );
 }
