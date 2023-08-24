@@ -1,10 +1,10 @@
 import { Box } from "@chakra-ui/react";
-import SubscriptionPoster from "../components/SubscriptionPoster";
+import ProductPage from "../components/ProductPage";
 
 const Catalogue = () => {
   return (
     <Box>
-      <SubscriptionPoster />
+      <ProductPage />
     </Box>
   );
 };
