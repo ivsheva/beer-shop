@@ -29,7 +29,7 @@ const FooterAccordion = ({ title, email, list }) => {
               fontSize="14px"
               fontWeight={footerItem.highlighted ? "600" : "400"}
               lineHeight="200%"
-              key={footerItem.key}
+              key={footerItem.id}
             >
               {footerItem.description}
             </Text>
