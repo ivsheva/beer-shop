@@ -16,6 +16,13 @@ const theme = extendTheme({
   fonts: {
     body: "Work Sans, sans-serif",
   },
+  styles: {
+    global: {
+      body: {
+        fontSize: "15px",
+      },
+    },
+  },
 });
 
 export default theme;

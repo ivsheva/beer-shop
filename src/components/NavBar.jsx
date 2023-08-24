@@ -1,4 +1,5 @@
-import { List, ListItem, Show, Divider } from "@chakra-ui/react";
+import { Divider, List, ListItem, Show } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 import navItems from "../data/navItems";
 
 const NavBar = () => {
@@ -27,7 +28,7 @@ const NavBar = () => {
             color={navItem.highlight ? "white" : "black"}
             _hover={navItem.highlight ? {} : { borderBottom: "2px" }}
           >
-            {navItem.title}
+            <Link to={navItem.link}>{navItem.title}</Link>
           </ListItem>
         ))}
       </List>
