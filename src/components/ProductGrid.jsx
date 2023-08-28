@@ -1,12 +1,22 @@
-import { Box, Select, Show, SimpleGrid, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Select,
+  Show,
+  SimpleGrid,
+  Text,
+  useDisclosure,
+} from "@chakra-ui/react";
 import PropTypes from "prop-types";
 import { useContext } from "react";
 import { useLocation } from "react-router-dom";
 import { ProductsContext } from "../contexts/ProductContext";
 import BeerCard from "./BeerCard";
+import FilterDrawer from "./Filtering/FilteringDrawer";
 import OverView from "./Filtering/OverView";
 
 const ProductGrid = ({ title }) => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
   const { allGoods } = useContext(ProductsContext);
 
   const pathname = useLocation().pathname;
@@ -35,6 +45,21 @@ const ProductGrid = ({ title }) => {
           {title}
         </Text>
       </Box>
+      <Button
+        display={{ base: "flex", lg: "none" }}
+        variant="outline"
+        color="darkgreen"
+        border="1px solid darkgreen"
+        borderRadius="50px"
+        _hover={{ bg: "darkgreen", color: "white" }}
+        width="100%"
+        marginY="24px"
+        paddingY="24px"
+        onClick={onOpen}
+      >
+        FILTER
+      </Button>
+      <FilterDrawer isOpen={isOpen} onClose={onClose} />
       <Box
         fontWeight="600"
         marginTop="14px"
