@@ -11,7 +11,7 @@ const Brands = ({ allBrands, checkedBrands, setCheckedBrands }) => {
       display="flex"
       flexDirection="column"
       width={{ base: "none", lg: "240px", xl: "260px" }}
-      maxHeight=""
+      marginTop={{ base: "none", lg: "30px" }}
     >
       <Box
         display="flex"

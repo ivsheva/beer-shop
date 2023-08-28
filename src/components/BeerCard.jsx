@@ -9,6 +9,7 @@ const BeerCard = ({ img, brand, name, price }) => {
   return (
     <Box
       display="flex"
+      position="relative"
       flexDirection="column"
       maxWidth="300px"
       justifyContent="center"

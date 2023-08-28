@@ -30,6 +30,7 @@ const Catalogue = () => {
         allBrands={allBrands}
         checkedBrands={checkedBrands}
         setCheckedBrands={setCheckedBrands}
+        allGoods={allGoods}
       />
     </Box>
   );
