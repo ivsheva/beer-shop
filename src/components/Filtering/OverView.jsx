@@ -1,5 +1,6 @@
-import { Text, Box } from "@chakra-ui/react";
+import { Box, Text } from "@chakra-ui/react";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 const OverView = ({ pathName }) => {
   const transformText = (text) => {
@@ -11,7 +12,7 @@ const OverView = ({ pathName }) => {
 
   return (
     <Box display="flex" fontSize="14px" color="darkgrey" marginTop="20px">
-      <Text>Back to overview / </Text>
+      <Link to="/">Back to overview / </Link>
       <Text color="lightblack" marginLeft="2px">
         {transformText(pathName)}
       </Text>

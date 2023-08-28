@@ -1,8 +1,12 @@
-import { Box, Select, SimpleGrid, Text } from "@chakra-ui/react";
+import { Box, Select, Show, SimpleGrid, Text } from "@chakra-ui/react";
 import PropTypes from "prop-types";
+import { useLocation } from "react-router-dom";
 import BeerCard from "./BeerCard";
+import OverView from "./Filtering/OverView";
 
 const ProductGrid = ({ title, list }) => {
+  const pathname = useLocation().pathname;
+
   return (
     <Box
       display="flex"
@@ -13,18 +17,23 @@ const ProductGrid = ({ title, list }) => {
       marginTop="50px"
       marginLeft={{ base: "none", lg: "120px", xl: "120px" }}
     >
-      <Text
-        fontFamily="Questrial, sans-serif "
-        fontSize="28px"
-        lineHeight="140%"
-        fontWeight="600"
-        alignSelf="flex-start"
-      >
-        {title}
-      </Text>
+      <Box alignSelf="flex-start">
+        <Show below="lg">
+          <OverView pathName={pathname} />
+        </Show>
+        <Text
+          fontFamily="Questrial, sans-serif "
+          fontSize="28px"
+          lineHeight="140%"
+          fontWeight="600"
+          marginTop="10px"
+        >
+          {title}
+        </Text>
+      </Box>
       <Box
         fontWeight="600"
-        marginTop="30px"
+        marginTop="14px"
         width="100%"
         display="flex"
         justifyContent="space-between"
