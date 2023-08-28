@@ -1,9 +1,12 @@
 import { Box, Checkbox, Link, Text } from "@chakra-ui/react";
-import PropTypes from "prop-types";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { PiCaretDownBold } from "react-icons/pi";
+import { ProductsContext } from "../../contexts/ProductContext";
 
-const Brands = ({ allBrands, checkedBrands, setCheckedBrands }) => {
+const Brands = () => {
+  const { allBrands, checkedBrands, setCheckedBrands } =
+    useContext(ProductsContext);
+
   const [isExpanded, setExpanded] = useState(true);
 
   return (
@@ -61,12 +64,6 @@ const Brands = ({ allBrands, checkedBrands, setCheckedBrands }) => {
       )}
     </Box>
   );
-};
-
-Brands.propTypes = {
-  allBrands: PropTypes.array.isRequired,
-  checkedBrands: PropTypes.object.isRequired,
-  setCheckedBrands: PropTypes.func.isRequired,
 };
 
 export default Brands;

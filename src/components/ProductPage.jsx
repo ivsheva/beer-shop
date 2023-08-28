@@ -1,24 +1,12 @@
 import { Box } from "@chakra-ui/react";
-import PropTypes from "prop-types";
-import Brands from "./Filtering/Brands";
-import Prices from "./Filtering/Prices";
-import SubscriptionPoster from "./SubscriptionPoster";
-import ProductGrid from "./ProductGrid";
 import { useLocation } from "react-router-dom";
+import Brands from "./Filtering/Brands";
 import OverView from "./Filtering/OverView";
+import Prices from "./Filtering/Prices";
+import ProductGrid from "./ProductGrid";
+import SubscriptionPoster from "./SubscriptionPoster";
 
-const ProductPage = ({
-  prices,
-  filteredValues,
-  setFilteredValues,
-  allBrands,
-  checkedBrands,
-  setCheckedBrands,
-  allGoods,
-}) => {
-  const min = prices.min;
-  const max = prices.max;
-
+const ProductPage = () => {
   const pathname = useLocation().pathname.substring(1);
 
   return (
@@ -31,36 +19,13 @@ const ProductPage = ({
       >
         <Box display={{ base: "none ", lg: "flex" }} flexDirection="column">
           <OverView pathName={pathname} />
-          <Brands
-            allBrands={allBrands}
-            checkedBrands={checkedBrands}
-            setCheckedBrands={setCheckedBrands}
-          />
-          <Prices
-            prices={{ min, max }}
-            filteredValues={filteredValues}
-            setFilteredValues={setFilteredValues}
-            checkedBrands={checkedBrands}
-            setCheckedBrands={setCheckedBrands}
-          />
+          <Brands />
+          <Prices />
         </Box>
-        <ProductGrid title="Craft beers" list={allGoods} />
+        <ProductGrid title="Craft beers" />
       </Box>
     </>
   );
-};
-
-ProductPage.propTypes = {
-  prices: PropTypes.shape({
-    min: PropTypes.number.isRequired,
-    max: PropTypes.number.isRequired,
-  }).isRequired,
-  filteredValues: PropTypes.arrayOf(PropTypes.number).isRequired,
-  setFilteredValues: PropTypes.func.isRequired,
-  allBrands: PropTypes.array.isRequired,
-  checkedBrands: PropTypes.object.isRequired,
-  setCheckedBrands: PropTypes.func.isRequired,
-  allGoods: PropTypes.array.isRequired,
 };
 
 export default ProductPage;

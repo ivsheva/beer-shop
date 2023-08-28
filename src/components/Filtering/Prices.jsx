@@ -6,13 +6,14 @@ import {
   RangeSliderTrack,
   Text,
 } from "@chakra-ui/react";
-import PropTypes from "prop-types";
 import { useState } from "react";
 import { PiCaretDownBold } from "react-icons/pi";
+import { ProductsContext } from "../../contexts/ProductContext";
+import { useContext } from "react";
 
-const Prices = ({ prices, filteredValues, setFilteredValues }) => {
-  const min = prices.min;
-  const max = prices.max;
+const Prices = () => {
+  const { min, max, filteredValues, setFilteredValues } =
+    useContext(ProductsContext);
 
   const [isExpanded, setExpanded] = useState(true);
 
@@ -75,15 +76,6 @@ const Prices = ({ prices, filteredValues, setFilteredValues }) => {
       )}
     </Box>
   );
-};
-
-Prices.propTypes = {
-  prices: PropTypes.shape({
-    min: PropTypes.number.isRequired,
-    max: PropTypes.number.isRequired,
-  }).isRequired,
-  filteredValues: PropTypes.arrayOf(PropTypes.number).isRequired,
-  setFilteredValues: PropTypes.func.isRequired,
 };
 
 export default Prices;

@@ -1,10 +1,14 @@
 import { Box, Select, Show, SimpleGrid, Text } from "@chakra-ui/react";
 import PropTypes from "prop-types";
+import { useContext } from "react";
 import { useLocation } from "react-router-dom";
+import { ProductsContext } from "../contexts/ProductContext";
 import BeerCard from "./BeerCard";
 import OverView from "./Filtering/OverView";
 
-const ProductGrid = ({ title, list }) => {
+const ProductGrid = ({ title }) => {
+  const { allGoods } = useContext(ProductsContext);
+
   const pathname = useLocation().pathname;
 
   return (
@@ -41,7 +45,7 @@ const ProductGrid = ({ title, list }) => {
         <Box width="50%" display="flex" alignItems="center" columnGap="20px">
           <Text
             display={{ base: "none", md: "block" }}
-          >{`${list.length} Products`}</Text>
+          >{`${allGoods.length} Products`}</Text>
           <Select
             width="72px"
             height="36px"
@@ -71,7 +75,7 @@ const ProductGrid = ({ title, list }) => {
         marginTop="50px"
         gap="50px"
       >
-        {list.map((beerItem) => (
+        {allGoods.map((beerItem) => (
           <BeerCard
             key={beerItem.id}
             img={beerItem.img}
@@ -87,7 +91,6 @@ const ProductGrid = ({ title, list }) => {
 
 ProductGrid.propTypes = {
   title: PropTypes.string.isRequired,
-  list: PropTypes.array.isRequired,
 };
 
 export default ProductGrid;
