@@ -35,7 +35,9 @@ const ProductGrid = ({ title }) => {
           product.price >= min &&
           product.price <= max
       )
-    : allGoods;
+    : allGoods.filter((product) => {
+        return product.price >= min && product.price <= max;
+      });
 
   return (
     <Box
