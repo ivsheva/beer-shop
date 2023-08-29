@@ -8,7 +8,7 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import PropTypes from "prop-types";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { ProductsContext } from "../contexts/ProductContext";
 import BeerCard from "./BeerCard";
@@ -16,6 +16,7 @@ import FilterDrawer from "./Filtering/FilteringDrawer";
 import OverView from "./Filtering/OverView";
 
 const ProductGrid = ({ title }) => {
+  const [sortBy, setSortBy] = useState();
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { allGoods, checkedBrands, filteredValues } =
     useContext(ProductsContext);
@@ -33,6 +34,18 @@ const ProductGrid = ({ title }) => {
     const priceCheck = product.price >= min && product.price <= max;
     return brandCheck && priceCheck;
   });
+
+  const sortOptions = {
+    abc: (a, b) => a.name.localeCompare(b.name), // Сортировка по имени
+    lower: (a, b) => a.price - b.price, // Сортировка по возрастанию цены
+    higher: (a, b) => b.price - a.price, // Сортировка по убыванию цены
+  };
+
+  const sortedProducts = [...filteredProducts];
+
+  if (sortOptions[sortBy]) {
+    sortedProducts.sort(sortOptions[sortBy]);
+  }
 
   return (
     <Box
@@ -100,6 +113,8 @@ const ProductGrid = ({ title }) => {
           width="180px"
           borderColor="lightgrey"
           _focus={{ boxShadow: "none", borderColor: "lightgrey" }}
+          value={sortBy}
+          onChange={(event) => setSortBy(event.target.value)}
         >
           <option value="default">Sort by</option>
           <option value="default">Default</option>
@@ -113,7 +128,7 @@ const ProductGrid = ({ title }) => {
         marginTop="50px"
         gap="50px"
       >
-        {filteredProducts.map((beerItem) => (
+        {sortedProducts.map((beerItem) => (
           <BeerCard
             key={beerItem.id}
             img={beerItem.img}
