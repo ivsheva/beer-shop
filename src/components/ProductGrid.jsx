@@ -28,16 +28,11 @@ const ProductGrid = ({ title }) => {
     (value) => value === true
   );
 
-  const filteredProducts = hasCheckedBrands
-    ? allGoods.filter(
-        (product) =>
-          checkedBrands[product.brand] === true &&
-          product.price >= min &&
-          product.price <= max
-      )
-    : allGoods.filter((product) => {
-        return product.price >= min && product.price <= max;
-      });
+  const filteredProducts = allGoods.filter((product) => {
+    const brandCheck = !hasCheckedBrands || checkedBrands[product.brand];
+    const priceCheck = product.price >= min && product.price <= max;
+    return brandCheck && priceCheck;
+  });
 
   return (
     <Box
