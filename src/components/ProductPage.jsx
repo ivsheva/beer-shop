@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { Box } from "@chakra-ui/react";
 import { useLocation } from "react-router-dom";
 import Brands from "./Filtering/Brands";
@@ -6,8 +7,23 @@ import Prices from "./Filtering/Prices";
 import ProductGrid from "./ProductGrid";
 import SubscriptionPoster from "./SubscriptionPoster";
 
-const ProductPage = () => {
+const ProductPage = ({ data }) => {
+  const {
+    min,
+    max,
+    filteredValues,
+    setFilteredValues,
+    uniqueBrands,
+    checkedBrands,
+    setCheckedBrands,
+    products,
+    title,
+  } = data;
+
   const pathname = useLocation().pathname.substring(1);
+
+  const brands = { uniqueBrands, checkedBrands, setCheckedBrands };
+  const prices = { min, max, filteredValues, setFilteredValues };
 
   return (
     <>
@@ -19,10 +35,17 @@ const ProductPage = () => {
       >
         <Box display={{ base: "none ", lg: "flex" }} flexDirection="column">
           <OverView pathName={pathname} />
-          <Brands />
-          <Prices />
+          <Brands brands={brands} />
+          <Prices prices={prices} />
         </Box>
-        <ProductGrid title="Craft beers" />
+        <ProductGrid
+          products={products}
+          checkedBrands={checkedBrands}
+          filteredValues={filteredValues}
+          title={title}
+          brands={brands}
+          prices={prices}
+        />
       </Box>
     </>
   );

@@ -1,11 +1,10 @@
+/* eslint-disable react/prop-types */
 import { Box, Checkbox, Link, Text } from "@chakra-ui/react";
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { PiCaretDownBold } from "react-icons/pi";
-import { ProductsContext } from "../../contexts/ProductContext";
 
-const Brands = () => {
-  const { uniqueBrands, checkedBrands, setCheckedBrands } =
-    useContext(ProductsContext);
+const Brands = ({ brands }) => {
+  const { uniqueBrands, checkedBrands, setCheckedBrands } = brands;
 
   const [isExpanded, setExpanded] = useState(true);
 

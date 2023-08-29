@@ -1,9 +1,9 @@
 import { Box } from "@chakra-ui/react";
 import { useState } from "react";
 import ProductPage from "../components/ProductPage";
-import products from "../data/goods";
+import products from "../data/styleProducts";
 
-const Catalogue = () => {
+const Style = () => {
   const brands = products.map(({ id, brand }) => ({
     id,
     brand,
@@ -11,7 +11,7 @@ const Catalogue = () => {
   const prices = products.map((item) => item.price);
   const min = Math.min(...prices);
   const max = Math.max(...prices);
-  const title = "Craft Beers";
+  const title = "Style";
 
   const uniqueBrands = brands.filter(
     (item, index, self) =>
@@ -40,4 +40,4 @@ const Catalogue = () => {
   );
 };
 
-export default Catalogue;
+export default Style;

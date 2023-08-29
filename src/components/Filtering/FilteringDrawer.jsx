@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import {
   Drawer,
   DrawerBody,
@@ -10,7 +11,7 @@ import PropTypes from "prop-types";
 import Brands from "./Brands";
 import Prices from "./Prices";
 
-const FilteringDrawer = ({ isOpen, onClose }) => {
+const FilteringDrawer = ({ isOpen, onClose, brands, prices }) => {
   return (
     <Drawer isOpen={isOpen} onClose={onClose} placement="left">
       <DrawerOverlay />
@@ -21,8 +22,8 @@ const FilteringDrawer = ({ isOpen, onClose }) => {
         </DrawerHeader>
 
         <DrawerBody>
-          <Brands />
-          <Prices />
+          <Brands brands={brands} />
+          <Prices prices={prices} />
         </DrawerBody>
       </DrawerContent>
     </Drawer>

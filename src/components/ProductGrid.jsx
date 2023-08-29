@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import {
   Box,
   Button,
@@ -7,19 +8,22 @@ import {
   Text,
   useDisclosure,
 } from "@chakra-ui/react";
-import PropTypes from "prop-types";
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { useLocation } from "react-router-dom";
-import { ProductsContext } from "../contexts/ProductContext";
 import BeerCard from "./BeerCard";
 import FilterDrawer from "./Filtering/FilteringDrawer";
 import OverView from "./Filtering/OverView";
 
-const ProductGrid = ({ title }) => {
+const ProductGrid = ({
+  products,
+  checkedBrands,
+  filteredValues,
+  title,
+  brands,
+  prices,
+}) => {
   const [sortBy, setSortBy] = useState();
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const { allGoods, checkedBrands, filteredValues } =
-    useContext(ProductsContext);
 
   const pathname = useLocation().pathname;
   const min = filteredValues[0];
@@ -29,7 +33,7 @@ const ProductGrid = ({ title }) => {
     (value) => value === true
   );
 
-  const filteredProducts = allGoods.filter((product) => {
+  const filteredProducts = products.filter((product) => {
     const brandCheck = !hasCheckedBrands || checkedBrands[product.brand];
     const priceCheck = product.price >= min && product.price <= max;
     return brandCheck && priceCheck;
@@ -85,7 +89,12 @@ const ProductGrid = ({ title }) => {
       >
         FILTER
       </Button>
-      <FilterDrawer isOpen={isOpen} onClose={onClose} />
+      <FilterDrawer
+        isOpen={isOpen}
+        onClose={onClose}
+        brands={brands}
+        prices={prices}
+      />
       <Box
         fontWeight="600"
         marginTop="14px"
@@ -140,10 +149,6 @@ const ProductGrid = ({ title }) => {
       </SimpleGrid>
     </Box>
   );
-};
-
-ProductGrid.propTypes = {
-  title: PropTypes.string.isRequired,
 };
 
 export default ProductGrid;

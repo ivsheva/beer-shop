@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import {
   Box,
   RangeSlider,
@@ -8,12 +9,9 @@ import {
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { PiCaretDownBold } from "react-icons/pi";
-import { ProductsContext } from "../../contexts/ProductContext";
-import { useContext } from "react";
 
-const Prices = () => {
-  const { min, max, filteredValues, setFilteredValues } =
-    useContext(ProductsContext);
+const Prices = ({ prices }) => {
+  const { min, max, filteredValues, setFilteredValues } = prices;
 
   const [isExpanded, setExpanded] = useState(true);
 
