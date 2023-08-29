@@ -17,7 +17,6 @@ export const ProductsProvider = ({ children }) => {
     (item, index, self) =>
       index === self.findIndex((t) => t.brand === item.brand)
   );
-  const allBrands = [{ id: 0, brand: "All brands" }, ...uniqueBrands];
 
   const [filteredValues, setFilteredValues] = useState([min, max]);
   const [checkedBrands, setCheckedBrands] = useState({});
@@ -29,7 +28,7 @@ export const ProductsProvider = ({ children }) => {
         max,
         filteredValues,
         setFilteredValues,
-        allBrands,
+        uniqueBrands,
         checkedBrands,
         setCheckedBrands,
         allGoods,

@@ -17,9 +17,17 @@ import OverView from "./Filtering/OverView";
 
 const ProductGrid = ({ title }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const { allGoods } = useContext(ProductsContext);
+  const { allGoods, checkedBrands } = useContext(ProductsContext);
 
   const pathname = useLocation().pathname;
+
+  const hasCheckedBrands = Object.values(checkedBrands).some(
+    (value) => value === true
+  );
+
+  const filteredProducts = hasCheckedBrands
+    ? allGoods.filter((product) => checkedBrands[product.brand] === true)
+    : allGoods;
 
   return (
     <Box
@@ -70,7 +78,7 @@ const ProductGrid = ({ title }) => {
         <Box width="50%" display="flex" alignItems="center" columnGap="20px">
           <Text
             display={{ base: "none", md: "block" }}
-          >{`${allGoods.length} Products`}</Text>
+          >{`${filteredProducts.length} Products`}</Text>
           <Select
             width="72px"
             height="36px"
@@ -100,7 +108,7 @@ const ProductGrid = ({ title }) => {
         marginTop="50px"
         gap="50px"
       >
-        {allGoods.map((beerItem) => (
+        {filteredProducts.map((beerItem) => (
           <BeerCard
             key={beerItem.id}
             img={beerItem.img}

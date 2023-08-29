@@ -4,7 +4,7 @@ import { PiCaretDownBold } from "react-icons/pi";
 import { ProductsContext } from "../../contexts/ProductContext";
 
 const Brands = () => {
-  const { allBrands, checkedBrands, setCheckedBrands } =
+  const { uniqueBrands, checkedBrands, setCheckedBrands } =
     useContext(ProductsContext);
 
   const [isExpanded, setExpanded] = useState(true);
@@ -35,7 +35,7 @@ const Brands = () => {
       </Box>
       {isExpanded && (
         <Box display="flex" flexDirection="column" overflowY="scroll">
-          {allBrands.map((item) => (
+          {uniqueBrands.map((item) => (
             <Box key={item.id} display="flex">
               <Checkbox
                 size="lg"
@@ -43,11 +43,11 @@ const Brands = () => {
                 onChange={(event) =>
                   setCheckedBrands((prevCheckedBrands) => ({
                     ...prevCheckedBrands,
-                    [item.id]: event.target.checked,
+                    [item.brand]: event.target.checked,
                   }))
                 }
-                isChecked={checkedBrands[item.id]}
-                value={item.id}
+                isChecked={checkedBrands[item.brand]}
+                value={item.brand}
               >
                 <Link
                   marginLeft="8px"
