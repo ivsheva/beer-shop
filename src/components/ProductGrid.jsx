@@ -17,16 +17,24 @@ import OverView from "./Filtering/OverView";
 
 const ProductGrid = ({ title }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const { allGoods, checkedBrands } = useContext(ProductsContext);
+  const { allGoods, checkedBrands, filteredValues } =
+    useContext(ProductsContext);
 
   const pathname = useLocation().pathname;
+  const min = filteredValues[0];
+  const max = filteredValues[1];
 
   const hasCheckedBrands = Object.values(checkedBrands).some(
     (value) => value === true
   );
 
   const filteredProducts = hasCheckedBrands
-    ? allGoods.filter((product) => checkedBrands[product.brand] === true)
+    ? allGoods.filter(
+        (product) =>
+          checkedBrands[product.brand] === true &&
+          product.price >= min &&
+          product.price <= max
+      )
     : allGoods;
 
   return (
