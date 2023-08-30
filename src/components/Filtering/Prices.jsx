@@ -53,6 +53,7 @@ const Prices = ({ prices }) => {
             colorScheme="gray"
             aria-label={["min", "max"]}
             min={min}
+            step={0.01}
             max={max}
             defaultValue={[0, max]}
           >
