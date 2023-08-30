@@ -10,18 +10,21 @@ const productCards = [
     img: image1,
     genre: "Exclusive",
     title: "Crowlers",
+    link: "crowlers",
   },
   {
     id: ++lastId,
     img: image2,
     genre: "Enjoy in style",
     title: "Proper glassware",
+    link: "glasses",
   },
   {
     id: ++lastId,
     img: image3,
     genre: "Mixed boxes",
     title: "Beer packs",
+    link: "beer-packs",
   },
 ];
 export default productCards;

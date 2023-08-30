@@ -14,6 +14,7 @@ import { AiOutlineHeart, AiOutlineShoppingCart } from "react-icons/ai";
 import { BiUserCircle } from "react-icons/bi";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { HiMagnifyingGlass } from "react-icons/hi2";
+import { Link } from "react-router-dom";
 import logo from "../img/img/beerdome-logo-black.png";
 import AuthDrawer from "./AuthDrawer";
 
@@ -54,21 +55,23 @@ const UserControl = () => {
           <HiMagnifyingGlass size={32} />
         </InputRightAddon>
       </InputGroup>
-      <Image
-        src={logo}
-        alt="BEERDOME"
-        marginLeft={{
-          base: "20px",
-          lg: "-80px",
-          xl: "-100px",
-          "2xl": "-180px",
-        }}
-        marginRight="20px"
-        maxWidth="100%"
-        height="auto"
-        objectFit="cover"
-        width={{ base: "180px", sm: "240px" }}
-      ></Image>
+      <Link to="/">
+        <Image
+          src={logo}
+          alt="BEERDOME"
+          marginLeft={{
+            base: "20px",
+            lg: "-80px",
+            xl: "-100px",
+            "2xl": "-180px",
+          }}
+          marginRight="20px"
+          maxWidth="100%"
+          height="auto"
+          objectFit="cover"
+          width={{ base: "180px", sm: "240px", lg: "240px", xl: "360px" }}
+        ></Image>
+      </Link>
       <HStack
         display={{ base: "none", lg: "flex" }}
         justifyContent="center"

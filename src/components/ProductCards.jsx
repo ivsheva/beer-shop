@@ -21,6 +21,7 @@ const ProductCards = () => {
           img={productCard.img}
           genre={productCard.genre}
           title={productCard.title}
+          link={productCard.link}
         />
       ))}
     </Box>
