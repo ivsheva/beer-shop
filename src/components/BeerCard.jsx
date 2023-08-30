@@ -15,8 +15,9 @@ const BeerCard = ({ img, brand, name, price }) => {
       justifyContent="center"
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
+      minHeight="400px"
     >
-      <Image src={img} width="250px" height="400px" fit="cover" />
+      <Image src={img} width="250px" height="auto" fit="cover" />
       <Text color="darkgrey" textAlign="left">
         {brand}
       </Text>
