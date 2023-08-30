@@ -6,6 +6,7 @@ import Style from "./pages/Style";
 import Countries from "./pages/Countries";
 import BeerPacks from "./pages/BeerPacks";
 import Glasses from "./pages/Glasses";
+import Crowlers from "./pages/Crowlers";
 
 const Router = () => {
   return (
@@ -18,6 +19,7 @@ const Router = () => {
           <Route path="countries" element={<Countries />} />
           <Route path="beer-packs" element={<BeerPacks />} />
           <Route path="glasses" element={<Glasses />} />
+          <Route path="crowlers" element={<Crowlers />} />
         </Route>
       </Routes>
     </BrowserRouter>
