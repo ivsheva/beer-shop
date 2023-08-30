@@ -12,6 +12,7 @@ const Vouchers = () => {
   const min = Math.min(...prices);
   const max = Math.max(...prices);
   const title = "Vouchers";
+  const isVoucher = true;
 
   const uniqueBrands = brands.filter(
     (item, index, self) =>
@@ -31,6 +32,7 @@ const Vouchers = () => {
     setCheckedBrands,
     products,
     title,
+    isVoucher,
   };
 
   return (

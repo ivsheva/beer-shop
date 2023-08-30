@@ -13,6 +13,7 @@ import { useLocation } from "react-router-dom";
 import BeerCard from "./BeerCard";
 import FilterDrawer from "./Filtering/FilteringDrawer";
 import OverView from "./Filtering/OverView";
+import VoucherDescription from "./VoucherDescription";
 
 const ProductGrid = ({
   products,
@@ -21,6 +22,7 @@ const ProductGrid = ({
   title,
   brands,
   prices,
+  isVoucher = false,
 }) => {
   const [sortBy, setSortBy] = useState();
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -65,15 +67,18 @@ const ProductGrid = ({
         <Show below="lg">
           <OverView pathName={pathname} />
         </Show>
-        <Text
-          fontFamily="Questrial, sans-serif "
-          fontSize="28px"
-          lineHeight="140%"
-          fontWeight="600"
-          marginTop="10px"
-        >
-          {title}
-        </Text>
+        {isVoucher && <VoucherDescription />}
+        {!isVoucher && (
+          <Text
+            fontFamily="Questrial, sans-serif "
+            fontSize="28px"
+            lineHeight="140%"
+            fontWeight="600"
+            marginTop="10px"
+          >
+            {title}
+          </Text>
+        )}
       </Box>
       <Button
         display={{ base: "flex", lg: "none" }}

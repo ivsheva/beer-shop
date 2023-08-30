@@ -18,6 +18,7 @@ const ProductPage = ({ data }) => {
     setCheckedBrands,
     products,
     title,
+    isVoucher,
   } = data;
 
   const pathname = useLocation().pathname.substring(1);
@@ -45,6 +46,7 @@ const ProductPage = ({ data }) => {
           title={title}
           brands={brands}
           prices={prices}
+          isVoucher={isVoucher}
         />
       </Box>
     </>
