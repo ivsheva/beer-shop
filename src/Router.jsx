@@ -8,6 +8,7 @@ import BeerPacks from "./pages/BeerPacks";
 import Glasses from "./pages/Glasses";
 import Crowlers from "./pages/Crowlers";
 import Vouchers from "./pages/Vouchers";
+import Sales from "./pages/Sales";
 
 const Router = () => {
   return (
@@ -22,6 +23,7 @@ const Router = () => {
           <Route path="glasses" element={<Glasses />} />
           <Route path="crowlers" element={<Crowlers />} />
           <Route path="gift-vouchers" element={<Vouchers />} />
+          <Route path="sale" element={<Sales />} />
         </Route>
       </Routes>
     </BrowserRouter>
