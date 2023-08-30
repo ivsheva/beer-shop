@@ -149,6 +149,7 @@ const ProductGrid = ({
             brand={beerItem.brand}
             name={beerItem.name}
             price={beerItem.price}
+            oldPrice={beerItem.oldPrice}
             isFull={true}
           />
         ))}

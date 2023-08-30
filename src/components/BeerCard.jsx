@@ -3,8 +3,19 @@ import PropTypes from "prop-types";
 import { useState } from "react";
 import { AiOutlineHeart } from "react-icons/ai";
 
-const BeerCard = ({ img, brand, name, price, isFull = false }) => {
+const BeerCard = ({
+  img,
+  brand,
+  name,
+  price,
+  oldPrice = null,
+  isFull = false,
+}) => {
   const [isHover, setIsHover] = useState(false);
+
+  const discount = oldPrice
+    ? Math.round(((oldPrice - price) / oldPrice) * 100)
+    : 0;
 
   return (
     <Box
@@ -37,7 +48,14 @@ const BeerCard = ({ img, brand, name, price, isFull = false }) => {
       >
         {name}
       </Text>
-      <Text color="red">€{price}</Text>
+      <Box display="flex" alignItems="center" columnGap="8px">
+        <Text color="red">€{price}</Text>
+        {oldPrice && (
+          <Text color="green" fontSize="13px" textDecoration="line-through">
+            €{oldPrice}
+          </Text>
+        )}
+      </Box>
       <Box position="absolute" top="10px" right="10px">
         <Tooltip
           label="Login for wishlist"
@@ -63,6 +81,29 @@ const BeerCard = ({ img, brand, name, price, isFull = false }) => {
           Add to cart
         </Button>
       )}
+      {oldPrice && (
+        <Box
+          position="absolute"
+          top="20px"
+          display="flex"
+          flexDirection="column"
+          rowGap="6px"
+        >
+          <Text
+            display={{ base: "none", md: "block" }}
+            color="green"
+            width="50px"
+            textAlign="center"
+            border="1px solid lightgreen"
+            fontWeight="600"
+          >
+            SALE
+          </Text>
+          <Text textAlign="center" width="45px" color="white" bgColor="green">
+            -{discount}%
+          </Text>
+        </Box>
+      )}
     </Box>
   );
 };
@@ -72,7 +113,8 @@ BeerCard.propTypes = {
   brand: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
-  isFull: PropTypes.bool.isRequired,
+  oldPrice: PropTypes.number,
+  isFull: PropTypes.bool,
 };
 
 export default BeerCard;
