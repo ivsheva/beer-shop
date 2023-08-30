@@ -11,7 +11,7 @@ const Sales = () => {
   const prices = products.map((item) => item.price);
   const min = Math.min(...prices);
   const max = Math.max(...prices);
-  const title = "Style";
+  const title = "Help to clean up our warehouse!";
 
   const uniqueBrands = brands.filter(
     (item, index, self) =>
