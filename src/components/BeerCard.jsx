@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { useState } from "react";
 import { AiOutlineHeart } from "react-icons/ai";
 
-const BeerCard = ({ img, brand, name, price }) => {
+const BeerCard = ({ img, brand, name, price, isFull = false }) => {
   const [isHover, setIsHover] = useState(false);
 
   return (
@@ -17,7 +17,7 @@ const BeerCard = ({ img, brand, name, price }) => {
       onMouseLeave={() => setIsHover(false)}
       minHeight="400px"
     >
-      <Image src={img} width="250px" height="auto" fit="cover" />
+      <Image src={img} width="250px" height="300px" fit="contain" />
       <Text color="darkgrey" textAlign="left">
         {brand}
       </Text>
@@ -26,6 +26,14 @@ const BeerCard = ({ img, brand, name, price }) => {
         fontSize="15px"
         maxWidth="240px"
         marginBottom="2px"
+        style={{
+          display: "-webkit-box",
+          WebkitBoxOrient: "vertical",
+          WebkitLineClamp: 1,
+          overflow: "hidden",
+          textOverflow: "ellipsis",
+          maxHeight: "3.6em", // Две строки с отступами между строками
+        }}
       >
         {name}
       </Text>
@@ -46,10 +54,11 @@ const BeerCard = ({ img, brand, name, price }) => {
       {isHover && (
         <Button
           position="absolute"
-          bottom="100px"
+          bottom="85px"
           colorScheme="red"
           background="red"
           borderRadius="0"
+          width={isFull ? "100%" : "unset"}
         >
           Add to cart
         </Button>
@@ -63,6 +72,7 @@ BeerCard.propTypes = {
   brand: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
+  isFull: PropTypes.bool.isRequired,
 };
 
 export default BeerCard;
