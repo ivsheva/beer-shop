@@ -1,25 +1,17 @@
-import {
-  Box,
-  HStack,
-  Image,
-  List,
-  ListItem,
-  Text,
-  VStack,
-} from "@chakra-ui/react";
-import {
-  AiFillStar,
-  AiOutlineHeart,
-  AiOutlineShoppingCart,
-} from "react-icons/ai";
-import { BiUserCircle } from "react-icons/bi";
+/* eslint-disable react/prop-types */
+import { Box, HStack, Image, List, ListItem, Text } from "@chakra-ui/react";
+import { AiFillStar } from "react-icons/ai";
 import { LuBox } from "react-icons/lu";
 import { PiTruck } from "react-icons/pi";
-import TrustMark from "../img/img/TrustMark.png";
-import lastStar from "../img/svg/lastStar.svg";
-import star from "../img/svg/star.svg";
+import TrustMark from "../../img/img/TrustMark.png";
+import lastStar from "../../img/svg/lastStar.svg";
+import star from "../../img/svg/star.svg";
+import Cart from "./Cart";
+import Login from "./Login";
+import WishList from "./WishList";
+import AuthDrawer from "../AuthDrawer";
 
-const Advantages = () => {
+const Advantages = ({ isOpen, onOpen, onClose }) => {
   return (
     <Box
       display="flex"
@@ -73,19 +65,11 @@ const Advantages = () => {
         columnGap="16px"
         marginTop={{ base: "8px", lg: "unset" }}
       >
-        <VStack spacing="0">
-          <BiUserCircle size="28" />
-          <Text>Login</Text>
-        </VStack>
-        <VStack spacing="0">
-          <AiOutlineHeart size="28" />
-          <Text>Wish List</Text>
-        </VStack>
-        <VStack spacing="0">
-          <AiOutlineShoppingCart size="28" />
-          <Text>Cart</Text>
-        </VStack>
+        <Login onOpen={onOpen} />
+        <WishList />
+        <Cart />
       </HStack>
+      <AuthDrawer isOpen={isOpen} onClose={onClose} />
     </Box>
   );
 };

@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import {
   Box,
   HStack,
@@ -6,26 +7,17 @@ import {
   InputGroup,
   InputRightAddon,
   Show,
-  Text,
-  VStack,
-  useDisclosure,
 } from "@chakra-ui/react";
-import { AiOutlineHeart, AiOutlineShoppingCart } from "react-icons/ai";
-import { BiUserCircle } from "react-icons/bi";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { HiMagnifyingGlass } from "react-icons/hi2";
-import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import logo from "../img/img/beerdome-logo-black.png";
-import AuthDrawer from "./AuthDrawer";
+import logo from "../../img/img/beerdome-logo-black.png";
+import AuthDrawer from "../AuthDrawer";
+import Cart from "./Cart";
+import Login from "./Login";
+import WishList from "./WishList";
 
-const UserControl = () => {
-  const { isOpen, onOpen, onClose } = useDisclosure();
-  const cart = useSelector((state) => state.cart);
-  const wishList = useSelector((state) => state.wishlist);
-  const cartLength = cart ? cart.length : 0;
-  const wishLength = wishList ? wishList.length : 0;
-
+const UserControl = ({ isOpen, onOpen, onClose }) => {
   return (
     <Box
       display="flex"
@@ -82,56 +74,9 @@ const UserControl = () => {
         justifyContent="center"
         spacing="4"
       >
-        <VStack spacing="0" onClick={onOpen} cursor="pointer">
-          <BiUserCircle size="28" />
-          <Text>Login</Text>
-        </VStack>
-        <VStack
-          spacing="0"
-          cursor="pointer"
-          position="relative"
-          _before={{
-            content: `"${wishLength}"`,
-            position: "absolute",
-            top: "-6px",
-            right: "8px",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            color: "white",
-            fontSize: "12px",
-            width: "18px",
-            height: "18px",
-            borderRadius: "50px",
-            bgColor: "pink",
-          }}
-        >
-          <AiOutlineHeart size="28" />
-          <Text>Wishlist</Text>
-        </VStack>
-        <VStack
-          spacing="0"
-          cursor="pointer"
-          position="relative"
-          _before={{
-            content: `"${cartLength}"`,
-            position: "absolute",
-            top: "-6px",
-            right: "-8px",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            color: "white",
-            fontSize: "12px",
-            width: "18px",
-            height: "18px",
-            borderRadius: "50px",
-            bgColor: "red",
-          }}
-        >
-          <AiOutlineShoppingCart size="28" />
-          <Text>Cart</Text>
-        </VStack>
+        <Login onOpen={onOpen} />
+        <WishList />
+        <Cart />
       </HStack>
       <Show breakpoint="(max-width: 990px)">
         <HiMagnifyingGlass size={32} />
