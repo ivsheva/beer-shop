@@ -2,9 +2,8 @@ import { Box, Button, Image, Text, Tooltip } from "@chakra-ui/react";
 import PropTypes from "prop-types";
 import { useState } from "react";
 import { AiOutlineHeart } from "react-icons/ai";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { v4 as uuidv4 } from "uuid";
-import useLocalStorage from "../hooks/useLocalStorage";
 import { ADD_TO_CART } from "../store/cartSlice";
 import { ADD_TO_WISH } from "../store/wishlistSlice";
 
@@ -18,8 +17,8 @@ const BeerCard = ({
 }) => {
   const dispatch = useDispatch();
   const [isHover, setIsHover] = useState(false);
-  const [cart, setCart] = useLocalStorage("cart", []);
-  const [wishList, setWishList] = useLocalStorage("wishlist", []);
+  const cart = useSelector((state) => state.cart);
+  const wishlist = useSelector((state) => state.wishlist);
 
   const discount = oldPrice
     ? Math.round(((oldPrice - price) / oldPrice) * 100)
@@ -27,19 +26,18 @@ const BeerCard = ({
 
   const handleAddToCart = () => {
     const newItem = { id: uuidv4(), img, brand, name, price };
-    const newCart = [...cart, newItem];
-    setCart(newCart);
-    dispatch(ADD_TO_CART(newItem));
+
+    if (!cart.find((item) => item.name === newItem.name)) {
+      dispatch(ADD_TO_CART(newItem));
+    }
   };
 
   const handleAddToWish = () => {
     const newItem = { id: uuidv4(), img, brand, name, price };
-    const newWishList = [...wishList, newItem];
 
-    setWishList(newWishList);
-    dispatch(ADD_TO_WISH(newItem));
-
-    console.log(wishList);
+    if (!wishlist.find((item) => item.name === newItem.name)) {
+      dispatch(ADD_TO_WISH(newItem));
+    }
   };
 
   return (

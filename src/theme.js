@@ -12,6 +12,7 @@ const theme = extendTheme({
     lightgrey: "#E5E5E5",
     red: "#E40053",
     darkgreen: "#023D32",
+    pink: "#C4AAE2",
   },
   fonts: {
     body: "Work Sans, sans-serif",
