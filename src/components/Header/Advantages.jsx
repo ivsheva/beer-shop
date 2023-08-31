@@ -10,8 +10,9 @@ import Cart from "./Cart";
 import Login from "./Login";
 import WishList from "./WishList";
 import AuthDrawer from "../AuthDrawer";
+import CartDrawer from "../CartDrawer";
 
-const Advantages = ({ isOpen, onOpen, onClose }) => {
+const Advantages = ({ loginDisclosure, wishDisclosure, cartDisclosure }) => {
   return (
     <Box
       display="flex"
@@ -65,11 +66,18 @@ const Advantages = ({ isOpen, onOpen, onClose }) => {
         columnGap="16px"
         marginTop={{ base: "8px", lg: "unset" }}
       >
-        <Login onOpen={onOpen} />
+        <Login onOpen={loginDisclosure.onOpen} />
         <WishList />
-        <Cart />
+        <Cart onOpen={cartDisclosure.onOpen} />
       </HStack>
-      <AuthDrawer isOpen={isOpen} onClose={onClose} />
+      <AuthDrawer
+        isOpen={loginDisclosure.isOpen}
+        onClose={loginDisclosure.onClose}
+      />
+      <CartDrawer
+        isOpen={cartDisclosure.isOpen}
+        onClose={cartDisclosure.onClose}
+      />
     </Box>
   );
 };

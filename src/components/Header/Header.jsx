@@ -4,12 +4,19 @@ import NavBar from "../NavBar";
 import UserControl from "./UserControl";
 
 const Header = () => {
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  const loginDisclosure = useDisclosure();
+  const cartDisclosure = useDisclosure();
 
   return (
     <Box>
-      <Advantages isOpen={isOpen} onOpen={onOpen} onClose={onClose} />
-      <UserControl isOpen={isOpen} onOpen={onOpen} onClose={onClose} />
+      <Advantages
+        loginDisclosure={loginDisclosure}
+        cartDisclosure={cartDisclosure}
+      />
+      <UserControl
+        loginDisclosure={loginDisclosure}
+        cartDisclosure={cartDisclosure}
+      />
       <NavBar />
     </Box>
   );
