@@ -24,7 +24,8 @@
     "react-slick": "^0.29.0",
     "redux": "^4.2.1",
     "slick-carousel": "^1.8.1",
-    "swiper": "^10.2.0"
+    "swiper": "^10.2.0",
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",
