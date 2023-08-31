@@ -5,16 +5,19 @@ import UserControl from "./UserControl";
 
 const Header = () => {
   const loginDisclosure = useDisclosure();
+  const wishDisclosure = useDisclosure();
   const cartDisclosure = useDisclosure();
 
   return (
     <Box>
       <Advantages
         loginDisclosure={loginDisclosure}
+        wishDisclosure={wishDisclosure}
         cartDisclosure={cartDisclosure}
       />
       <UserControl
         loginDisclosure={loginDisclosure}
+        wishDisclosure={wishDisclosure}
         cartDisclosure={cartDisclosure}
       />
       <NavBar />

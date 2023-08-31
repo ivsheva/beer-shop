@@ -46,7 +46,7 @@ const CartDrawer = ({ isOpen, onClose }) => {
             width="95%"
             borderRadius="0"
             mt="20px"
-            mb="80px"
+            mb="40px"
             fontWeight="600"
             paddingY="30px"
           >

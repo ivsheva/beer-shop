@@ -1,8 +1,9 @@
+/* eslint-disable react/prop-types */
 import { Text, VStack } from "@chakra-ui/react";
 import { AiOutlineHeart } from "react-icons/ai";
 import { useSelector } from "react-redux";
 
-const WishList = () => {
+const WishList = ({ onOpen }) => {
   const wishList = useSelector((state) => state.wishlist);
   const wishLength = wishList ? wishList.length : 0;
 
@@ -11,6 +12,7 @@ const WishList = () => {
       spacing="0"
       cursor="pointer"
       position="relative"
+      onClick={onOpen}
       _before={{
         content: `"${wishLength}"`,
         position: "absolute",
