@@ -1,5 +1,5 @@
 import { Box } from "@chakra-ui/react";
-import productCards from "../data/productCards";
+import productCards from "../../data/productCards";
 import ProductCard from "./ProductCard";
 
 const ProductCards = () => {

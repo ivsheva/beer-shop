@@ -1,9 +1,9 @@
 import { Box, Divider, Hide, Image, Link, Show, Text } from "@chakra-ui/react";
 import { BsInstagram } from "react-icons/bs";
 import { FaFacebookF } from "react-icons/fa";
-import footerItems from "../data/footerItems";
-import paymentMethods from "../data/paymentMethods";
-import logo from "../img/img/logo-footer.jpg";
+import footerItems from "../../data/footerItems";
+import paymentMethods from "../../data/paymentMethods";
+import logo from "../../img/img/logo-footer.jpg";
 import FooterAccordion from "./FooterAccordion";
 import FooterBlock from "./FooterBlock";
 

@@ -1,7 +1,7 @@
 import { Box } from "@chakra-ui/react";
 import { useState } from "react";
 import products from "../data/packProducts";
-import ProductPage from "../components/ProductPage";
+import ProductPage from "../components/Products/ProductPage";
 
 const BeerPacks = () => {
   const brands = products.map(({ id, brand }) => ({

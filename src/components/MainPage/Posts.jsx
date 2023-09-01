@@ -4,7 +4,7 @@ import "swiper/css/autoplay";
 import "swiper/css/navigation";
 import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import posts from "../data/posts";
+import posts from "../../data/posts";
 import Post from "./Post";
 
 const Posts = () => {

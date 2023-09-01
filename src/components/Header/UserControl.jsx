@@ -12,12 +12,12 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { HiMagnifyingGlass } from "react-icons/hi2";
 import { Link } from "react-router-dom";
 import logo from "../../img/img/beerdome-logo-black.png";
-import AuthDrawer from "../AuthDrawer";
+import AuthDrawer from "../Drawers/AuthDrawer";
 import Cart from "./Cart";
 import Login from "./Login";
 import WishList from "./WishList";
-import CartDrawer from "../CartDrawer";
-import WishDrawer from "../WishDrawer";
+import CartDrawer from "../Drawers/CartDrawer";
+import WishDrawer from "../Drawers/WishDrawer";
 
 const UserControl = ({ loginDisclosure, wishDisclosure, cartDisclosure }) => {
   return (

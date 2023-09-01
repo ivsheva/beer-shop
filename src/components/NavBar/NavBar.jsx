@@ -1,6 +1,6 @@
 import { Divider, List, ListItem, Show } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
-import navItems from "../data/navItems";
+import navItems from "../../data/navItems";
 
 const NavBar = () => {
   return (

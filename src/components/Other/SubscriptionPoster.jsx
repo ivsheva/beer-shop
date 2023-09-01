@@ -1,5 +1,5 @@
 import { Box, Link, Text } from "@chakra-ui/react";
-import bannerBg from "../img/img/bg-banner-1.jpg";
+import bannerBg from "../../img/img/bg-banner-1.jpg";
 
 const SubscriptionPoster = () => {
   return (

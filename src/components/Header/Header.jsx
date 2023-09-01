@@ -1,6 +1,6 @@
 import { Box, useDisclosure } from "@chakra-ui/react";
 import Advantages from "./Advantages";
-import NavBar from "../NavBar";
+import NavBar from "../NavBar/NavBar";
 import UserControl from "./UserControl";
 
 const Header = () => {

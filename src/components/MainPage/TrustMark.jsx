@@ -1,6 +1,6 @@
 import { Flex, HStack, Image, Show, Text } from "@chakra-ui/react";
-import TrustMarkImg from "../img/img/TrustMark-black.png";
-import Mark from "./Mark";
+import TrustMarkImg from "../../img/img/TrustMark-black.png";
+import Mark from "../Other/Mark";
 
 const TrustMark = () => {
   return (

@@ -1,11 +1,11 @@
 /* eslint-disable react/prop-types */
 import { Box } from "@chakra-ui/react";
 import { useLocation } from "react-router-dom";
-import Brands from "./Filtering/Brands";
-import OverView from "./Filtering/OverView";
-import Prices from "./Filtering/Prices";
+import Brands from "./../Filtering/Brands";
+import OverView from "./../Filtering/OverView";
+import Prices from "./../Filtering/Prices";
 import ProductGrid from "./ProductGrid";
-import SubscriptionPoster from "./SubscriptionPoster";
+import SubscriptionPoster from "../Other/SubscriptionPoster";
 
 const ProductPage = ({ data }) => {
   const {

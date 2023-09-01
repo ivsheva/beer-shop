@@ -4,8 +4,8 @@ import { useState } from "react";
 import { AiOutlineHeart } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
 import { v4 as uuidv4 } from "uuid";
-import { ADD_TO_CART } from "../store/cartSlice";
-import { ADD_TO_WISH } from "../store/wishlistSlice";
+import { ADD_TO_CART } from "../../store/cartSlice";
+import { ADD_TO_WISH } from "../../store/wishlistSlice";
 
 const BeerCard = ({
   img,

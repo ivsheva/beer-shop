@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 
 import { Box, Image, Text, Heading } from "@chakra-ui/react";
-import img from "../img/img/story-bg.jpg";
+import img from "../../img/img/story-bg.jpg";
 
 const Story = () => {
   return (

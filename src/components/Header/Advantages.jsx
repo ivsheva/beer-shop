@@ -9,9 +9,9 @@ import star from "../../img/svg/star.svg";
 import Cart from "./Cart";
 import Login from "./Login";
 import WishList from "./WishList";
-import AuthDrawer from "../AuthDrawer";
-import CartDrawer from "../CartDrawer";
-import WishDrawer from "../WishDrawer";
+import AuthDrawer from "../Drawers/AuthDrawer";
+import CartDrawer from "../Drawers/CartDrawer";
+import WishDrawer from "../Drawers/WishDrawer";
 
 const Advantages = ({ loginDisclosure, wishDisclosure, cartDisclosure }) => {
   return (

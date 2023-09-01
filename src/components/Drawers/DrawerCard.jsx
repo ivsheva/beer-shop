@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
 import { Box, Image, Text, useToast } from "@chakra-ui/react";
 import { useDispatch, useSelector } from "react-redux";
-import { ADD_TO_CART, REMOVE_FROM_CART } from "../store/cartSlice";
-import { REMOVE_FROM_WISH } from "../store/wishlistSlice";
+import { ADD_TO_CART, REMOVE_FROM_CART } from "../../store/cartSlice";
+import { REMOVE_FROM_WISH } from "../../store/wishlistSlice";
 
 const DrawerCard = ({ id, img, brand, name, price, isWishItem = false }) => {
   const dispatch = useDispatch();

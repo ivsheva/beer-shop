@@ -1,8 +1,8 @@
 import { Box, HStack, Image, VStack } from "@chakra-ui/react";
-import image1 from "../img/img/bg-poster-1.jpg";
-import image2 from "../img/img/bg-poster-2.jpg";
-import image3 from "../img/img/bg-poster-3.jpg";
-import image4 from "../img/img/bg-poster-4.jpg";
+import image1 from "../../img/img/bg-poster-1.jpg";
+import image2 from "../../img/img/bg-poster-2.jpg";
+import image3 from "../../img/img/bg-poster-3.jpg";
+import image4 from "../../img/img/bg-poster-4.jpg";
 
 const Posters = () => {
   return (

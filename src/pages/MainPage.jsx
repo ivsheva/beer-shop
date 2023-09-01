@@ -1,12 +1,12 @@
 import { Box } from "@chakra-ui/react";
-import BeerSlider from "../components/BeerSlider";
-import ImageSlider from "../components/ImageSLider";
-import LoyaltyProgram from "../components/LoyaltyProgram";
-import Posters from "../components/Posters";
-import Posts from "../components/Posts";
-import ProductCards from "../components/ProductCards";
-import Story from "../components/Story";
-import TrustMark from "../components/TrustMark";
+import BeerSlider from "../components/MainPage/BeerSlider";
+import ImageSlider from "../components/MainPage/ImageSlider";
+import LoyaltyProgram from "../components/MainPage/LoyaltyProgram";
+import Posters from "../components/MainPage/Posters";
+import Posts from "../components/MainPage/Posts";
+import ProductCards from "../components/Products/ProductCards";
+import Story from "../components/MainPage/Story";
+import TrustMark from "../components/MainPage/TrustMark";
 
 function MainPage() {
   return (

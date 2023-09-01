@@ -12,7 +12,7 @@ import {
   useToast,
 } from "@chakra-ui/react";
 import { useDispatch, useSelector } from "react-redux";
-import { ADD_TO_CART } from "../store/cartSlice";
+import { ADD_TO_CART } from "../../store/cartSlice";
 import DrawerCard from "./DrawerCard";
 
 const WishDrawer = ({ isOpen, onClose }) => {

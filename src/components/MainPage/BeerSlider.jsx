@@ -2,8 +2,8 @@ import { Box, HStack, Text } from "@chakra-ui/react";
 import { useState } from "react";
 import "swiper/css";
 import "swiper/css/navigation";
-import { additionalGoods, mainGoods } from "../data/goods";
-import Slider from "./Slider";
+import { additionalGoods, mainGoods } from "../../data/goods";
+import Slider from "../Products/Slider";
 
 const BeerSlider = () => {
   const [activeHeading, setActiveHeading] = useState(0);

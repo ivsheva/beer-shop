@@ -1,5 +1,5 @@
 import { HStack, Image } from "@chakra-ui/react";
-import star from "../img/svg/star.svg";
+import star from "../../img/svg/star.svg";
 
 const Mark = () => {
   return (

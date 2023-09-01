@@ -11,8 +11,8 @@ import {
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import BeerCard from "./BeerCard";
-import FilterDrawer from "./Filtering/FilteringDrawer";
-import OverView from "./Filtering/OverView";
+import FilterDrawer from "./../Filtering/FilteringDrawer";
+import OverView from "./../Filtering/OverView";
 import VoucherDescription from "./VoucherDescription";
 
 const ProductGrid = ({

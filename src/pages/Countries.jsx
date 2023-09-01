@@ -1,6 +1,6 @@
 import { Box } from "@chakra-ui/react";
 import { useState } from "react";
-import ProductPage from "../components/ProductPage";
+import ProductPage from "../components/Products/ProductPage";
 import products from "../data/countryProducts";
 
 const Countries = () => {

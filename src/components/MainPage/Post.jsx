@@ -4,7 +4,7 @@ import { useState } from "react";
 import { AiOutlineHeart } from "react-icons/ai";
 import { BsBookmark } from "react-icons/bs";
 import { FaRegCommentDots } from "react-icons/fa";
-import "../styles/hover.css";
+import "../../styles/hover.css";
 
 const Post = ({ img, description, link }) => {
   const [isHovered, setIsHovered] = useState(false);
