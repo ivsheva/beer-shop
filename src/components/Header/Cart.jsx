@@ -1,9 +1,12 @@
 /* eslint-disable react/prop-types */
 import { Text, VStack } from "@chakra-ui/react";
+import { useContext } from "react";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { useSelector } from "react-redux";
+import { DisclosureContext } from "../../contexts/disclosureContext";
 
-const Cart = ({ onOpen }) => {
+const Cart = () => {
+  const { cartDisclosure } = useContext(DisclosureContext);
   const cart = useSelector((state) => state.cart);
   const cartLength = cart ? cart.length : 0;
   return (
@@ -11,7 +14,7 @@ const Cart = ({ onOpen }) => {
       spacing="0"
       cursor="pointer"
       position="relative"
-      onClick={onOpen}
+      onClick={cartDisclosure.onOpen}
       _before={{
         content: `"${cartLength}"`,
         position: "absolute",

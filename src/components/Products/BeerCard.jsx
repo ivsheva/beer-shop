@@ -1,11 +1,12 @@
 import { Box, Button, Image, Text, Tooltip } from "@chakra-ui/react";
 import PropTypes from "prop-types";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { AiOutlineHeart } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
 import { v4 as uuidv4 } from "uuid";
 import { ADD_TO_CART } from "../../store/cartSlice";
 import { ADD_TO_WISH } from "../../store/wishlistSlice";
+import { DisclosureContext } from "../../contexts/disclosureContext";
 
 const BeerCard = ({
   img,
@@ -15,6 +16,7 @@ const BeerCard = ({
   oldPrice = null,
   isFull = false,
 }) => {
+  const { wishDisclosure, cartDisclosure } = useContext(DisclosureContext);
   const dispatch = useDispatch();
   const [isHover, setIsHover] = useState(false);
   const cart = useSelector((state) => state.cart);
@@ -29,6 +31,7 @@ const BeerCard = ({
 
     if (!cart.find((item) => item.name === newItem.name)) {
       dispatch(ADD_TO_CART(newItem));
+      cartDisclosure.onOpen();
     }
   };
 
@@ -37,6 +40,7 @@ const BeerCard = ({
 
     if (!wishlist.find((item) => item.name === newItem.name)) {
       dispatch(ADD_TO_WISH(newItem));
+      wishDisclosure.onOpen();
     }
   };
 

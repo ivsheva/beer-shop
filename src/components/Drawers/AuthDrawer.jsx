@@ -11,11 +11,19 @@ import {
   Link,
   Text,
 } from "@chakra-ui/react";
-import PropTypes from "prop-types";
+import { useContext } from "react";
+import { DisclosureContext } from "../../contexts/disclosureContext";
 
-const AuthDrawer = ({ isOpen, onClose }) => {
+const AuthDrawer = () => {
+  const { loginDisclosure } = useContext(DisclosureContext);
+
   return (
-    <Drawer size="md" isOpen={isOpen} placement="right" onClose={onClose}>
+    <Drawer
+      size="md"
+      isOpen={loginDisclosure.isOpen}
+      placement="right"
+      onClose={loginDisclosure.onClose}
+    >
       <DrawerOverlay />
       <DrawerContent>
         <DrawerCloseButton />
@@ -94,11 +102,6 @@ const AuthDrawer = ({ isOpen, onClose }) => {
       </DrawerContent>
     </Drawer>
   );
-};
-
-AuthDrawer.propTypes = {
-  isOpen: PropTypes.bool.isRequired,
-  onClose: PropTypes.func.isRequired,
 };
 
 export default AuthDrawer;

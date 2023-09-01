@@ -12,13 +12,20 @@ import {
 } from "@chakra-ui/react";
 import { useSelector } from "react-redux";
 import DrawerCard from "./DrawerCard";
+import { useContext } from "react";
+import { DisclosureContext } from "../../contexts/disclosureContext";
 
-const CartDrawer = ({ isOpen, onClose }) => {
+const CartDrawer = () => {
+  const { cartDisclosure } = useContext(DisclosureContext);
   const cart = useSelector((state) => state.cart);
   const sum = cart.reduce((total, item) => total + item.price, 0).toFixed(1);
 
   return (
-    <Drawer isOpen={isOpen} onClose={onClose} size="md">
+    <Drawer
+      isOpen={cartDisclosure.isOpen}
+      onClose={cartDisclosure.onClose}
+      size="md"
+    >
       <DrawerOverlay />
       <DrawerContent>
         <DrawerCloseButton />

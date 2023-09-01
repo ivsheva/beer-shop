@@ -1,9 +1,12 @@
 /* eslint-disable react/prop-types */
 import { Text, VStack } from "@chakra-ui/react";
+import { useContext } from "react";
 import { AiOutlineHeart } from "react-icons/ai";
 import { useSelector } from "react-redux";
+import { DisclosureContext } from "../../contexts/disclosureContext";
 
-const WishList = ({ onOpen }) => {
+const WishList = () => {
+  const { wishDisclosure } = useContext(DisclosureContext);
   const wishList = useSelector((state) => state.wishlist);
   const wishLength = wishList ? wishList.length : 0;
 
@@ -12,7 +15,7 @@ const WishList = ({ onOpen }) => {
       spacing="0"
       cursor="pointer"
       position="relative"
-      onClick={onOpen}
+      onClick={wishDisclosure.onOpen}
       _before={{
         content: `"${wishLength}"`,
         position: "absolute",

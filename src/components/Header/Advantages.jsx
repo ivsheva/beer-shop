@@ -13,7 +13,7 @@ import AuthDrawer from "../Drawers/AuthDrawer";
 import CartDrawer from "../Drawers/CartDrawer";
 import WishDrawer from "../Drawers/WishDrawer";
 
-const Advantages = ({ loginDisclosure, wishDisclosure, cartDisclosure }) => {
+const Advantages = () => {
   return (
     <Box
       display="flex"
@@ -67,22 +67,13 @@ const Advantages = ({ loginDisclosure, wishDisclosure, cartDisclosure }) => {
         columnGap="16px"
         marginTop={{ base: "8px", lg: "unset" }}
       >
-        <Login onOpen={loginDisclosure.onOpen} />
-        <WishList onOpen={wishDisclosure.onOpen} />
-        <Cart onOpen={cartDisclosure.onOpen} />
+        <Login />
+        <WishList />
+        <Cart />
       </HStack>
-      <AuthDrawer
-        isOpen={loginDisclosure.isOpen}
-        onClose={loginDisclosure.onClose}
-      />
-      <CartDrawer
-        isOpen={cartDisclosure.isOpen}
-        onClose={cartDisclosure.onClose}
-      />
-      <WishDrawer
-        isOpen={wishDisclosure.isOpen}
-        onClose={wishDisclosure.onClose}
-      />
+      <AuthDrawer />
+      <CartDrawer />
+      <WishDrawer />
     </Box>
   );
 };

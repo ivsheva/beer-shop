@@ -1,25 +1,13 @@
-import { Box, useDisclosure } from "@chakra-ui/react";
-import Advantages from "./Advantages";
+import { Box } from "@chakra-ui/react";
 import NavBar from "../NavBar/NavBar";
+import Advantages from "./Advantages";
 import UserControl from "./UserControl";
 
 const Header = () => {
-  const loginDisclosure = useDisclosure();
-  const wishDisclosure = useDisclosure();
-  const cartDisclosure = useDisclosure();
-
   return (
     <Box>
-      <Advantages
-        loginDisclosure={loginDisclosure}
-        wishDisclosure={wishDisclosure}
-        cartDisclosure={cartDisclosure}
-      />
-      <UserControl
-        loginDisclosure={loginDisclosure}
-        wishDisclosure={wishDisclosure}
-        cartDisclosure={cartDisclosure}
-      />
+      <Advantages />
+      <UserControl />
       <NavBar />
     </Box>
   );

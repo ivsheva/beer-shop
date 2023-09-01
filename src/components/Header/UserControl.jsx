@@ -19,7 +19,7 @@ import WishList from "./WishList";
 import CartDrawer from "../Drawers/CartDrawer";
 import WishDrawer from "../Drawers/WishDrawer";
 
-const UserControl = ({ loginDisclosure, wishDisclosure, cartDisclosure }) => {
+const UserControl = () => {
   return (
     <Box
       display="flex"
@@ -76,26 +76,17 @@ const UserControl = ({ loginDisclosure, wishDisclosure, cartDisclosure }) => {
         justifyContent="center"
         spacing="4"
       >
-        <Login onOpen={loginDisclosure.onOpen} />
-        <WishList onOpen={wishDisclosure.onOpen} />
-        <Cart onOpen={cartDisclosure.onOpen} />
+        <Login />
+        <WishList />
+        <Cart />
       </HStack>
       <Show breakpoint="(max-width: 990px)">
         <HiMagnifyingGlass size={32} />
       </Show>
 
-      <AuthDrawer
-        isOpen={loginDisclosure.isOpen}
-        onClose={loginDisclosure.onClose}
-      />
-      <CartDrawer
-        isOpen={cartDisclosure.isOpen}
-        onClose={cartDisclosure.onClose}
-      />
-      <WishDrawer
-        isOpen={wishDisclosure.isOpen}
-        onClose={wishDisclosure.onClose}
-      />
+      <AuthDrawer />
+      <CartDrawer />
+      <WishDrawer />
     </Box>
   );
 };

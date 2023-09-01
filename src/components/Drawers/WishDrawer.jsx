@@ -14,8 +14,11 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 import { ADD_TO_CART } from "../../store/cartSlice";
 import DrawerCard from "./DrawerCard";
+import { useContext } from "react";
+import { DisclosureContext } from "../../contexts/disclosureContext";
 
-const WishDrawer = ({ isOpen, onClose }) => {
+const WishDrawer = () => {
+  const { wishDisclosure } = useContext(DisclosureContext);
   const dispatch = useDispatch();
   const wishlist = useSelector((state) => state.wishlist);
   const cart = useSelector((state) => state.cart);
@@ -40,7 +43,11 @@ const WishDrawer = ({ isOpen, onClose }) => {
   };
 
   return (
-    <Drawer isOpen={isOpen} onClose={onClose} size="md">
+    <Drawer
+      isOpen={wishDisclosure.isOpen}
+      onClose={wishDisclosure.onClose}
+      size="md"
+    >
       <DrawerOverlay />
       <DrawerContent>
         <DrawerCloseButton />

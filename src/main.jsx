@@ -6,12 +6,15 @@ import Router from "./Router";
 import "./index.css";
 import store from "./store/store.js";
 import theme from "./theme.js";
+import { DisclosureProvider } from "./contexts/disclosureContext";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <ChakraProvider theme={theme}>
       <Provider store={store}>
-        <Router />
+        <DisclosureProvider>
+          <Router />
+        </DisclosureProvider>
       </Provider>
     </ChakraProvider>
   </React.StrictMode>
