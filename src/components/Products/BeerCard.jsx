@@ -1,12 +1,12 @@
 import { Box, Button, Image, Text, Tooltip } from "@chakra-ui/react";
 import PropTypes from "prop-types";
 import { useContext, useState } from "react";
-import { AiOutlineHeart } from "react-icons/ai";
+import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
 import { v4 as uuidv4 } from "uuid";
+import { DisclosureContext } from "../../contexts/disclosureContext";
 import { ADD_TO_CART } from "../../store/cartSlice";
 import { ADD_TO_WISH } from "../../store/wishlistSlice";
-import { DisclosureContext } from "../../contexts/disclosureContext";
 
 const BeerCard = ({
   img,
@@ -21,6 +21,7 @@ const BeerCard = ({
   const [isHover, setIsHover] = useState(false);
   const cart = useSelector((state) => state.cart);
   const wishlist = useSelector((state) => state.wishlist);
+  const inWish = wishlist.some((item) => item.name === name);
 
   const discount = oldPrice
     ? Math.round(((oldPrice - price) / oldPrice) * 100)
@@ -92,12 +93,21 @@ const BeerCard = ({
           placement="top"
         >
           <Box>
-            <AiOutlineHeart
-              size={24}
-              cursor="pointer"
-              color="purple"
-              onClick={handleAddToWish}
-            />
+            {inWish ? (
+              <AiFillHeart
+                size={24}
+                cursor="pointer"
+                color="purple"
+                onClick={handleAddToWish}
+              />
+            ) : (
+              <AiOutlineHeart
+                size={24}
+                cursor="pointer"
+                color="purple"
+                onClick={handleAddToWish}
+              />
+            )}
           </Box>
         </Tooltip>
       </Box>
