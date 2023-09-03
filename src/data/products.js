@@ -17,7 +17,7 @@ import beer16 from "../img/img/beer16.jpg";
 
 let lastId = 0;
 
-export const mainGoods = [
+export const mainProducts = [
   {
     id: ++lastId,
     brand: "Cantillon",
@@ -99,7 +99,7 @@ export const mainGoods = [
   },
 ];
 
-export const additionalGoods = [
+export const additionalProducts = [
   {
     id: ++lastId,
     brand: "Side Project",
@@ -180,6 +180,6 @@ export const additionalGoods = [
   },
 ];
 
-const allGoods = mainGoods.concat(additionalGoods);
+const allProducts = mainProducts.concat(additionalProducts);
 
-export default allGoods;
+export default allProducts;

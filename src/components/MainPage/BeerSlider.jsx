@@ -2,7 +2,7 @@ import { Box, HStack, Text } from "@chakra-ui/react";
 import { useState } from "react";
 import "swiper/css";
 import "swiper/css/navigation";
-import { additionalGoods, mainGoods } from "../../data/goods";
+import { additionalProducts, mainProducts } from "../../data/products";
 import Slider from "../Products/Slider";
 
 const BeerSlider = () => {
@@ -37,9 +37,9 @@ const BeerSlider = () => {
         </Text>
       </HStack>
       {activeHeading === 0 ? (
-        <Slider goods={mainGoods} />
+        <Slider goods={mainProducts} />
       ) : (
-        <Slider goods={additionalGoods} />
+        <Slider goods={additionalProducts} />
       )}
     </Box>
   );

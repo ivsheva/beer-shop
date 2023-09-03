@@ -1,7 +1,7 @@
 import { Box } from "@chakra-ui/react";
 import { useState } from "react";
 import ProductPage from "../components/Products/ProductPage";
-import products from "../data/goods";
+import products from "../data/products";
 
 const Catalogue = () => {
   const brands = products.map(({ id, brand }) => ({
