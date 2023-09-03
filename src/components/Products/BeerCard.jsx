@@ -3,12 +3,12 @@ import PropTypes from "prop-types";
 import { useContext, useState } from "react";
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
-import { v4 as uuidv4 } from "uuid";
 import { DisclosureContext } from "../../contexts/disclosureContext";
 import { ADD_TO_CART } from "../../store/cartSlice";
 import { ADD_TO_WISH } from "../../store/wishlistSlice";
 
 const BeerCard = ({
+  id,
   img,
   brand,
   name,
@@ -28,7 +28,7 @@ const BeerCard = ({
     : 0;
 
   const handleAddToCart = () => {
-    const newItem = { id: uuidv4(), img, brand, name, price };
+    const newItem = { id, img, brand, name, price };
 
     if (!cart.find((item) => item.name === newItem.name)) {
       dispatch(ADD_TO_CART(newItem));
@@ -37,7 +37,7 @@ const BeerCard = ({
   };
 
   const handleAddToWish = () => {
-    const newItem = { id: uuidv4(), img, brand, name, price };
+    const newItem = { id, img, brand, name, price };
 
     if (!wishlist.find((item) => item.name === newItem.name)) {
       dispatch(ADD_TO_WISH(newItem));
@@ -152,6 +152,7 @@ const BeerCard = ({
 };
 
 BeerCard.propTypes = {
+  id: PropTypes.string.isRequired,
   img: PropTypes.string.isRequired,
   brand: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,

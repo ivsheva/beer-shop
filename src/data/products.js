@@ -16,10 +16,11 @@ import beer15 from "../img/img/beer15.jpg";
 import beer16 from "../img/img/beer16.jpg";
 
 let lastId = 0;
+const prefix = "main_";
 
 export const mainProducts = [
   {
-    id: ++lastId,
+    id: prefix + ++lastId,
     brand: "Cantillon",
     name: "Cantillon - Cuvée Saint-Gilloise (Champions) (2023)",
     price: 18.99,
@@ -29,7 +30,7 @@ export const mainProducts = [
     img: beer1,
   },
   {
-    id: ++lastId,
+    id: prefix + ++lastId,
     brand: "Cantillon",
     name: "Cantillon - Rosé de Gambrinus (2023)",
     price: 16.99,
@@ -39,7 +40,7 @@ export const mainProducts = [
     img: beer2,
   },
   {
-    id: ++lastId,
+    id: prefix + ++lastId,
     brand: "Cantillon",
     name: "Cantillon - Rosé de Gambrinus (2023) 37,5cl",
     price: 10.49,
@@ -49,7 +50,7 @@ export const mainProducts = [
     img: beer3,
   },
   {
-    id: ++lastId,
+    id: prefix + ++lastId,
     brand: "Cantillon",
     name: "Cantillon - Kriek 100% Lambic Bio (2023)",
     price: 16.99,
@@ -59,7 +60,7 @@ export const mainProducts = [
     img: beer4,
   },
   {
-    id: ++lastId,
+    id: prefix + ++lastId,
     brand: "Lervig",
     name: "Lervig / Pulpit Rock - Kransekake Stout)",
     price: 5.79,
@@ -69,7 +70,7 @@ export const mainProducts = [
     img: beer5,
   },
   {
-    id: ++lastId,
+    id: prefix + ++lastId,
     brand: "Het Boerenerf",
     name: "Het Boerenerf - Zomerkriek - Oogst 2022",
     price: 25.49,
@@ -79,7 +80,7 @@ export const mainProducts = [
     img: beer6,
   },
   {
-    id: ++lastId,
+    id: prefix + ++lastId,
     brand: "Puhaste",
     name: "Pühaste - Surmapatt Sauternes/Port/Whisky BA (Silver Series)",
     price: 9.79,
@@ -88,7 +89,7 @@ export const mainProducts = [
     img: beer7,
   },
   {
-    id: ++lastId,
+    id: prefix + ++lastId,
     brand: "Basqueland",
     name: "Basqueland - Prime Time",
     price: 25.49,
@@ -101,7 +102,7 @@ export const mainProducts = [
 
 export const additionalProducts = [
   {
-    id: ++lastId,
+    id: prefix + ++lastId,
     brand: "Side Project",
     name: "Shared - Parallels",
     price: 71.99,
@@ -111,7 +112,7 @@ export const additionalProducts = [
     img: beer9,
   },
   {
-    id: ++lastId,
+    id: prefix + ++lastId,
     brand: "Folkingbrew",
     name: "Folkingbrew - Dreamscape",
     price: 6.49,
@@ -121,7 +122,7 @@ export const additionalProducts = [
     img: beer10,
   },
   {
-    id: ++lastId,
+    id: prefix + ++lastId,
     brand: "Croma",
     name: "Croma - Follow Me (Bourbon Barrel Aged)",
     price: 28.99,
@@ -131,7 +132,7 @@ export const additionalProducts = [
     img: beer11,
   },
   {
-    id: ++lastId,
+    id: prefix + ++lastId,
     brand: "Spartacus",
     name: "Spartacus - Wolf inside",
     price: 6.49,
@@ -140,7 +141,7 @@ export const additionalProducts = [
     img: beer12,
   },
   {
-    id: ++lastId,
+    id: prefix + ++lastId,
     brand: "Folkingbrew",
     name: "Folkingbrew - Under the Sea",
     price: 6.49,
@@ -150,7 +151,7 @@ export const additionalProducts = [
     img: beer13,
   },
   {
-    id: ++lastId,
+    id: prefix + ++lastId,
     brand: "FrauGruber",
     name: "FrauGruber - Back To It",
     price: 6.79,
@@ -159,7 +160,7 @@ export const additionalProducts = [
     img: beer14,
   },
   {
-    id: ++lastId,
+    id: prefix + ++lastId,
     brand: "CRAK",
     name: "CRAK - Take Me Home",
     price: 6.99,
@@ -169,7 +170,7 @@ export const additionalProducts = [
     img: beer15,
   },
   {
-    id: ++lastId,
+    id: prefix + ++lastId,
     brand: "Basqueland",
     name: "Basqueland - Trailblazer",
     price: 6.99,

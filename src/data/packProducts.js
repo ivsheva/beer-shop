@@ -4,10 +4,11 @@ import pack3 from "../img/img/pack3.jpg";
 import pack4 from "../img/img/pack4.jpg";
 
 let lastId = 0;
+const prefix = "pack_";
 
 const packProducts = [
   {
-    id: ++lastId,
+    id: prefix + ++lastId,
     brand: "Beerdome",
     name: "Beerdome Bundle",
     price: 29.99,
@@ -17,7 +18,7 @@ const packProducts = [
     img: pack1,
   },
   {
-    id: ++lastId,
+    id: prefix + ++lastId,
     brand: "Brouwerij Kees",
     name: "Kees Bundle",
     price: 24.99,
@@ -27,7 +28,7 @@ const packProducts = [
     img: pack2,
   },
   {
-    id: ++lastId,
+    id: prefix + ++lastId,
     brand: "IPA",
     name: "IPA Bundle",
     price: 33.99,
@@ -37,7 +38,7 @@ const packProducts = [
     img: pack3,
   },
   {
-    id: ++lastId,
+    id: prefix + ++lastId,
     brand: "Dutch",
     name: "Dutch Bundle",
     price: 33.99,

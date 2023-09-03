@@ -145,6 +145,7 @@ const ProductGrid = ({
         {sortedProducts.map((beerItem) => (
           <BeerCard
             key={beerItem.id}
+            id={beerItem.id}
             img={beerItem.img}
             brand={beerItem.brand}
             name={beerItem.name}

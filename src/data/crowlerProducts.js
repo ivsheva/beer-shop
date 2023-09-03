@@ -2,10 +2,11 @@ import crowler1 from "../img/img/crowler1.jpg";
 import crowler2 from "../img/img/crowler2.jpg";
 
 let lastId = 0;
+const prefix = "crowler_";
 
 const crowlerProducts = [
   {
-    id: ++lastId,
+    id: prefix + ++lastId,
     brand: "Brehon Brewhouse",
     name: "Brehon Brewhouse - Raglan Road",
     price: 4.99,
@@ -15,7 +16,7 @@ const crowlerProducts = [
     img: crowler1,
   },
   {
-    id: ++lastId,
+    id: prefix + ++lastId,
     brand: "Lobik",
     name: "Lobik - Ripe Tropicana",
     price: 5.79,

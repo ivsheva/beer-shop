@@ -4,10 +4,11 @@ import voucher3 from "../img/img/voucher3.jpg";
 import voucher4 from "../img/img/voucher4.jpg";
 
 let lastId = 0;
+const prefix = "voucher_";
 
 const voucherProducts = [
   {
-    id: ++lastId,
+    id: prefix + ++lastId,
     brand: "Voucher",
     name: "Digital Voucher - 25 euro",
     price: 25.0,
@@ -17,7 +18,7 @@ const voucherProducts = [
     img: voucher1,
   },
   {
-    id: ++lastId,
+    id: prefix + ++lastId,
     brand: "Voucher",
     name: "Digital Voucher - 50 euro",
     price: 50.0,
@@ -27,7 +28,7 @@ const voucherProducts = [
     img: voucher2,
   },
   {
-    id: ++lastId,
+    id: prefix + ++lastId,
     brand: "Voucher",
     name: "Digital Voucher - 100 euro",
     price: 100.0,
@@ -37,7 +38,7 @@ const voucherProducts = [
     img: voucher3,
   },
   {
-    id: ++lastId,
+    id: prefix + ++lastId,
     brand: "Voucher",
     name: "Digital Voucher - 125 euro",
     price: 125.0,

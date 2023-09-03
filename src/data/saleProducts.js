@@ -4,10 +4,11 @@ import sale3 from "../img/img/sale3.jpg";
 import sale4 from "../img/img/sale4.jpg";
 
 let lastId = 0;
+const prefix = "sale_";
 
 const saleProducts = [
   {
-    id: ++lastId,
+    id: prefix + ++lastId,
     brand: "Central Waters",
     name: "Central Waters - Maple Barrel Stout (2022)",
     oldPrice: 39.99,
@@ -18,7 +19,7 @@ const saleProducts = [
     img: sale1,
   },
   {
-    id: ++lastId,
+    id: prefix + ++lastId,
     brand: "Folkingebrew",
     name: "Folkingebrew - Darkest Hour",
     oldPrice: 6.49,
@@ -28,7 +29,7 @@ const saleProducts = [
     img: sale2,
   },
   {
-    id: ++lastId,
+    id: prefix + ++lastId,
     brand: "J. Kemker",
     name: "J. Kemker - Appelwien",
     oldPrice: 13.29,
@@ -39,7 +40,7 @@ const saleProducts = [
     img: sale3,
   },
   {
-    id: ++lastId,
+    id: prefix + ++lastId,
     brand: "Lervig",
     name: "Lervig - No Worries - Driving Home For Christmas",
     oldPrice: 1.99,

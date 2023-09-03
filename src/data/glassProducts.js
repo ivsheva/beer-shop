@@ -4,10 +4,11 @@ import glass3 from "../img/img/glass3.jpg";
 import glass4 from "../img/img/glass4.jpg";
 
 let lastId = 0;
+const prefix = "glass_";
 
 const glassProducts = [
   {
-    id: ++lastId,
+    id: prefix + ++lastId,
     brand: "Funky Fluid",
     name: "Funky Fluid - 4th Anniversary Shaker Glass Gold 50cl",
     price: 5.99,
@@ -16,7 +17,7 @@ const glassProducts = [
     img: glass1,
   },
   {
-    id: ++lastId,
+    id: prefix + ++lastId,
     brand: "Funky Fluid",
     name: "Funky Fluid - Shaker Glass White 50cl",
     price: 5.99,
@@ -25,7 +26,7 @@ const glassProducts = [
     img: glass2,
   },
   {
-    id: ++lastId,
+    id: prefix + ++lastId,
     brand: "Brehon Brewhouse",
     name: "Brehon Brewhouse - Balloon Glass 50cl",
     price: 4.99,
@@ -34,7 +35,7 @@ const glassProducts = [
     img: glass3,
   },
   {
-    id: ++lastId,
+    id: prefix + ++lastId,
     brand: "PINTA",
     name: "PINTA - Barrel Brewing Glass 50cl",
     price: 5.99,

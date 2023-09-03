@@ -25,6 +25,7 @@ const Slider = ({ goods }) => {
         {goods.map((beerItem) => (
           <SwiperSlide key={beerItem.id} style={{ maxWidth: "300px" }}>
             <BeerCard
+              id={beerItem.id}
               img={beerItem.img}
               brand={beerItem.brand}
               name={beerItem.name}
@@ -40,7 +41,7 @@ const Slider = ({ goods }) => {
 Slider.propTypes = {
   goods: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.number.isRequired,
+      id: PropTypes.string.isRequired,
       img: PropTypes.string.isRequired,
       brand: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,

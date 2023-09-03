@@ -4,10 +4,11 @@ import style3 from "../img/img/style3.jpg";
 import style4 from "../img/img/style4.jpg";
 
 let lastId = 0;
+const prefix = "style_";
 
 const styleProducts = [
   {
-    id: ++lastId,
+    id: prefix + ++lastId,
     brand: "Croma",
     name: "Croma - Tropo Rosso (Bourbon Barrel Aged)",
     price: 28.99,
@@ -17,7 +18,7 @@ const styleProducts = [
     img: style1,
   },
   {
-    id: ++lastId,
+    id: prefix + ++lastId,
     brand: "Brehon Brewhouse",
     name: "Brehon Brewhouse - Raglan Road",
     price: 5.79,
@@ -27,7 +28,7 @@ const styleProducts = [
     img: style2,
   },
   {
-    id: ++lastId,
+    id: prefix + ++lastId,
     brand: "Toppling Goliath",
     name: "Toppling Goliath - Double Dry Hop King Sue",
     price: 10.99,
@@ -37,7 +38,7 @@ const styleProducts = [
     img: style3,
   },
   {
-    id: ++lastId,
+    id: prefix + ++lastId,
     brand: "Fremont",
     name: "Fremont - Brew 6000 (2022)",
     price: 36.99,

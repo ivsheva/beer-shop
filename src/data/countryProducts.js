@@ -4,10 +4,11 @@ import country3 from "../img/img/country3.jpg";
 import country4 from "../img/img/country4.jpg";
 
 let lastId = 0;
+const prefix = "country_";
 
 const countryProducts = [
   {
-    id: ++lastId,
+    id: prefix + ++lastId,
     brand: "450 North",
     name: "450 North - SLUSHY XL Banana Bluntz",
     price: 10.99,
@@ -17,7 +18,7 @@ const countryProducts = [
     img: country1,
   },
   {
-    id: ++lastId,
+    id: prefix + ++lastId,
     brand: "450 North",
     name: "450 North - SLUSHY XL Space Intruders",
     price: 9.99,
@@ -27,7 +28,7 @@ const countryProducts = [
     img: country2,
   },
   {
-    id: ++lastId,
+    id: prefix + ++lastId,
     brand: "Ārpus",
     name: "Ārpus / Hop Hooligans - QDH Nelson X Riwaka X Citra Lupomax X Simcoe Cryo TIPA",
     price: 6.49,
@@ -37,7 +38,7 @@ const countryProducts = [
     img: country3,
   },
   {
-    id: ++lastId,
+    id: prefix + ++lastId,
     brand: "450 North",
     name: "450 North - SLUSHY XXL Fishbowl Punch",
     price: 10.99,
