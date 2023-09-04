@@ -9,6 +9,7 @@ import Glasses from "./pages/Glasses";
 import Crowlers from "./pages/Crowlers";
 import Vouchers from "./pages/Vouchers";
 import Sales from "./pages/Sales";
+import ProductDetailPage from "./pages/ProductDetailPage";
 
 const Router = () => {
   return (
@@ -24,6 +25,11 @@ const Router = () => {
           <Route path="crowlers" element={<Crowlers />} />
           <Route path="gift-vouchers" element={<Vouchers />} />
           <Route path="sale" element={<Sales />} />
+          <Route path="products/:id" element={<ProductDetailPage />} />
+          <Route
+            path=":pageType/products/:id"
+            element={<ProductDetailPage />}
+          />
         </Route>
       </Routes>
     </BrowserRouter>
