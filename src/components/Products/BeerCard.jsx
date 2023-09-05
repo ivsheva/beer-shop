@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { DisclosureContext } from "../../contexts/disclosureContext";
 import { ADD_TO_CART } from "../../store/cartSlice";
-import { ADD_TO_WISH } from "../../store/wishlistSlice";
+import { ADD_TO_WISH, REMOVE_FROM_WISH } from "../../store/wishlistSlice";
 
 const BeerCard = ({
   id,
@@ -22,13 +22,14 @@ const BeerCard = ({
   const [isHover, setIsHover] = useState(false);
   const cart = useSelector((state) => state.cart);
   const wishlist = useSelector((state) => state.wishlist);
-  const inWish = wishlist.some((item) => item.name === name);
+  let inWish = wishlist.some((item) => item.name === name);
 
   const discount = oldPrice
     ? Math.round(((oldPrice - price) / oldPrice) * 100)
     : 0;
 
-  const handleAddToCart = () => {
+  const handleAddToCart = (event) => {
+    event.preventDefault();
     const newItem = { id, img, brand, name, price };
 
     if (!cart.find((item) => item.name === newItem.name)) {
@@ -37,12 +38,16 @@ const BeerCard = ({
     }
   };
 
-  const handleAddToWish = () => {
+  const handleAddToWish = (event) => {
+    event.preventDefault();
     const newItem = { id, img, brand, name, price };
 
     if (!wishlist.find((item) => item.name === newItem.name)) {
       dispatch(ADD_TO_WISH(newItem));
       wishDisclosure.onOpen();
+    } else {
+      inWish = false;
+      dispatch(REMOVE_FROM_WISH(newItem.id));
     }
   };
 
@@ -100,14 +105,14 @@ const BeerCard = ({
                   size={24}
                   cursor="pointer"
                   color="purple"
-                  onClick={handleAddToWish}
+                  onClick={(event) => handleAddToWish(event)}
                 />
               ) : (
                 <AiOutlineHeart
                   size={24}
                   cursor="pointer"
                   color="purple"
-                  onClick={handleAddToWish}
+                  onClick={(event) => handleAddToWish(event)}
                 />
               )}
             </Box>
@@ -121,7 +126,7 @@ const BeerCard = ({
             background="red"
             borderRadius="0"
             width={isFull ? "100%" : "unset"}
-            onClick={handleAddToCart}
+            onClick={(event) => handleAddToCart(event)}
           >
             Add to cart
           </Button>
