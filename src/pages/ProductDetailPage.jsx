@@ -27,7 +27,9 @@ const ProductDetailPage = () => {
 
   const handleAddToCart = () => {
     if (!cart.find((item) => item.name === product.name)) {
-      dispatch(ADD_TO_CART({ ...product, quantity: productAmount }));
+      productAmount > 0
+        ? dispatch(ADD_TO_CART({ ...product, quantity: productAmount }))
+        : dispatch(ADD_TO_CART(product));
 
       cartDisclosure.onOpen();
     }
