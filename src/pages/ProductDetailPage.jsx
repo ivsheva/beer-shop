@@ -1,6 +1,6 @@
 import { Box, Button, Image, Input, Link, Show, Text } from "@chakra-ui/react";
 import { useContext, useState } from "react";
-import { AiOutlineHeart } from "react-icons/ai";
+import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import TrustMark from "../components/MainPage/TrustMark";
@@ -9,7 +9,7 @@ import DescriptionAccordion from "../components/ProductPage/DescriptionAccordion
 import { DisclosureContext } from "../contexts/disclosureContext";
 import allProducts from "../data/allProducts";
 import { ADD_TO_CART } from "../store/cartSlice";
-import { ADD_TO_WISH } from "../store/wishlistSlice";
+import { ADD_TO_WISH, REMOVE_FROM_WISH } from "../store/wishlistSlice";
 
 const ProductDetailPage = () => {
   const dispatch = useDispatch();
@@ -23,11 +23,11 @@ const ProductDetailPage = () => {
 
   const { id } = useParams();
   const product = allProducts.find((item) => item.id === id);
+  let inWish = wishlist.some((item) => item.name === product.name);
 
   const handleAddToCart = () => {
     if (!cart.find((item) => item.name === product.name)) {
-      for (let amount = 0; amount < productAmount; amount++)
-        dispatch(ADD_TO_CART(product));
+      dispatch(ADD_TO_CART({ ...product, quantity: productAmount }));
 
       cartDisclosure.onOpen();
     }
@@ -37,6 +37,9 @@ const ProductDetailPage = () => {
     if (!wishlist.find((item) => item.name === product.name)) {
       dispatch(ADD_TO_WISH(product));
       wishDisclosure.onOpen();
+    } else {
+      dispatch(REMOVE_FROM_WISH(product.id));
+      inWish = false;
     }
   };
 
@@ -111,7 +114,7 @@ const ProductDetailPage = () => {
             borderRadius="0"
             onClick={handleAddToWish}
           >
-            <AiOutlineHeart size={36} />
+            {inWish ? <AiFillHeart size={36} /> : <AiOutlineHeart size={36} />}
           </Button>
         </Box>
         <TrustMark />

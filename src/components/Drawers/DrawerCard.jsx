@@ -4,7 +4,15 @@ import { useDispatch, useSelector } from "react-redux";
 import { ADD_TO_CART, REMOVE_FROM_CART } from "../../store/cartSlice";
 import { REMOVE_FROM_WISH } from "../../store/wishlistSlice";
 
-const DrawerCard = ({ id, img, brand, name, price, isWishItem = false }) => {
+const DrawerCard = ({
+  id,
+  img,
+  brand,
+  name,
+  price,
+  quantity = 1,
+  isWishItem = false,
+}) => {
   const dispatch = useDispatch();
   const toast = useToast();
   const cart = useSelector((state) => state.cart);
@@ -50,9 +58,10 @@ const DrawerCard = ({ id, img, brand, name, price, isWishItem = false }) => {
         <Text fontSize="16px" fontWeight="400">
           {name}
         </Text>
-        <Text fontFamily="Work Sans, sans-serif" marginTop="12px">
-          €{price}
-        </Text>
+        <Box marginTop="12px" display="flex" justifyContent="space-between">
+          <Text fontFamily="Work Sans, sans-serif">€{price}</Text>
+          {!isWishItem && <Text color="black">{quantity}</Text>}
+        </Box>
         <Box display="flex" marginTop="4px" color="green" columnGap="20px">
           <Text
             onClick={handleDelete}

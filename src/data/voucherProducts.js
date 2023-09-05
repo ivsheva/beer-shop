@@ -16,6 +16,7 @@ const voucherProducts = [
       "25 euro voucher. You'll receive the code per mail after payment is confirmed. Please use the pick-up option to avoid the shipping costs if no other beers are being ordered.",
     rating: 4.8,
     img: voucher1,
+    quantity: 1,
   },
   {
     id: prefix + ++lastId,
@@ -26,6 +27,7 @@ const voucherProducts = [
       "50 euro voucher. You'll receive the code per mail after payment is confirmed. Please use the pick-up option to avoid the shipping costs if no other beers are being ordered.",
     rating: 4.8,
     img: voucher2,
+    quantity: 1,
   },
   {
     id: prefix + ++lastId,
@@ -36,6 +38,7 @@ const voucherProducts = [
       "100 euro voucher. You'll receive the code per mail after payment is confirmed. Please use the pick-up option to avoid the shipping costs if no other beers are being ordered.",
     rating: 4.8,
     img: voucher3,
+    quantity: 1,
   },
   {
     id: prefix + ++lastId,
@@ -46,6 +49,7 @@ const voucherProducts = [
       "125 euro voucher. You'll receive the code per mail after payment is confirmed. Please use the pick-up option to avoid the shipping costs if no other beers are being ordered.",
     rating: 4.8,
     img: voucher4,
+    quantity: 1,
   },
 ];
 

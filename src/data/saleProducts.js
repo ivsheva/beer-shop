@@ -17,6 +17,7 @@ const saleProducts = [
       "Imperial Stout aged in bourbon barrels, which previously contained B&E's Trees bourbon barrel aged maple syrup, providing the earthy nuttiness of the Wisconsin Maple Trees to an already outstanding barrel aged stout.",
     rating: 4.7,
     img: sale1,
+    quantity: 1,
   },
   {
     id: prefix + ++lastId,
@@ -27,6 +28,7 @@ const saleProducts = [
     description: "Imperial Stout with cocoa nibs & vanilla",
     rating: 4.8,
     img: sale2,
+    quantity: 1,
   },
   {
     id: prefix + ++lastId,
@@ -38,6 +40,7 @@ const saleProducts = [
       "Spontaneous fermented cider with apples from the Münsterland and Bielefeld region. Aged for 6 months in oak barrels. BBE: 15-10-2023",
     rating: 4.8,
     img: sale3,
+    quantity: 1,
   },
   {
     id: prefix + ++lastId,
@@ -49,6 +52,7 @@ const saleProducts = [
       "Drive home safe for Christmas with this Non-Alcoholic beer! It offers you all the malty, dark roasted and spice notes of other Christmas beers – but with none of the alcohol!",
     rating: 4.8,
     img: sale4,
+    quantity: 1,
   },
 ];
 

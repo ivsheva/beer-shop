@@ -16,6 +16,7 @@ const styleProducts = [
       "Bourbon barrel aged Barleywine without any adjuncts, aged in a Four Roses barrel.",
     rating: "4.8",
     img: style1,
+    quantity: 1,
   },
   {
     id: prefix + ++lastId,
@@ -26,6 +27,7 @@ const styleProducts = [
       "Complimenting notes of Madeira with the sweetness of roasted malts, this robust Whiskey Cask barrel-aged Imperial Stout is rich with notes of chocolate and liquorice. Hopped with Willamette and Magnum. CROWLER! CANNED 10-8, BEST BEFORE 21-9",
     rating: 4.6,
     img: style2,
+    quantity: 1,
   },
   {
     id: prefix + ++lastId,
@@ -36,6 +38,7 @@ const styleProducts = [
       "Citra hops give King Sue its bold flavors of mango, orange and pineapple. This double dry hopped version packs even more flavor into each can.",
     rating: 4.8,
     img: style3,
+    quantity: 1,
   },
   {
     id: prefix + ++lastId,
@@ -46,6 +49,7 @@ const styleProducts = [
       "This English-style barleywine ale uses floor-malted English barley, Noble hops and is aged in 10-15 year-old, single use bourbon barrels for 16 months to bring you a complex and subtle craft beer flavor experience. Brewed to celebrate the 6000th brew!",
     rating: 4.8,
     img: style4,
+    quantity: 1,
   },
 ];
 

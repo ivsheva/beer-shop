@@ -40,6 +40,7 @@ const CartDrawer = () => {
               brand={product.brand}
               name={product.name}
               price={product.price}
+              quantity={product.quantity}
             />
           ))}
         </DrawerBody>

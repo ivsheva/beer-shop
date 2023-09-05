@@ -4,7 +4,7 @@ import { useState } from "react";
 import Socials from "./Socials";
 
 const Description = ({ description }) => {
-  const [active, setActive] = useState(1);
+  const [active, setActive] = useState(0);
 
   return (
     <Box

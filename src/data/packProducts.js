@@ -16,6 +16,7 @@ const packProducts = [
       "Package of 6 beers: 1x Vault City - Triple Fruited Mango, 1x Frontaal - Enjoy the Distance, 1x Folkingebrew - Enter the Night, 1x Spartacus - Death Strain, 1x Spartacus - Under the Stars, 1x Poppels - Hazy India Pale Ale",
     rating: 4.8,
     img: pack1,
+    quantity: 1,
   },
   {
     id: prefix + ++lastId,
@@ -26,6 +27,7 @@ const packProducts = [
       "Package of 6 delicious Kees beers: 1x Bohemian Dream, 1x Barrel Project India Pale Ale 2023, 1x Undisclosed Desires, 1x Orange Trempée (collab with Dochter vd Korenaar), 1x California Sunset 2023, 1x Triple Haze",
     rating: 4.8,
     img: pack2,
+    quantity: 1,
   },
   {
     id: prefix + ++lastId,
@@ -36,6 +38,7 @@ const packProducts = [
       "Bunde with 6 different IPA's: 1x Folkingebrew - Follow the Sun, 1x Spartacus - Death Strain, 1x Kees - Baby Haze, 1x Mad Scientist / Folkingebrew - Quantum Flavourdynamics, 1x Frontaal - For the Love of Hops ´´Red´´, 1x Spartacus - Under the Stars",
     rating: 4.8,
     img: pack3,
+    quantity: 1,
   },
   {
     id: prefix + ++lastId,
@@ -45,6 +48,7 @@ const packProducts = [
     description: "This package consists of 6 delicious Dutch beers.",
     rating: 4.8,
     img: pack4,
+    quantity: 1,
   },
 ];
 

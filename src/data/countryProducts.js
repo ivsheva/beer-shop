@@ -16,6 +16,7 @@ const countryProducts = [
       "Banana Bluntz XL is conditioned on double banana, orange, passionfruit and banana candies.",
     rating: 4.7,
     img: country1,
+    quantity: 1,
   },
   {
     id: prefix + ++lastId,
@@ -26,6 +27,7 @@ const countryProducts = [
       "Space Intruders XL is conditioned on double mango, apricot, tangerine, kiwi and coconut.",
     rating: 4.8,
     img: country2,
+    quantity: 1,
   },
   {
     id: prefix + ++lastId,
@@ -36,6 +38,7 @@ const countryProducts = [
       "Banana Bluntz XL is conditioned on double banana, orange, passionfruit and banana candies.",
     rating: 4.8,
     img: country3,
+    quantity: 1,
   },
   {
     id: prefix + ++lastId,
@@ -46,6 +49,7 @@ const countryProducts = [
       "Smoothie Sour conditioned on pineapple, lemon, orange, Blue Curacao, sweet and sour mix, coconut cream, nerds candy and Swedish fish.",
     rating: 4.8,
     img: country4,
+    quantity: 1,
   },
 ];
 

@@ -15,6 +15,7 @@ const glassProducts = [
     description: "Birthday collab glass.",
     rating: 4.8,
     img: glass1,
+    quantity: 1,
   },
   {
     id: prefix + ++lastId,
@@ -24,6 +25,7 @@ const glassProducts = [
     description: "Shaker with white Funky Fluid logos.",
     rating: 4.8,
     img: glass2,
+    quantity: 1,
   },
   {
     id: prefix + ++lastId,
@@ -33,6 +35,7 @@ const glassProducts = [
     description: "",
     rating: 4.7,
     img: glass3,
+    quantity: 1,
   },
   {
     id: prefix + ++lastId,
@@ -42,6 +45,7 @@ const glassProducts = [
     description: "",
     rating: 4.8,
     img: glass4,
+    quantity: 1,
   },
 ];
 

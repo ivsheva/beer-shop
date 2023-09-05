@@ -14,6 +14,7 @@ const crowlerProducts = [
       "Complimenting notes of Madeira with the sweetness of roasted malts, this robust Whiskey Cask barrel-aged Imperial Stout is rich with notes of chocolate and liquorice. Hopped with Willamette and Magnum. CROWLER! CANNED 10-8, BEST BEFORE 21-9",
     rating: 4.8,
     img: crowler1,
+    quantity: 1,
   },
   {
     id: prefix + ++lastId,
@@ -24,6 +25,7 @@ const crowlerProducts = [
       "Fruited Sour ale with pineapple, papaya, passionfruit and mango. CROWLER! CANNED 10-8, BEST BEFORE 21-9",
     rating: 4.8,
     img: crowler2,
+    quantity: 1,
   },
 ];
 
