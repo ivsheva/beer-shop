@@ -3,6 +3,8 @@ import { Box, Image, Text, useToast } from "@chakra-ui/react";
 import { useDispatch, useSelector } from "react-redux";
 import { ADD_TO_CART, REMOVE_FROM_CART } from "../../store/cartSlice";
 import { REMOVE_FROM_WISH } from "../../store/wishlistSlice";
+import { useContext } from "react";
+import { DisclosureContext } from "../../contexts/disclosureContext";
 
 const DrawerCard = ({
   id,
@@ -16,11 +18,16 @@ const DrawerCard = ({
   const dispatch = useDispatch();
   const toast = useToast();
   const cart = useSelector((state) => state.cart);
+  const { cartDisclosure, wishDisclosure } = useContext(DisclosureContext);
 
   const handleDelete = () => {
-    isWishItem
-      ? dispatch(REMOVE_FROM_WISH(id))
-      : dispatch(REMOVE_FROM_CART(id));
+    if (isWishItem) {
+      dispatch(REMOVE_FROM_WISH(id));
+      wishDisclosure.onClose();
+    } else {
+      dispatch(REMOVE_FROM_CART(id));
+      cartDisclosure.onClose();
+    }
     toast({
       title: "Item Deleted",
       status: "success",

@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import {
+  Button,
   Drawer,
   DrawerBody,
   DrawerCloseButton,
@@ -8,12 +9,11 @@ import {
   DrawerHeader,
   DrawerOverlay,
   Text,
-  Button,
 } from "@chakra-ui/react";
-import { useSelector } from "react-redux";
-import DrawerCard from "./DrawerCard";
 import { useContext } from "react";
+import { useSelector } from "react-redux";
 import { DisclosureContext } from "../../contexts/disclosureContext";
+import DrawerCard from "./DrawerCard";
 
 const CartDrawer = () => {
   const { cartDisclosure } = useContext(DisclosureContext);
