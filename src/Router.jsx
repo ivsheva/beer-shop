@@ -1,15 +1,16 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Layout from "./components/Global/Layout";
-import MainPage from "./pages/MainPage";
-import Catalogue from "./pages/Catalogue";
-import Style from "./pages/Style";
-import Countries from "./pages/Countries";
+import About from "./pages/About";
 import BeerPacks from "./pages/BeerPacks";
-import Glasses from "./pages/Glasses";
+import Catalogue from "./pages/Catalogue";
+import Countries from "./pages/Countries";
 import Crowlers from "./pages/Crowlers";
-import Vouchers from "./pages/Vouchers";
-import Sales from "./pages/Sales";
+import Glasses from "./pages/Glasses";
+import MainPage from "./pages/MainPage";
 import ProductDetailPage from "./pages/ProductDetailPage";
+import Sales from "./pages/Sales";
+import Style from "./pages/Style";
+import Vouchers from "./pages/Vouchers";
 
 const Router = () => {
   return (
@@ -30,6 +31,7 @@ const Router = () => {
             path=":pageType/products/:id"
             element={<ProductDetailPage />}
           />
+          <Route path="about-us" element={<About />} />
         </Route>
       </Routes>
     </BrowserRouter>
