@@ -1,5 +1,5 @@
-import crowler1 from "../img/img/crowler1.jpg";
-import crowler2 from "../img/img/crowler2.jpg";
+import crowler1 from "../../img/img/crowler1.jpg";
+import crowler2 from "../../img/img/crowler2.jpg";
 
 let lastId = 0;
 const prefix = "crowler_";

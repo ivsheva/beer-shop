@@ -1,6 +1,6 @@
-import ServicePage from "../components/ServicePage/ServicePage";
-import privacyBg from "../img/img/service-bg.jpg";
-import paragraphs from "../data/privacyParagraphs";
+import ServicePage from "../../components/ServicePage/ServicePage";
+import privacyBg from "../../img/img/service-bg.jpg";
+import paragraphs from "../../data/paragraphs/privacyParagraphs";
 
 const PrivacyPolicy = () => {
   return (

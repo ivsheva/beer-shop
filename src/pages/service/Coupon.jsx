@@ -1,6 +1,6 @@
-import ServicePage from "../components/ServicePage/ServicePage";
-import couponBg from "../img/img/service-bg.jpg";
-import paragraphs from "../data/saleParagraphs";
+import ServicePage from "../../components/ServicePage/ServicePage";
+import couponBg from "../../img/img/service-bg.jpg";
+import paragraphs from "../../data/paragraphs/saleParagraphs";
 
 const Coupon = () => {
   return (

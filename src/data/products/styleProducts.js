@@ -1,7 +1,7 @@
-import style1 from "../img/img/style1.jpg";
-import style2 from "../img/img/style2.jpg";
-import style3 from "../img/img/style3.jpg";
-import style4 from "../img/img/style4.jpg";
+import style1 from "../../img/img/style1.jpg";
+import style2 from "../../img/img/style2.jpg";
+import style3 from "../../img/img/style3.jpg";
+import style4 from "../../img/img/style4.jpg";
 
 let lastId = 0;
 const prefix = "style_";

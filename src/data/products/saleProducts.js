@@ -1,7 +1,7 @@
-import sale1 from "../img/img/sale1.jpg";
-import sale2 from "../img/img/sale2.jpg";
-import sale3 from "../img/img/sale3.jpg";
-import sale4 from "../img/img/sale4.jpg";
+import sale1 from "../../img/img/sale1.jpg";
+import sale2 from "../../img/img/sale2.jpg";
+import sale3 from "../../img/img/sale3.jpg";
+import sale4 from "../../img/img/sale4.jpg";
 
 let lastId = 0;
 const prefix = "sale_";

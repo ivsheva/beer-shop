@@ -1,6 +1,6 @@
-import ServicePage from "../components/ServicePage/ServicePage";
-import questionBg from "../img/img/faq-bg.jpg";
-import paragraphs from "../data/questionsParagraphs";
+import ServicePage from "../../components/ServicePage/ServicePage";
+import questionBg from "../../img/img/faq-bg.jpg";
+import paragraphs from "../../data/paragraphs/questionsParagraphs";
 
 const Questions = () => {
   return (

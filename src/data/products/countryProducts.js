@@ -1,7 +1,7 @@
-import country1 from "../img/img/country1.jpg";
-import country2 from "../img/img/country2.jpg";
-import country3 from "../img/img/country3.jpg";
-import country4 from "../img/img/country4.jpg";
+import country1 from "../../img/img/country1.jpg";
+import country2 from "../../img/img/country2.jpg";
+import country3 from "../../img/img/country3.jpg";
+import country4 from "../../img/img/country4.jpg";
 
 let lastId = 0;
 const prefix = "country_";

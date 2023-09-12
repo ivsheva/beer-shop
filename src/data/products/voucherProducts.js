@@ -1,7 +1,7 @@
-import voucher1 from "../img/img/voucher1.jpg";
-import voucher2 from "../img/img/voucher2.jpg";
-import voucher3 from "../img/img/voucher3.jpg";
-import voucher4 from "../img/img/voucher4.jpg";
+import voucher1 from "../../img/img/voucher1.jpg";
+import voucher2 from "../../img/img/voucher2.jpg";
+import voucher3 from "../../img/img/voucher3.jpg";
+import voucher4 from "../../img/img/voucher4.jpg";
 
 let lastId = 0;
 const prefix = "voucher_";

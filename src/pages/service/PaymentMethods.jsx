@@ -1,6 +1,6 @@
-import ServicePage from "../components/ServicePage/ServicePage";
-import paymentBg from "../img/img/service-bg.jpg";
-import paragraphs from "../data/paymentParagraphs";
+import ServicePage from "../../components/ServicePage/ServicePage";
+import paymentBg from "../../img/img/service-bg.jpg";
+import paragraphs from "../../data/paragraphs/paymentParagraphs";
 
 const PaymentMethods = () => {
   return (

@@ -1,7 +1,7 @@
-import pack1 from "../img/img/pack1.jpg";
-import pack2 from "../img/img/pack2.jpg";
-import pack3 from "../img/img/pack3.jpg";
-import pack4 from "../img/img/pack4.jpg";
+import pack1 from "../../img/img/pack1.jpg";
+import pack2 from "../../img/img/pack2.jpg";
+import pack3 from "../../img/img/pack3.jpg";
+import pack4 from "../../img/img/pack4.jpg";
 
 let lastId = 0;
 const prefix = "pack_";

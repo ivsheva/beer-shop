@@ -1,9 +1,9 @@
 import { Box } from "@chakra-ui/react";
 import { useState } from "react";
-import ProductPage from "../components/Products/ProductPage";
-import products from "../data/crowlerProducts";
+import ProductPage from "../../components/Products/ProductPage";
+import products from "../../data/products/saleProducts";
 
-const Crowlers = () => {
+const Sales = () => {
   const brands = products.map(({ id, brand }) => ({
     id,
     brand,
@@ -11,7 +11,7 @@ const Crowlers = () => {
   const prices = products.map((item) => item.price);
   const min = Math.min(...prices);
   const max = Math.max(...prices);
-  const title = "Crowlers";
+  const title = "Help to clean up our warehouse!";
 
   const uniqueBrands = brands.filter(
     (item, index, self) =>
@@ -40,4 +40,4 @@ const Crowlers = () => {
   );
 };
 
-export default Crowlers;
+export default Sales;

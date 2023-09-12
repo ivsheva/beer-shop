@@ -1,9 +1,9 @@
 import { Box } from "@chakra-ui/react";
 import { useState } from "react";
-import products from "../data/voucherProducts";
-import ProductPage from "../components/Products/ProductPage";
+import ProductPage from "../../components/Products/ProductPage";
+import products from "../../data/products/crowlerProducts";
 
-const Vouchers = () => {
+const Crowlers = () => {
   const brands = products.map(({ id, brand }) => ({
     id,
     brand,
@@ -11,8 +11,7 @@ const Vouchers = () => {
   const prices = products.map((item) => item.price);
   const min = Math.min(...prices);
   const max = Math.max(...prices);
-  const title = "Vouchers";
-  const isVoucher = true;
+  const title = "Crowlers";
 
   const uniqueBrands = brands.filter(
     (item, index, self) =>
@@ -32,7 +31,6 @@ const Vouchers = () => {
     setCheckedBrands,
     products,
     title,
-    isVoucher,
   };
 
   return (
@@ -42,4 +40,4 @@ const Vouchers = () => {
   );
 };
 
-export default Vouchers;
+export default Crowlers;

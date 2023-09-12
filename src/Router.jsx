@@ -1,21 +1,21 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Layout from "./components/Global/Layout";
-import About from "./pages/About";
-import BeerPacks from "./pages/BeerPacks";
-import Catalogue from "./pages/Catalogue";
-import Countries from "./pages/Countries";
-import Crowlers from "./pages/Crowlers";
-import Glasses from "./pages/Glasses";
+import About from "./pages/service/About";
+import BeerPacks from "./pages/products/BeerPacks";
+import Catalogue from "./pages/products/Catalogue";
+import Countries from "./pages/products/Countries";
+import Crowlers from "./pages/products/Crowlers";
+import Glasses from "./pages/products/Glasses";
 import MainPage from "./pages/MainPage";
 import ProductDetailPage from "./pages/ProductDetailPage";
-import Sales from "./pages/Sales";
-import Style from "./pages/Style";
-import Vouchers from "./pages/Vouchers";
-import Questions from "./pages/Questions";
-import PaymentMethods from "./pages/PaymentMethods";
-import Conditions from "./pages/Conditions";
-import PrivacyPolicy from "./pages/PrivacyPolicy";
-import Coupon from "./pages/Coupon";
+import Sales from "./pages/products/Sales";
+import Style from "./pages/products/Style";
+import Vouchers from "./pages/products/Vouchers";
+import Questions from "./pages/service/Questions";
+import PaymentMethods from "./pages/service/PaymentMethods";
+import Conditions from "./pages/service/Conditions";
+import PrivacyPolicy from "./pages/service/PrivacyPolicy";
+import Coupon from "./pages/service/Coupon";
 
 const Router = () => {
   return (

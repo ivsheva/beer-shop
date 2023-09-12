@@ -1,6 +1,6 @@
-import ServicePage from "../components/ServicePage/ServicePage";
-import conditionsBg from "../img/img/service-bg.jpg";
-import paragraphs from "../data/conditionsParagraphs";
+import ServicePage from "../../components/ServicePage/ServicePage";
+import conditionsBg from "../../img/img/service-bg.jpg";
+import paragraphs from "../../data/paragraphs/conditionsParagraphs";
 
 const Conditions = () => {
   return (

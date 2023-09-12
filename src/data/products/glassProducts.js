@@ -1,7 +1,7 @@
-import glass1 from "../img/img/glass1.jpg";
-import glass2 from "../img/img/glass2.jpg";
-import glass3 from "../img/img/glass3.jpg";
-import glass4 from "../img/img/glass4.jpg";
+import glass1 from "../../img/img/glass1.jpg";
+import glass2 from "../../img/img/glass2.jpg";
+import glass3 from "../../img/img/glass3.jpg";
+import glass4 from "../../img/img/glass4.jpg";
 
 let lastId = 0;
 const prefix = "glass_";
