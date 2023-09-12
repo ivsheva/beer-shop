@@ -12,6 +12,7 @@ import Sales from "./pages/Sales";
 import Style from "./pages/Style";
 import Vouchers from "./pages/Vouchers";
 import Questions from "./pages/Questions";
+import PaymentMethods from "./pages/PaymentMethods";
 
 const Router = () => {
   return (
@@ -34,6 +35,10 @@ const Router = () => {
           />
           <Route path="service/about-us" element={<About />} />
           <Route path="service/faq" element={<Questions />} />
+          <Route
+            path="service/how-can-i-pay-for-my-order"
+            element={<PaymentMethods />}
+          />
         </Route>
       </Routes>
     </BrowserRouter>
