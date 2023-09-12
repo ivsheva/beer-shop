@@ -14,6 +14,7 @@ import Vouchers from "./pages/Vouchers";
 import Questions from "./pages/Questions";
 import PaymentMethods from "./pages/PaymentMethods";
 import Conditions from "./pages/Conditions";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 const Router = () => {
   return (
@@ -41,6 +42,7 @@ const Router = () => {
             element={<PaymentMethods />}
           />
           <Route path="service/terms-and-conditions" element={<Conditions />} />
+          <Route path="service/privacy-policy" element={<PrivacyPolicy />} />
         </Route>
       </Routes>
     </BrowserRouter>
