@@ -7,7 +7,7 @@ const navItems = [
   { id: 6, title: "CROWLERS", highlight: false, link: "crowlers" },
   { id: 7, title: "GIFT VOUCHERS", highlight: false, link: "gift-vouchers" },
   { id: 8, title: "SALE", highlight: true, link: "sale" },
-  { id: 9, title: "ABOUT US", highlight: false, link: "about-us" },
+  { id: 9, title: "ABOUT US", highlight: false, link: "service/about-us" },
 ];
 
 export default navItems;

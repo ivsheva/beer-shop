@@ -1,7 +1,7 @@
+/* eslint-disable react/prop-types */
 import { Box, Image, Text } from "@chakra-ui/react";
-import aboutBg from "../../img/img/about-bg.jpg";
 
-const AboutPoster = () => {
+const ServicePoster = ({ title, img }) => {
   return (
     <Box
       width="100%"
@@ -17,7 +17,7 @@ const AboutPoster = () => {
         backgroundColor: "rgba(0, 0, 0, 0.3)",
       }}
     >
-      <Image src={aboutBg} fit="cover" height="100%" width="100%" />
+      <Image src={img} fit="cover" height="100%" width="100%" />
       <Text
         color="white"
         position="absolute"
@@ -27,10 +27,10 @@ const AboutPoster = () => {
         fontSize="30px"
         fontWeight="500"
       >
-        About Beerdome
+        {title}
       </Text>
     </Box>
   );
 };
 
-export default AboutPoster;
+export default ServicePoster;

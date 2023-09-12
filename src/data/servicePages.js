@@ -4,32 +4,32 @@ const servicePages = [
   {
     id: ++lastId,
     title: "About us",
-    link: "",
+    link: "/service/about-us",
   },
   {
     id: ++lastId,
     title: "FAQ",
-    link: "",
+    link: "/service/faq",
   },
   {
     id: ++lastId,
     title: "How can I pay for my order?",
-    link: "",
+    link: "/service/how-can-i-pay-for-my-order",
   },
   {
     id: ++lastId,
     title: "Terms and Conditions",
-    link: "",
+    link: "/service/terms-and-conditions",
   },
   {
     id: ++lastId,
     title: "Privacy Policy",
-    link: "",
+    link: "/service/privacy-policy",
   },
   {
     id: ++lastId,
     title: "I Love Beerdome sale",
-    link: "",
+    link: "/service/i-love-beerdome-sale",
   },
 ];
 

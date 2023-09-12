@@ -11,6 +11,7 @@ import ProductDetailPage from "./pages/ProductDetailPage";
 import Sales from "./pages/Sales";
 import Style from "./pages/Style";
 import Vouchers from "./pages/Vouchers";
+import Questions from "./pages/Questions";
 
 const Router = () => {
   return (
@@ -31,7 +32,8 @@ const Router = () => {
             path=":pageType/products/:id"
             element={<ProductDetailPage />}
           />
-          <Route path="about-us" element={<About />} />
+          <Route path="service/about-us" element={<About />} />
+          <Route path="service/faq" element={<Questions />} />
         </Route>
       </Routes>
     </BrowserRouter>

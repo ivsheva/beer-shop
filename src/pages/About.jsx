@@ -1,16 +1,17 @@
 import { Box } from "@chakra-ui/react";
 import { useLocation } from "react-router-dom";
-import AboutPoster from "../components/AboutPage/AboutPoster";
-import ServicePages from "../components/AboutPage/ServicePages";
+import ServicePoster from "../components/ServicePage/ServicePoster";
+import ServicePages from "../components/ServicePage/ServicePages";
 import AboutContent from "../components/AboutPage/AboutContent";
+import aboutBg from "../img/img/about-bg.jpg";
 
 const About = () => {
   const location = useLocation();
-  const currentPage = location.pathname.slice(1);
+  const currentPage = location.pathname.slice(9);
 
   return (
     <Box>
-      <AboutPoster />
+      <ServicePoster title="About beerdome" img={aboutBg} />
       <ServicePages activePage={currentPage} />
       <AboutContent />
     </Box>
