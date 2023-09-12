@@ -15,6 +15,7 @@ import Questions from "./pages/Questions";
 import PaymentMethods from "./pages/PaymentMethods";
 import Conditions from "./pages/Conditions";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
+import Coupon from "./pages/Coupon";
 
 const Router = () => {
   return (
@@ -43,6 +44,7 @@ const Router = () => {
           />
           <Route path="service/terms-and-conditions" element={<Conditions />} />
           <Route path="service/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="service/i-love-beerdome-sale" element={<Coupon />} />
         </Route>
       </Routes>
     </BrowserRouter>
