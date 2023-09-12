@@ -4,7 +4,7 @@ import ServiceParagraph from "./ServiceParagraph";
 
 const ServiceParagraphs = ({ paragraphs }) => {
   return (
-    <Box margin="0 auto">
+    <Box>
       {paragraphs.map((paragraph) => (
         <ServiceParagraph
           key={paragraph.id}

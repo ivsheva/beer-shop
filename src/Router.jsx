@@ -13,6 +13,7 @@ import Style from "./pages/Style";
 import Vouchers from "./pages/Vouchers";
 import Questions from "./pages/Questions";
 import PaymentMethods from "./pages/PaymentMethods";
+import Conditions from "./pages/Conditions";
 
 const Router = () => {
   return (
@@ -39,6 +40,7 @@ const Router = () => {
             path="service/how-can-i-pay-for-my-order"
             element={<PaymentMethods />}
           />
+          <Route path="service/terms-and-conditions" element={<Conditions />} />
         </Route>
       </Routes>
     </BrowserRouter>
