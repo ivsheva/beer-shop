@@ -8,18 +8,23 @@ import {
   InputRightAddon,
   Show,
 } from "@chakra-ui/react";
+import { useContext } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { HiMagnifyingGlass } from "react-icons/hi2";
 import { Link } from "react-router-dom";
+import { DisclosureContext } from "../../contexts/disclosureContext";
 import logo from "../../img/img/beerdome-logo-black.png";
 import AuthDrawer from "../Drawers/AuthDrawer";
+import CartDrawer from "../Drawers/CartDrawer";
+import WishDrawer from "../Drawers/WishDrawer";
 import Cart from "./Cart";
 import Login from "./Login";
 import WishList from "./WishList";
-import CartDrawer from "../Drawers/CartDrawer";
-import WishDrawer from "../Drawers/WishDrawer";
+import NavigationDrawer from "../Drawers/NavigationDrawer";
 
 const UserControl = () => {
+  const { navigationDisclosure } = useContext(DisclosureContext);
+
   return (
     <Box
       display="flex"
@@ -31,7 +36,7 @@ const UserControl = () => {
       width="100%"
     >
       <Show breakpoint="(max-width: 990px)">
-        <GiHamburgerMenu size={32} />
+        <GiHamburgerMenu size={32} onClick={navigationDisclosure.onOpen} />
       </Show>
       <InputGroup width="unset" display={{ base: "none", lg: "flex" }}>
         <Input
@@ -87,6 +92,7 @@ const UserControl = () => {
       <AuthDrawer />
       <CartDrawer />
       <WishDrawer />
+      <NavigationDrawer />
     </Box>
   );
 };

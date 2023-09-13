@@ -8,10 +8,16 @@ export const DisclosureProvider = ({ children }) => {
   const loginDisclosure = useDisclosure();
   const wishDisclosure = useDisclosure();
   const cartDisclosure = useDisclosure();
+  const navigationDisclosure = useDisclosure();
 
   return (
     <DisclosureContext.Provider
-      value={{ loginDisclosure, wishDisclosure, cartDisclosure }}
+      value={{
+        loginDisclosure,
+        wishDisclosure,
+        cartDisclosure,
+        navigationDisclosure,
+      }}
     >
       {children}
     </DisclosureContext.Provider>
