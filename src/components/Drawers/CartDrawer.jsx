@@ -18,7 +18,9 @@ import DrawerCard from "./DrawerCard";
 const CartDrawer = () => {
   const { cartDisclosure } = useContext(DisclosureContext);
   const cart = useSelector((state) => state.cart);
-  const sum = cart.reduce((total, item) => total + item.price, 0).toFixed(1);
+  const sum = cart
+    .reduce((total, item) => total + item.price * Number(item.quantity), 0)
+    .toFixed(1);
 
   return (
     <Drawer
