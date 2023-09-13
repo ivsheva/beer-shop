@@ -1,6 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 
-import { Box, Image, Text, Heading } from "@chakra-ui/react";
+import { Box, Heading, Image, Text } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 import img from "../../img/img/story-bg.jpg";
 
 const Story = () => {
@@ -37,7 +38,7 @@ const Story = () => {
           fontSize="28px"
           lineHeight="140%"
         >
-          Curious about our story?
+          <Link>Curious about our story?</Link>
         </Heading>
         <Text color="darkgrey" marginTop="12px" fontSize="15px">
           Beerdome fulfills the wish of beer lovers to discover new and rare
@@ -45,9 +46,11 @@ const Story = () => {
           Our beers are for winners, treasure hunters and fans of taste
           sensations!
         </Text>
-        <Text fontSize="15px" fontWeight="500">
-          ABOUT BEERDOME
-        </Text>
+        <Link to="service/about-us">
+          <Text fontSize="15px" fontWeight="500">
+            ABOUT BEERDOME
+          </Text>
+        </Link>
       </Box>
     </Box>
   );

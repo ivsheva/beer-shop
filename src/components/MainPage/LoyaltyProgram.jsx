@@ -55,6 +55,10 @@ const LoyaltyProgram = () => {
           borderRadius="50px"
           padding="24px 48px"
           fontWeight="400"
+          _hover={{
+            bg: "black",
+          }}
+          animation="ease-in-out"
         >
           LOYALTY
         </Button>

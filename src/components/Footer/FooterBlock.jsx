@@ -1,5 +1,6 @@
 import { Box, Text } from "@chakra-ui/react";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 const FooterBlock = ({ title, email, list }) => {
   return (
@@ -25,7 +26,11 @@ const FooterBlock = ({ title, email, list }) => {
             marginBottom={listItem.highlighted ? "8px" : ""}
             key={listItem.id}
           >
-            {listItem.description}
+            {listItem.link ? (
+              <Link to={listItem.link}>{listItem.description}</Link>
+            ) : (
+              listItem.description
+            )}
           </Text>
         ))}
         {email && (

@@ -2,6 +2,7 @@ import { Box, Text } from "@chakra-ui/react";
 import PropTypes from "prop-types";
 import { useState } from "react";
 import { PiCaretDownBold } from "react-icons/pi";
+import { Link } from "react-router-dom";
 
 const FooterAccordion = ({ title, email, list }) => {
   const [show, setShow] = useState(false);
@@ -31,7 +32,11 @@ const FooterAccordion = ({ title, email, list }) => {
               lineHeight="200%"
               key={footerItem.id}
             >
-              {footerItem.description}
+              {footerItem.link ? (
+                <Link to={footerItem.link}>{footerItem.description}</Link>
+              ) : (
+                footerItem.description
+              )}
             </Text>
           ))}
           {email && (
