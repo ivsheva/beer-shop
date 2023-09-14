@@ -16,6 +16,7 @@ import PaymentMethods from "./pages/service/PaymentMethods";
 import Conditions from "./pages/service/Conditions";
 import PrivacyPolicy from "./pages/service/PrivacyPolicy";
 import Coupon from "./pages/service/Coupon";
+import ErrorPage from "./pages/ErrorPage";
 
 const Router = () => {
   return (
@@ -45,6 +46,7 @@ const Router = () => {
           <Route path="service/terms-and-conditions" element={<Conditions />} />
           <Route path="service/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="service/i-love-beerdome-sale" element={<Coupon />} />
+          <Route path="*" element={<ErrorPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
