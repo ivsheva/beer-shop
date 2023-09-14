@@ -21,9 +21,11 @@ import Cart from "./Cart";
 import Login from "./Login";
 import WishList from "./WishList";
 import NavigationDrawer from "../Drawers/NavigationDrawer";
+import SearchModal from "../Modals/SearchModal";
 
 const UserControl = () => {
-  const { navigationDisclosure } = useContext(DisclosureContext);
+  const { navigationDisclosure, searchModalDisclosure } =
+    useContext(DisclosureContext);
 
   return (
     <Box
@@ -49,6 +51,7 @@ const UserControl = () => {
           _hover={{ borderColor: "lightgrey" }}
           _focus={{ borderColor: "lightgrey" }}
           readOnly
+          onClick={searchModalDisclosure.onOpen}
         />
         <InputRightAddon
           height="inherit"
@@ -86,13 +89,14 @@ const UserControl = () => {
         <Cart />
       </HStack>
       <Show breakpoint="(max-width: 990px)">
-        <HiMagnifyingGlass size={32} />
+        <HiMagnifyingGlass size={32} onClick={searchModalDisclosure.onOpen} />
       </Show>
 
       <AuthDrawer />
       <CartDrawer />
       <WishDrawer />
       <NavigationDrawer />
+      <SearchModal />
     </Box>
   );
 };

@@ -9,6 +9,7 @@ export const DisclosureProvider = ({ children }) => {
   const wishDisclosure = useDisclosure();
   const cartDisclosure = useDisclosure();
   const navigationDisclosure = useDisclosure();
+  const searchModalDisclosure = useDisclosure();
 
   return (
     <DisclosureContext.Provider
@@ -17,6 +18,7 @@ export const DisclosureProvider = ({ children }) => {
         wishDisclosure,
         cartDisclosure,
         navigationDisclosure,
+        searchModalDisclosure,
       }}
     >
       {children}

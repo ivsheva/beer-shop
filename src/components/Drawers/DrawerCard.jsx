@@ -14,6 +14,7 @@ const DrawerCard = ({
   price,
   quantity = 1,
   isWishItem = false,
+  isSearchItem = false,
 }) => {
   const dispatch = useDispatch();
   const toast = useToast();
@@ -37,8 +38,10 @@ const DrawerCard = ({
   };
 
   const handleAdd = () => {
-    const newItem = { id, img, brand, name, price };
-    if (!cart.find((item) => item.id !== newItem.id)) {
+    const newItem = { id, img, brand, name, price, quantity };
+    console.log(newItem);
+    console.log(cart);
+    if (!cart.some((item) => item.name === newItem.name)) {
       dispatch(ADD_TO_CART(newItem));
       toast({
         title: "Item added",
@@ -67,25 +70,29 @@ const DrawerCard = ({
         </Text>
         <Box marginTop="12px" display="flex" justifyContent="space-between">
           <Text fontFamily="Work Sans, sans-serif">€{price}</Text>
-          {!isWishItem && <Text color="black">{quantity}</Text>}
+          {!isWishItem ||
+            (!isSearchItem && <Text color="black">{quantity}</Text>)}
         </Box>
         <Box display="flex" marginTop="4px" color="green" columnGap="20px">
-          <Text
-            onClick={handleDelete}
-            cursor="pointer"
-            textDecoration="underline"
-          >
-            Delete
-          </Text>
-          {isWishItem && (
+          {!isSearchItem && (
             <Text
-              onClick={handleAdd}
+              onClick={handleDelete}
               cursor="pointer"
               textDecoration="underline"
             >
-              Add to Cart
+              Delete
             </Text>
           )}
+          {isWishItem ||
+            (isSearchItem && (
+              <Text
+                onClick={handleAdd}
+                cursor="pointer"
+                textDecoration="underline"
+              >
+                Add to Cart
+              </Text>
+            ))}
         </Box>
       </Box>
     </Box>
