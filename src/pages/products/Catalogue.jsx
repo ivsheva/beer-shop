@@ -1,9 +1,10 @@
 import { Box } from "@chakra-ui/react";
 import { useState } from "react";
 import ProductPage from "../../components/Products/ProductPage";
-import products from "../../data/products/products";
+import allProducts from "../../data/products/allProducts"; // dont forget to do shuffle
 
 const Catalogue = () => {
+  const products = allProducts.sort((a, b) => a.name.localeCompare(b.name));
   const brands = products.map(({ id, brand }) => ({
     id,
     brand,

@@ -1,5 +1,5 @@
+/* eslint-disable react/prop-types */
 import { Box, Button, Image, Text, Tooltip } from "@chakra-ui/react";
-import PropTypes from "prop-types";
 import { useContext, useState } from "react";
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
@@ -16,6 +16,7 @@ const BeerCard = ({
   price,
   oldPrice = null,
   isFull = false,
+  quantity = 1,
 }) => {
   const { wishDisclosure, cartDisclosure } = useContext(DisclosureContext);
   const dispatch = useDispatch();
@@ -30,7 +31,7 @@ const BeerCard = ({
 
   const handleAddToCart = (event) => {
     event.preventDefault();
-    const newItem = { id, img, brand, name, price };
+    const newItem = { id, img, brand, name, price, quantity };
 
     if (!cart.find((item) => item.name === newItem.name)) {
       dispatch(ADD_TO_CART(newItem));
@@ -157,16 +158,6 @@ const BeerCard = ({
       </Box>
     </Link>
   );
-};
-
-BeerCard.propTypes = {
-  id: PropTypes.string.isRequired,
-  img: PropTypes.string.isRequired,
-  brand: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  price: PropTypes.number.isRequired,
-  oldPrice: PropTypes.number,
-  isFull: PropTypes.bool,
 };
 
 export default BeerCard;

@@ -5,6 +5,7 @@ import { ADD_TO_CART, REMOVE_FROM_CART } from "../../store/cartSlice";
 import { REMOVE_FROM_WISH } from "../../store/wishlistSlice";
 import { useContext } from "react";
 import { DisclosureContext } from "../../contexts/disclosureContext";
+import { useNavigate } from "react-router-dom";
 
 const DrawerCard = ({
   id,
@@ -16,6 +17,7 @@ const DrawerCard = ({
   isWishItem = false,
   isSearchItem = false,
 }) => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const toast = useToast();
   const cart = useSelector((state) => state.cart);
@@ -39,8 +41,6 @@ const DrawerCard = ({
 
   const handleAdd = () => {
     const newItem = { id, img, brand, name, price, quantity };
-    console.log(newItem);
-    console.log(cart);
     if (!cart.some((item) => item.name === newItem.name)) {
       dispatch(ADD_TO_CART(newItem));
       toast({
@@ -58,9 +58,21 @@ const DrawerCard = ({
       });
   };
 
+  const handleNavigate = () => {
+    navigate(`/all-beers/products/${id}`);
+    !isWishItem ? cartDisclosure.onClose() : wishDisclosure.onClose();
+  };
+
   return (
     <Box display="flex" padding={{ base: "none", sm: "24px" }}>
-      <Image src={img} float="left" maxBlockSize="140px" fit="cover" />
+      <Image
+        src={img}
+        float="left"
+        maxBlockSize="140px"
+        fit="cover"
+        onClick={() => handleNavigate()}
+        cursor="pointer"
+      />
       <Box fontFamily="Questrial, sans-serif1" marginLeft="32px">
         <Text fontSize="12px" fontWeight="400">
           {brand}
