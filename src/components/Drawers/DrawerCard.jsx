@@ -92,7 +92,7 @@ const DrawerCard = ({
         </Text>
         <Box marginTop="12px" display="flex" justifyContent="space-between">
           <Text fontFamily="Work Sans, sans-serif">€{price}</Text>
-          {!isWishItem ||
+          {isWishItem ||
             (!isSearchItem && <Text color="black">{quantity}</Text>)}
         </Box>
         <Box display="flex" marginTop="4px" color="green" columnGap="20px">
