@@ -22,10 +22,17 @@ import Login from "./Login";
 import WishList from "./WishList";
 import NavigationDrawer from "../Drawers/NavigationDrawer";
 import SearchModal from "../Modals/SearchModal";
+import SearchDrawer from "../Drawers/SearchDrawer";
 
 const UserControl = () => {
-  const { navigationDisclosure, searchModalDisclosure } =
+  const { navigationDisclosure, searchModalDisclosure, searchDisclosure } =
     useContext(DisclosureContext);
+
+  const handleOpenSearch = () => {
+    window.innerWidth >= 768
+      ? searchModalDisclosure.onOpen()
+      : searchDisclosure.onOpen();
+  };
 
   return (
     <Box
@@ -89,13 +96,14 @@ const UserControl = () => {
         <Cart />
       </HStack>
       <Show breakpoint="(max-width: 990px)">
-        <HiMagnifyingGlass size={32} onClick={searchModalDisclosure.onOpen} />
+        <HiMagnifyingGlass size={32} onClick={handleOpenSearch} />
       </Show>
 
       <AuthDrawer />
       <CartDrawer />
       <WishDrawer />
       <NavigationDrawer />
+      <SearchDrawer />
       <SearchModal />
     </Box>
   );

@@ -10,7 +10,14 @@ import { DisclosureContext } from "../../contexts/disclosureContext";
 import { HiMagnifyingGlass } from "react-icons/hi2";
 
 const SearchHeader = () => {
-  const { searchModalDisclosure } = useContext(DisclosureContext);
+  const { searchModalDisclosure, searchDisclosure } =
+    useContext(DisclosureContext);
+
+  const handleClose = () => {
+    window.innerWidth >= 768
+      ? searchModalDisclosure.onClose()
+      : searchDisclosure.onClose();
+  };
 
   return (
     <InputGroup>
@@ -58,7 +65,7 @@ const SearchHeader = () => {
           }}
           color="black"
           fontSize="12px"
-          onClick={searchModalDisclosure.onClose}
+          onClick={handleClose}
         >
           Close
         </Button>
