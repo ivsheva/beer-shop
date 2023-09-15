@@ -25,7 +25,11 @@ const SearchDrawer = () => {
         <DrawerHeader>
           <SearchHeader />
         </DrawerHeader>
-        <DrawerBody>
+        <DrawerBody
+          display="flex"
+          flexDirection="column"
+          rowGap={{ base: "50px", sm: "0" }}
+        >
           {popularProducts.map((product) => (
             <DrawerCard
               key={product.id}

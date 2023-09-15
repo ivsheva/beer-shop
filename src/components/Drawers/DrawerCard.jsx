@@ -21,7 +21,12 @@ const DrawerCard = ({
   const dispatch = useDispatch();
   const toast = useToast();
   const cart = useSelector((state) => state.cart);
-  const { cartDisclosure, wishDisclosure } = useContext(DisclosureContext);
+  const {
+    cartDisclosure,
+    wishDisclosure,
+    searchDisclosure,
+    searchModalDisclosure,
+  } = useContext(DisclosureContext);
 
   const handleDelete = () => {
     if (isWishItem) {
@@ -60,7 +65,12 @@ const DrawerCard = ({
 
   const handleNavigate = () => {
     navigate(`/all-beers/products/${id}`);
-    !isWishItem ? cartDisclosure.onClose() : wishDisclosure.onClose();
+    if (isWishItem) wishDisclosure.onClose();
+    else if (isSearchItem) {
+      window.innerWidth >= 768
+        ? searchModalDisclosure.onClose()
+        : searchDisclosure.onClose();
+    } else cartDisclosure.onClose();
   };
 
   return (
