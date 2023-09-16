@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import {
   Button,
   Input,
@@ -9,7 +10,7 @@ import { useContext } from "react";
 import { DisclosureContext } from "../../contexts/disclosureContext";
 import { HiMagnifyingGlass } from "react-icons/hi2";
 
-const SearchHeader = () => {
+const SearchHeader = ({ searchText, setSearchText }) => {
   const { searchModalDisclosure, searchDisclosure } =
     useContext(DisclosureContext);
 
@@ -17,6 +18,7 @@ const SearchHeader = () => {
     window.innerWidth >= 768
       ? searchModalDisclosure.onClose()
       : searchDisclosure.onClose();
+    setSearchText("");
   };
 
   return (
@@ -32,6 +34,8 @@ const SearchHeader = () => {
         <HiMagnifyingGlass size="32" />
       </InputLeftAddon>
       <Input
+        value={searchText}
+        onChange={(event) => setSearchText(event.target.value)}
         width="100%"
         border="none"
         boxShadow="none"

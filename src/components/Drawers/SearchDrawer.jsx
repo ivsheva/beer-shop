@@ -1,18 +1,18 @@
 import {
   Drawer,
   DrawerBody,
+  DrawerContent,
   DrawerHeader,
   DrawerOverlay,
-  DrawerContent,
 } from "@chakra-ui/react";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { DisclosureContext } from "../../contexts/disclosureContext";
+import SearchBody from "../Modals/SearchBody";
 import SearchHeader from "../Modals/SearchHeader";
-import popularProducts from "../../data/products/popularProducts";
-import DrawerCard from "./DrawerCard";
 
 const SearchDrawer = () => {
   const { searchDisclosure } = useContext(DisclosureContext);
+  const [searchText, setSearchText] = useState("");
 
   return (
     <Drawer
@@ -23,24 +23,14 @@ const SearchDrawer = () => {
       <DrawerOverlay />
       <DrawerContent>
         <DrawerHeader>
-          <SearchHeader />
+          <SearchHeader searchText={searchText} setSearchText={setSearchText} />
         </DrawerHeader>
         <DrawerBody
           display="flex"
           flexDirection="column"
           rowGap={{ base: "50px", sm: "0" }}
         >
-          {popularProducts.map((product) => (
-            <DrawerCard
-              key={product.id}
-              id={product.id}
-              img={product.img}
-              brand={product.brand}
-              name={product.name}
-              price={product.price}
-              isSearchItem
-            />
-          ))}
+          <SearchBody searchText={searchText} setSearchText={setSearchText} />
         </DrawerBody>
       </DrawerContent>
     </Drawer>

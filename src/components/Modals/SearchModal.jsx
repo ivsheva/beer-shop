@@ -5,14 +5,14 @@ import {
   ModalHeader,
   ModalOverlay,
 } from "@chakra-ui/react";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { DisclosureContext } from "../../contexts/disclosureContext";
+import SearchBody from "./SearchBody";
 import SearchHeader from "./SearchHeader";
-import DrawerCard from "../Drawers/DrawerCard";
-import popularProducts from "../../data/products/popularProducts";
 
 const SearchModal = () => {
   const { searchModalDisclosure } = useContext(DisclosureContext);
+  const [searchText, setSearchText] = useState("");
 
   return (
     <Modal
@@ -23,20 +23,10 @@ const SearchModal = () => {
       <ModalOverlay />
       <ModalContent>
         <ModalHeader padding="0">
-          <SearchHeader />
+          <SearchHeader searchText={searchText} setSearchText={setSearchText} />
         </ModalHeader>
         <ModalBody>
-          {popularProducts.map((product) => (
-            <DrawerCard
-              key={product.id}
-              id={product.id}
-              img={product.img}
-              brand={product.brand}
-              name={product.name}
-              price={product.price}
-              isSearchItem
-            />
-          ))}
+          <SearchBody searchText={searchText} setSearchText={setSearchText} />
         </ModalBody>
       </ModalContent>
     </Modal>
