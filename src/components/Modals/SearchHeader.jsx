@@ -7,7 +7,7 @@ import {
   InputRightAddon,
 } from "@chakra-ui/react";
 import { useContext } from "react";
-import { DisclosureContext } from "../../contexts/disclosureContext";
+import { DisclosureContext } from "../../contexts/DisclosureContext";
 import { HiMagnifyingGlass } from "react-icons/hi2";
 
 const SearchHeader = ({ searchText, setSearchText }) => {

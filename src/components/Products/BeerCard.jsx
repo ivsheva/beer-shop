@@ -4,7 +4,7 @@ import { useContext, useState } from "react";
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { DisclosureContext } from "../../contexts/disclosureContext";
+import { DisclosureContext } from "../../contexts/DisclosureContext";
 import { ADD_TO_CART } from "../../store/cartSlice";
 import { ADD_TO_WISH, REMOVE_FROM_WISH } from "../../store/wishlistSlice";
 

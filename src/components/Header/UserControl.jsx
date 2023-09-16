@@ -12,7 +12,7 @@ import { useContext } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { HiMagnifyingGlass } from "react-icons/hi2";
 import { Link } from "react-router-dom";
-import { DisclosureContext } from "../../contexts/disclosureContext";
+import { DisclosureContext } from "../../contexts/DisclosureContext";
 import logo from "../../img/img/beerdome-logo-black.png";
 import AuthDrawer from "../Drawers/AuthDrawer";
 import CartDrawer from "../Drawers/CartDrawer";

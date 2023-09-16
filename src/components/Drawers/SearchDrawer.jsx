@@ -6,7 +6,7 @@ import {
   DrawerOverlay,
 } from "@chakra-ui/react";
 import { useContext, useState } from "react";
-import { DisclosureContext } from "../../contexts/disclosureContext";
+import { DisclosureContext } from "../../contexts/DisclosureContext";
 import SearchBody from "../Modals/SearchBody";
 import SearchHeader from "../Modals/SearchHeader";
 

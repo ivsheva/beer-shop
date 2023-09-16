@@ -3,7 +3,7 @@ import { Text, VStack } from "@chakra-ui/react";
 import { useContext } from "react";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { useSelector } from "react-redux";
-import { DisclosureContext } from "../../contexts/disclosureContext";
+import { DisclosureContext } from "../../contexts/DisclosureContext";
 
 const Cart = () => {
   const { cartDisclosure } = useContext(DisclosureContext);

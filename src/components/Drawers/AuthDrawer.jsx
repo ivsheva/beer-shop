@@ -12,7 +12,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { useContext } from "react";
-import { DisclosureContext } from "../../contexts/disclosureContext";
+import { DisclosureContext } from "../../contexts/DisclosureContext";
 
 const AuthDrawer = () => {
   const { loginDisclosure } = useContext(DisclosureContext);

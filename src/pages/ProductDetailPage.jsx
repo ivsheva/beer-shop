@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom";
 import TrustMark from "../components/MainPage/TrustMark";
 import Description from "../components/ProductPage/Description";
 import DescriptionAccordion from "../components/ProductPage/DescriptionAccordion";
-import { DisclosureContext } from "../contexts/disclosureContext";
+import { DisclosureContext } from "../contexts/DisclosureContext";
 import allProducts from "../data/products/allProducts";
 import { ADD_TO_CART } from "../store/cartSlice";
 import { ADD_TO_WISH, REMOVE_FROM_WISH } from "../store/wishlistSlice";

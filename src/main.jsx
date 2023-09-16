@@ -6,7 +6,7 @@ import Router from "./Router";
 import "./index.css";
 import store from "./store/store.js";
 import theme from "./theme.js";
-import { DisclosureProvider } from "./contexts/disclosureContext";
+import { DisclosureProvider } from "./contexts/DisclosureContext";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>

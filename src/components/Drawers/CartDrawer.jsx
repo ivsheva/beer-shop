@@ -12,7 +12,7 @@ import {
 } from "@chakra-ui/react";
 import { useContext } from "react";
 import { useSelector } from "react-redux";
-import { DisclosureContext } from "../../contexts/disclosureContext";
+import { DisclosureContext } from "../../contexts/DisclosureContext";
 import DrawerCard from "./DrawerCard";
 
 const CartDrawer = () => {

@@ -9,7 +9,7 @@ import {
 } from "@chakra-ui/react";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-import { DisclosureContext } from "../../contexts/disclosureContext";
+import { DisclosureContext } from "../../contexts/DisclosureContext";
 import navItems from "../../data/navItems";
 
 const NavigationDrawer = () => {

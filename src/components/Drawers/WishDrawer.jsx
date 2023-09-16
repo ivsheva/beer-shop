@@ -15,7 +15,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { ADD_TO_CART } from "../../store/cartSlice";
 import DrawerCard from "./DrawerCard";
 import { useContext } from "react";
-import { DisclosureContext } from "../../contexts/disclosureContext";
+import { DisclosureContext } from "../../contexts/DisclosureContext";
 
 const WishDrawer = () => {
   const { wishDisclosure } = useContext(DisclosureContext);

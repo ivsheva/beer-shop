@@ -2,7 +2,7 @@
 import { VStack, Text } from "@chakra-ui/react";
 import { useContext } from "react";
 import { BiUserCircle } from "react-icons/bi";
-import { DisclosureContext } from "../../contexts/disclosureContext";
+import { DisclosureContext } from "../../contexts/DisclosureContext";
 
 const Login = () => {
   const { loginDisclosure } = useContext(DisclosureContext);
