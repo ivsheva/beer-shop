@@ -28,7 +28,10 @@ const AuthDrawer = () => {
       <DrawerContent>
         <DrawerCloseButton />
         <DrawerHeader fontFamily="Questrial, sans-serif" fontSize="36px">
-          Login
+          <Text fontSize="inherit" display="inline">
+            Login
+          </Text>
+          <Text fontSize="14px">(it does not work for now)</Text>
         </DrawerHeader>
 
         <DrawerBody>

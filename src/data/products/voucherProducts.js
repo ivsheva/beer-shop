@@ -43,10 +43,10 @@ const voucherProducts = [
   {
     id: prefix + ++lastId,
     brand: "Voucher",
-    name: "Digital Voucher - 125 euro",
-    price: 125.0,
+    name: "Digital Voucher - 150 euro",
+    price: 150.0,
     description:
-      "125 euro voucher. You'll receive the code per mail after payment is confirmed. Please use the pick-up option to avoid the shipping costs if no other beers are being ordered.",
+      "150 euro voucher. You'll receive the code per mail after payment is confirmed. Please use the pick-up option to avoid the shipping costs if no other beers are being ordered.",
     rating: 4.8,
     img: voucher4,
     quantity: 1,

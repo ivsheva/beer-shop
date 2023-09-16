@@ -1,7 +1,9 @@
 import { Box, Button, Text, VStack } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
 import bannerBg from "../../img/img/bg-banner-1.jpg";
 
 const LoyaltyProgram = () => {
+  const navigate = useNavigate();
   return (
     <Box
       backgroundImage={bannerBg}
@@ -59,6 +61,8 @@ const LoyaltyProgram = () => {
             bg: "black",
           }}
           animation="ease-in-out"
+          onClick={() => navigate("/loyalty-program")}
+          cursor="pointer"
         >
           LOYALTY
         </Button>
