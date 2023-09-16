@@ -77,7 +77,6 @@ const UserControl = () => {
             base: "20px",
             lg: "-80px",
             xl: "-100px",
-            "2xl": "-180px",
           }}
           marginRight="20px"
           maxWidth="100%"
