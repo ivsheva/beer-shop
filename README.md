@@ -1,6 +1,6 @@
 # Beer Shop
 Beer Shop is a personal project designed for practicing layout development skills by a junior frontend developer. It serves as a clone of the original website [beerdome](https://www.beerdome.nl/en/). 
-The project was built using JSX (not TSX, which was a significant oversight) and incorporates various technologies including Git, React, Chakra UI, Redux, Redux Toolkit, and Vite.
+The project was built using JSX (not TSX, which was a significant oversight) and incorporates various technologies including Git, React, React Router, Chakra UI, Redux, Redux Toolkit and Vite.
 
 ## Get Started
 1. Install dependencies using `npm i` or `yarn`.
