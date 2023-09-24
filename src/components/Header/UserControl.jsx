@@ -41,7 +41,7 @@ const UserControl = () => {
       justifyContent="space-between"
       flexWrap="wrap"
       paddingY="20px"
-      paddingX={{ base: "2%", md: "2%", xl: "12%" }}
+      paddingX={{ base: "2%", md: "2%", xl: "8%", "2xl": "12%" }}
       width="100%"
     >
       <Show breakpoint="(max-width: 990px)">
@@ -76,13 +76,13 @@ const UserControl = () => {
           marginLeft={{
             base: "20px",
             lg: "-80px",
-            xl: "-100px",
+            xl: "-50px",
           }}
           marginRight="20px"
           maxWidth="100%"
           height="auto"
           objectFit="cover"
-          width={{ base: "180px", sm: "240px", lg: "240px", xl: "360px" }}
+          width={{ base: "180px", sm: "240px", lg: "240px", xl: "280px" }}
         ></Image>
       </Link>
       <HStack
