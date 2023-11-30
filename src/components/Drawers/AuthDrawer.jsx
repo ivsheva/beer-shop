@@ -74,17 +74,6 @@ const AuthDrawer = () => {
           <Link color="green" textDecoration="underline">
             Forgot your password?
           </Link>
-          <Button
-            display="flex"
-            colorScheme="green"
-            background="darkgreen"
-            width="100%"
-            padding="28px 32px"
-            borderRadius="0"
-            marginTop="28px"
-          >
-            LOGIN
-          </Button>
           <Text color="grey" fontSize="18px" marginY="24px">
             All your orders and returns in one place The ordering process is
             even faster Your shopping cart stored, always and everywhere

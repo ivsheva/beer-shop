@@ -16,13 +16,13 @@ import { DisclosureContext } from "../../contexts/DisclosureContext";
 import logo from "../../img/img/beerdome-logo-black.png";
 import AuthDrawer from "../Drawers/AuthDrawer";
 import CartDrawer from "../Drawers/CartDrawer";
+import NavigationDrawer from "../Drawers/NavigationDrawer";
+import SearchDrawer from "../Drawers/SearchDrawer";
 import WishDrawer from "../Drawers/WishDrawer";
+import SearchModal from "../Modals/SearchModal";
 import Cart from "./Cart";
 import Login from "./Login";
 import WishList from "./WishList";
-import NavigationDrawer from "../Drawers/NavigationDrawer";
-import SearchModal from "../Modals/SearchModal";
-import SearchDrawer from "../Drawers/SearchDrawer";
 
 const UserControl = () => {
   const { navigationDisclosure, searchModalDisclosure, searchDisclosure } =
