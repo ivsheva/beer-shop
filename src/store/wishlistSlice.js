@@ -2,15 +2,28 @@ import { createSlice } from "@reduxjs/toolkit";
 
 let lastId = 0;
 
+const getWishlist = () => {
+  const wishlist = localStorage.getItem("wishlist");
+  return wishlist ? JSON.parse(wishlist) : [];
+};
+
 const wishSlice = createSlice({
   name: "wishlist",
-  initialState: [],
+  initialState: getWishlist,
   reducers: {
-    ADD_TO_WISH: (cart, action) => {
-      cart.push({ id: ++lastId, ...action.payload });
+    ADD_TO_WISH: (wishlist, action) => {
+      wishlist.push({ id: ++lastId, ...action.payload });
+
+      localStorage.setItem("wishlist", JSON.stringify(wishlist));
     },
-    REMOVE_FROM_WISH: (cart, action) => {
-      return cart.filter((cartItem) => cartItem.id !== action.payload);
+    REMOVE_FROM_WISH: (wishlist, action) => {
+      const updatedWishlist = wishlist.filter(
+        (cartItem) => cartItem.id !== action.payload
+      );
+
+      localStorage.setItem("wishlist", updatedWishlist);
+
+      return updatedWishlist;
     },
   },
 });
