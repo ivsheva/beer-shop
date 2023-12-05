@@ -7,49 +7,60 @@ import Prices from "./../Filtering/Prices";
 import ProductGrid from "./ProductGrid";
 import SubscriptionPoster from "../Other/SubscriptionPoster";
 
-const ProductPage = ({ data }) => {
-  const {
-    min,
-    max,
-    filteredValues,
-    setFilteredValues,
-    uniqueBrands,
-    checkedBrands,
-    setCheckedBrands,
-    products,
-    title,
-    isVoucher,
-  } = data;
-
+const ProductPage = ({ productData }) => {
+  // Get a pathname to create a redirect component
   const pathname = useLocation().pathname.substring(1);
-
-  const brands = { uniqueBrands, checkedBrands, setCheckedBrands };
-  const prices = { min, max, filteredValues, setFilteredValues };
 
   return (
     <>
       <SubscriptionPoster />
-      <Box
-        display="flex"
-        width={{ base: "80%", lg: "90%", xl: "80%" }}
-        margin="0 auto"
-      >
-        <Box display={{ base: "none ", lg: "flex" }} flexDirection="column">
-          <OverView pathName={pathname} />
-          <Brands brands={brands} />
-          <Prices prices={prices} />
-        </Box>
-        <ProductGrid
-          products={products}
-          checkedBrands={checkedBrands}
-          filteredValues={filteredValues}
-          title={title}
-          brands={brands}
-          prices={prices}
-          isVoucher={isVoucher}
-        />
-      </Box>
+      <ProductPageBody pathname={pathname} productData={productData} />
     </>
+  );
+};
+
+const ProductPageFiltering = ({ pathname, brands, prices }) => {
+  return (
+    <Box display={{ base: "none ", lg: "flex" }} flexDirection="column">
+      <OverView pathName={pathname} />
+      <Brands brands={brands} />
+      <Prices prices={prices} />
+    </Box>
+  );
+};
+
+const ProductPageBody = ({ pathname, productData }) => {
+  const {
+    filteredValues,
+    checkedBrands,
+    products,
+    title,
+    isVoucher,
+    brandFilterData,
+    priceFilterData,
+  } = productData;
+
+  return (
+    <Box
+      display="flex"
+      width={{ base: "80%", lg: "90%", xl: "80%" }}
+      margin="0 auto"
+    >
+      <ProductPageFiltering
+        pathname={pathname}
+        brands={brandFilterData}
+        prices={priceFilterData}
+      />
+      <ProductGrid
+        products={products}
+        checkedBrands={checkedBrands}
+        filteredValues={filteredValues}
+        title={title}
+        brands={brandFilterData}
+        prices={priceFilterData}
+        isVoucher={isVoucher}
+      />
+    </Box>
   );
 };
 
