@@ -6,10 +6,13 @@ import OverView from "./../Filtering/OverView";
 import Prices from "./../Filtering/Prices";
 import ProductGrid from "./ProductGrid";
 import SubscriptionPoster from "../Other/SubscriptionPoster";
+import useProductData from "../../hooks/useProductData";
 
-const ProductPage = ({ productData }) => {
+const ProductPage = ({ products }) => {
   // Get a pathname to create a redirect component
   const pathname = useLocation().pathname.substring(1);
+
+  const productData = useProductData(products);
 
   return (
     <>

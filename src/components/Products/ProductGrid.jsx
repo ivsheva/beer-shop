@@ -167,7 +167,7 @@ const GridBody = ({ sortedProducts }) => {
         <BeerCard
           key={beerItem.id}
           id={beerItem.id}
-          img={beerItem.img}
+          img={beerItem.imageUrl}
           brand={beerItem.brand}
           name={beerItem.name}
           price={beerItem.price}

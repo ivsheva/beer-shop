@@ -1,16 +1,14 @@
 import { Box } from "@chakra-ui/react";
+import Loading from "../../components/Other/Loading";
 import ProductPage from "../../components/Products/ProductPage";
-import products from "../../data/products/saleProducts";
-import useProductData from "../../hooks/useProductData";
+import useBeerByType from "../../hooks/useBeerByType";
 
 const Sales = () => {
-  const productData = useProductData(products);
+  const { data: products, isLoading } = useBeerByType("sale");
 
-  return (
-    <Box>
-      <ProductPage productData={productData} />
-    </Box>
-  );
+  if (isLoading) return <Loading />;
+
+  return <Box>{products && <ProductPage products={products} />}</Box>;
 };
 
 export default Sales;

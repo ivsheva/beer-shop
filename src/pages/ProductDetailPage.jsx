@@ -1,17 +1,19 @@
 import { Box, Button, Image, Input, Link, Show, Text } from "@chakra-ui/react";
 import { useContext, useState } from "react";
-import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
+import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import TrustMark from "../components/MainPage/TrustMark";
+import Loading from "../components/Other/Loading";
 import Description from "../components/ProductPage/Description";
 import DescriptionAccordion from "../components/ProductPage/DescriptionAccordion";
 import { DisclosureContext } from "../contexts/DisclosureContext";
-import allProducts from "../data/products/allProducts";
+import useBeer from "../hooks/useBeer";
 import { ADD_TO_CART } from "../store/cartSlice";
 import { ADD_TO_WISH, REMOVE_FROM_WISH } from "../store/wishlistSlice";
 
 const ProductDetailPage = () => {
+  // TODO: REFACTOR
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart);
   const wishlist = useSelector((state) => state.wishlist);
@@ -22,7 +24,10 @@ const ProductDetailPage = () => {
   const [productAmount, setProductAmount] = useState(1);
 
   const { id } = useParams();
-  const product = allProducts.find((item) => item.id === id);
+  const { data: product, isLoading } = useBeer(id);
+
+  if (isLoading) return <Loading />;
+
   let inWish = wishlist.some((item) => item.name === product.name);
 
   const handleAddToCart = () => {
@@ -55,7 +60,7 @@ const ProductDetailPage = () => {
       alignItems={{ base: "center", lg: "unset" }}
     >
       <Image
-        src={product.img}
+        src={product.imageUrl}
         float={{ base: "unset", lg: "left" }}
         maxWidth={{ base: "300px", md: "600px", lg: "500px" }}
         maxHeight="800px"
