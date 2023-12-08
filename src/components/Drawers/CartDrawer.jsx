@@ -38,7 +38,7 @@ const CartDrawer = () => {
             <DrawerCard
               key={product.id}
               id={product.id}
-              img={product.img}
+              img={product.imageUrl}
               brand={product.brand}
               name={product.name}
               price={product.price}

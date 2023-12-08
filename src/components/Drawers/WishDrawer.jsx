@@ -11,11 +11,11 @@ import {
   Text,
   useToast,
 } from "@chakra-ui/react";
+import { useContext } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { DisclosureContext } from "../../contexts/DisclosureContext";
 import { ADD_TO_CART } from "../../store/cartSlice";
 import DrawerCard from "./DrawerCard";
-import { useContext } from "react";
-import { DisclosureContext } from "../../contexts/DisclosureContext";
 
 const WishDrawer = () => {
   const { wishDisclosure } = useContext(DisclosureContext);
@@ -58,7 +58,7 @@ const WishDrawer = () => {
             <DrawerCard
               key={product.id}
               id={product.id}
-              img={product.img}
+              img={product.imageUrl}
               brand={product.brand}
               name={product.name}
               price={product.price}
