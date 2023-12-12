@@ -1,5 +1,5 @@
+/* eslint-disable react/prop-types */
 import { Box } from "@chakra-ui/react";
-import PropTypes from "prop-types";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
@@ -22,31 +22,14 @@ const Slider = ({ goods }) => {
         navigation
         loop={true}
       >
-        {goods.map((beerItem) => (
-          <SwiperSlide key={beerItem.id} style={{ maxWidth: "300px" }}>
-            <BeerCard
-              id={beerItem.id}
-              img={beerItem.img}
-              brand={beerItem.brand}
-              name={beerItem.name}
-              price={beerItem.price}
-            />
+        {goods.map((product) => (
+          <SwiperSlide key={product.id} style={{ maxWidth: "300px" }}>
+            <BeerCard product={product} />
           </SwiperSlide>
         ))}
       </Swiper>
     </Box>
   );
-};
-
-Slider.propTypes = {
-  goods: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      img: PropTypes.string.isRequired,
-      brand: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired,
-    })
-  ).isRequired,
 };
 
 export default Slider;

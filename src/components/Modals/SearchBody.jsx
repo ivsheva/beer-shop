@@ -1,10 +1,16 @@
 /* eslint-disable react/prop-types */
 import { Box, Button, Text } from "@chakra-ui/react";
-import popularProducts from "../../data/products/popularProducts";
-import allProducts from "../../data/products/allProducts";
+import useBeers from "../../hooks/useBeers";
+import usePopularBeers from "../../hooks/usePopularBeers";
 import DrawerCard from "../Drawers/DrawerCard";
+import Loading from "../Other/Loading";
 
 const SearchBody = ({ searchText, setSearchText }) => {
+  const { data: allProducts, isLoading } = useBeers();
+  const { data: popularProducts, isLoadingPopular } = usePopularBeers();
+
+  if (isLoading || isLoadingPopular) return <Loading />;
+
   const filteredProducts = searchText
     ? allProducts.filter((product) =>
         product.name.toLowerCase().includes(searchText.toLowerCase().trim())
@@ -38,7 +44,7 @@ const SearchBody = ({ searchText, setSearchText }) => {
             <DrawerCard
               key={product.id}
               id={product.id}
-              img={product.img}
+              img={product.imageUrl}
               brand={product.brand}
               name={product.name}
               price={product.price}

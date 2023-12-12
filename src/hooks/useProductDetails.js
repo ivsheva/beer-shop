@@ -16,6 +16,10 @@ function useProductDetail(product = null) {
 
   let inWish = wishlist.some((item) => item.name === product.name);
 
+  const discount = product.oldPrice
+    ? Math.round(((product.oldPrice - product.price) / product.oldPrice) * 100)
+    : 0;
+
   const handleAddToCart = () => {
     if (!cart.find((item) => item.name === product.name)) {
       productAmount > 0
@@ -37,11 +41,17 @@ function useProductDetail(product = null) {
   };
 
   return {
+    dispatch,
+    cart,
+    wishlist,
     productAmount,
     setProductAmount,
     inWish,
     handleAddToCart,
     handleAddToWish,
+    discount,
+    cartDisclosure,
+    wishDisclosure,
   };
 }
 

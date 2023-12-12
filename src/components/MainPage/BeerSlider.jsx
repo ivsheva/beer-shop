@@ -1,12 +1,26 @@
+/* eslint-disable react/prop-types */
 import { Box, HStack, Text } from "@chakra-ui/react";
 import { useState } from "react";
 import "swiper/css";
 import "swiper/css/navigation";
-import { additionalProducts, mainProducts } from "../../data/products/products";
 import Slider from "../Products/Slider";
+import useBeerByTag from "../../hooks/useBeerByTag";
+import Loading from "../Other/Loading";
+
+const headings = ["NEW ARRIVALS", "Popular products"];
 
 const BeerSlider = () => {
   const [activeHeading, setActiveHeading] = useState(0);
+
+  const { data: mainProducts, isLoading } = useBeerByTag("slided_main");
+  const { data: popularProducts, isLoading: isLoadingPopular } =
+    useBeerByTag("slided_popular");
+
+  const handleHeadingClick = (index) => {
+    setActiveHeading(index);
+  };
+
+  if (isLoading || isLoadingPopular) return <Loading />;
 
   return (
     <Box
@@ -17,31 +31,37 @@ const BeerSlider = () => {
       alignItems="center"
     >
       <HStack fontWeight="700" fontSize="16 px" marginBottom="48px">
-        <Text
-          cursor="pointer"
-          onClick={() => setActiveHeading(0)}
-          color={activeHeading === 0 ? "black" : "middlegrey"}
-          transition="all 0.2s ease-in"
-          as="h3"
-        >
-          NEW ARRIVALS
-        </Text>
-        <Text
-          cursor="pointer"
-          onClick={() => setActiveHeading(1)}
-          color={activeHeading === 1 ? "black" : "middlegrey"}
-          transition="all 0.2s ease-in"
-          as="h3"
-        >
-          Popular products
-        </Text>
+        {headings.map((heading, index) => (
+          <Text
+            key={index}
+            cursor="pointer"
+            onClick={() => handleHeadingClick(index)}
+            color={activeHeading === index ? "black" : "middlegrey"}
+            transition="all 0.2s ease-in"
+            as="h3"
+          >
+            {heading}
+          </Text>
+        ))}
       </HStack>
+      <ProductSlider
+        activeHeading={activeHeading}
+        mainProducts={mainProducts}
+        popularProducts={popularProducts}
+      />
+    </Box>
+  );
+};
+
+const ProductSlider = ({ activeHeading, mainProducts, popularProducts }) => {
+  return (
+    <>
       {activeHeading === 0 ? (
         <Slider goods={mainProducts} />
       ) : (
-        <Slider goods={additionalProducts} />
+        <Slider goods={popularProducts} />
       )}
-    </Box>
+    </>
   );
 };
 

@@ -13,8 +13,18 @@ class APIClient {
       .get("", { params: { type } })
       .then((response) => response.data);
   }
+  async getByTag(tag) {
+    return axiosInstance
+      .get("", { params: { tag } })
+      .then((response) => response.data);
+  }
   async getById(id) {
     return axiosInstance.get(`/${id}`).then((response) => response.data);
+  }
+  async getPopular() {
+    return axiosInstance
+      .get("", { params: { isPopular: true } })
+      .then((response) => response.data);
   }
 }
 

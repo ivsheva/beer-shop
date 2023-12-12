@@ -163,17 +163,8 @@ const GridBody = ({ sortedProducts }) => {
       marginTop="50px"
       gap="50px"
     >
-      {sortedProducts.map((beerItem) => (
-        <BeerCard
-          key={beerItem.id}
-          id={beerItem.id}
-          img={beerItem.imageUrl}
-          brand={beerItem.brand}
-          name={beerItem.name}
-          price={beerItem.price}
-          oldPrice={beerItem.oldPrice}
-          isFull={true}
-        />
+      {sortedProducts.map((product) => (
+        <BeerCard key={product.id} product={product} isFull={true} />
       ))}
     </SimpleGrid>
   );

@@ -1,59 +1,18 @@
 /* eslint-disable react/prop-types */
 import { Box, Button, Image, Text, Tooltip } from "@chakra-ui/react";
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
-import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { DisclosureContext } from "../../contexts/DisclosureContext";
+import useProductDetails from "../../hooks/useProductDetails";
 import { ADD_TO_CART } from "../../store/cartSlice";
 import { ADD_TO_WISH, REMOVE_FROM_WISH } from "../../store/wishlistSlice";
 
-const BeerCard = ({
-  id,
-  img,
-  brand,
-  name,
-  price,
-  oldPrice = null,
-  isFull = false,
-  quantity = 1,
-}) => {
-  const { wishDisclosure, cartDisclosure } = useContext(DisclosureContext);
+const BeerCard = ({ product, isFull = false }) => {
   const [isHover, setIsHover] = useState(false);
-  const dispatch = useDispatch();
-  const cart = useSelector((state) => state.cart);
-  const wishlist = useSelector((state) => state.wishlist);
-  let inWish = wishlist.some((item) => item.name === name);
-
-  const discount = oldPrice
-    ? Math.round(((oldPrice - price) / oldPrice) * 100)
-    : 0;
-
-  const handleAddToCart = (event) => {
-    event.preventDefault();
-    const newItem = { id, img, brand, name, price, quantity };
-
-    if (!cart.find((item) => item.name === newItem.name)) {
-      dispatch(ADD_TO_CART(newItem));
-      cartDisclosure.onOpen();
-    }
-  };
-
-  const handleAddToWish = (event) => {
-    event.preventDefault();
-    const newItem = { id, img, brand, name, price };
-
-    if (!wishlist.find((item) => item.name === newItem.name)) {
-      dispatch(ADD_TO_WISH(newItem));
-      wishDisclosure.onOpen();
-    } else {
-      inWish = false;
-      dispatch(REMOVE_FROM_WISH(newItem.id));
-    }
-  };
+  const { inWish, discount } = useProductDetails(product);
 
   return (
-    <Link to={`products/${id}`}>
+    <Link to={`products/${product.id}`}>
       <Box
         display="flex"
         position="relative"
@@ -64,19 +23,20 @@ const BeerCard = ({
         onMouseLeave={() => setIsHover(false)}
         minHeight="400px"
       >
-        <Image src={img} width="250px" height="300px" fit="contain" />
-        <Text color="darkgrey" textAlign="left">
-          {brand}
-        </Text>
-        <ProductName productName={name} />
-        <PriceText oldPrice={oldPrice} price={price} />
-        <ShowWishlist inWish={inWish} handleAddToWish={handleAddToWish} />
-        <HoverText
-          isHover={isHover}
-          isFull={isFull}
-          handleAddToCart={handleAddToCart}
+        <Image
+          src={product.imageUrl}
+          width="250px"
+          height="300px"
+          fit="contain"
         />
-        <DiscountText oldPrice={oldPrice} discount={discount} />
+        <Text color="darkgrey" textAlign="left">
+          {product.brand}
+        </Text>
+        <ProductName productName={product.name} />
+        <PriceText oldPrice={product.oldPrice} price={product.price} />
+        <ShowWishlist product={product} inWish={inWish} />
+        <HoverText product={product} isHover={isHover} isFull={isFull} />
+        <DiscountText oldPrice={product.oldPrice} discount={discount} />
       </Box>
     </Link>
   );
@@ -116,7 +76,21 @@ const PriceText = ({ oldPrice, price }) => {
   );
 };
 
-const ShowWishlist = ({ inWish, handleAddToWish }) => {
+const ShowWishlist = ({ product, inWish }) => {
+  const { dispatch, wishlist, wishDisclosure } = useProductDetails(product);
+
+  const handleAddToWish = (event) => {
+    event.preventDefault();
+
+    if (!wishlist.find((item) => item.name === product.name)) {
+      dispatch(ADD_TO_WISH(product));
+      wishDisclosure.onOpen();
+    } else {
+      inWish = false;
+      dispatch(REMOVE_FROM_WISH(product.id));
+    }
+  };
+
   return (
     <Box position="absolute" top="10px" right="10px">
       <Tooltip
@@ -148,7 +122,18 @@ const ShowWishlist = ({ inWish, handleAddToWish }) => {
   );
 };
 
-const HoverText = ({ isHover, isFull, handleAddToCart }) => {
+const HoverText = ({ product, isHover, isFull }) => {
+  const { dispatch, cart, cartDisclosure } = useProductDetails(product);
+
+  const handleAddToCart = (event) => {
+    event.preventDefault();
+
+    if (!cart.find((item) => item.name === product.name)) {
+      dispatch(ADD_TO_CART(product));
+      cartDisclosure.onOpen();
+    }
+  };
+
   return (
     isHover && (
       <Button
