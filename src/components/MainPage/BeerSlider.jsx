@@ -4,7 +4,7 @@ import { useState } from "react";
 import "swiper/css";
 import "swiper/css/navigation";
 import Slider from "../Products/Slider";
-import useBeerByTag from "../../hooks/useBeerByTag";
+import useBeersByTag from "../../hooks/useBeersByTag";
 import Loading from "../Other/Loading";
 
 const headings = ["NEW ARRIVALS", "Popular products"];
@@ -12,9 +12,9 @@ const headings = ["NEW ARRIVALS", "Popular products"];
 const BeerSlider = () => {
   const [activeHeading, setActiveHeading] = useState(0);
 
-  const { data: mainProducts, isLoading } = useBeerByTag("slided_main");
+  const { data: mainProducts, isLoading } = useBeersByTag("slided_main");
   const { data: popularProducts, isLoading: isLoadingPopular } =
-    useBeerByTag("slided_popular");
+    useBeersByTag("slided_popular");
 
   const handleHeadingClick = (index) => {
     setActiveHeading(index);

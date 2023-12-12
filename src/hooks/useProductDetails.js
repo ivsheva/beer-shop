@@ -4,7 +4,7 @@ import { DisclosureContext } from "../contexts/DisclosureContext";
 import { ADD_TO_CART } from "../store/cartSlice";
 import { ADD_TO_WISH, REMOVE_FROM_WISH } from "../store/wishlistSlice";
 
-function useProductDetail(product = null) {
+function useProductDetails(product = null) {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart);
   const wishlist = useSelector((state) => state.wishlist);
@@ -55,4 +55,4 @@ function useProductDetail(product = null) {
   };
 }
 
-export default useProductDetail;
+export default useProductDetails;

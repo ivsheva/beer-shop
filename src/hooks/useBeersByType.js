@@ -3,10 +3,10 @@ import APIClient from "../services/apiClient";
 
 const apiClient = new APIClient();
 
-const useBeerByType = (type) =>
+const useBeersByType = (type) =>
   useQuery({
     queryKey: ["beers", type],
     queryFn: () => apiClient.getByType(type),
   });
 
-export default useBeerByType;
+export default useBeersByType;

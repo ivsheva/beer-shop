@@ -3,10 +3,10 @@ import { useQuery } from "@tanstack/react-query";
 
 const apiClient = new APIClient();
 
-const useBeerByTag = (tag) =>
+const useBeersByTag = (tag) =>
   useQuery({
     queryKey: ["beers", tag],
     queryFn: () => apiClient.getByTag(tag),
   });
 
-export default useBeerByTag;
+export default useBeersByTag;

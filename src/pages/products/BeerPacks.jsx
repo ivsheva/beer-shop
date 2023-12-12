@@ -1,10 +1,10 @@
 import { Box } from "@chakra-ui/react";
 import Loading from "../../components/Other/Loading";
 import ProductPage from "../../components/Products/ProductPage";
-import useBeerByType from "../../hooks/useBeerByType";
+import useBeersByType from "../../hooks/useBeersByType";
 
 const BeerPacks = () => {
-  const { data: products, isLoading } = useBeerByType("pack");
+  const { data: products, isLoading } = useBeersByType("pack");
 
   if (isLoading) return <Loading />;
 
