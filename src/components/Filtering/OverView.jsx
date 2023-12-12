@@ -1,5 +1,4 @@
 import { Box, Text } from "@chakra-ui/react";
-import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 const OverView = ({ pathName }) => {
@@ -18,10 +17,6 @@ const OverView = ({ pathName }) => {
       </Text>
     </Box>
   );
-};
-
-OverView.propTypes = {
-  pathName: PropTypes.string.isRequired,
 };
 
 export default OverView;

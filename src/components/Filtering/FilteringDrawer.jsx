@@ -7,7 +7,6 @@ import {
   DrawerHeader,
   DrawerOverlay,
 } from "@chakra-ui/react";
-import PropTypes from "prop-types";
 import Brands from "./Brands";
 import Prices from "./Prices";
 
@@ -28,11 +27,6 @@ const FilteringDrawer = ({ isOpen, onClose, brands, prices }) => {
       </DrawerContent>
     </Drawer>
   );
-};
-
-FilteringDrawer.propTypes = {
-  isOpen: PropTypes.bool.isRequired,
-  onClose: PropTypes.func.isRequired,
 };
 
 export default FilteringDrawer;

@@ -1,5 +1,4 @@
 import { Box, Image, Text } from "@chakra-ui/react";
-import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 const ProductCard = ({ img, genre, title, link }) => {
@@ -38,13 +37,6 @@ const ProductCard = ({ img, genre, title, link }) => {
       </Box>
     </Link>
   );
-};
-
-ProductCard.propTypes = {
-  img: PropTypes.string.isRequired,
-  genre: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  link: PropTypes.string.isRequired,
 };
 
 export default ProductCard;

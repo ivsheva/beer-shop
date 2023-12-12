@@ -1,5 +1,4 @@
 import { Box, Text } from "@chakra-ui/react";
-import PropTypes from "prop-types";
 import { useState } from "react";
 import { PiCaretDownBold } from "react-icons/pi";
 import { Link } from "react-router-dom";
@@ -54,12 +53,6 @@ const FooterAccordion = ({ title, email, list }) => {
       )}
     </Box>
   );
-};
-
-FooterAccordion.propTypes = {
-  title: PropTypes.string.isRequired,
-  email: PropTypes.string.isRequired,
-  list: PropTypes.array.isRequired,
 };
 
 export default FooterAccordion;

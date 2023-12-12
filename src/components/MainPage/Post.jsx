@@ -1,5 +1,4 @@
 import { Box, Image, Link, Text } from "@chakra-ui/react";
-import PropTypes from "prop-types";
 import { useState } from "react";
 import { AiOutlineHeart } from "react-icons/ai";
 import { BsBookmark } from "react-icons/bs";
@@ -53,12 +52,6 @@ const Post = ({ img, description, link }) => {
       </Box>
     </Link>
   );
-};
-
-Post.propTypes = {
-  img: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  link: PropTypes.string.isRequired,
 };
 
 export default Post;
