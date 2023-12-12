@@ -1,7 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-let lastId = 0;
-
 const getCart = () => {
   const cart = localStorage.getItem("cart");
   return cart ? JSON.parse(cart) : [];
@@ -13,7 +11,7 @@ const cartSlice = createSlice({
   reducers: {
     ADD_TO_CART: (cart, action) => {
       // update cart
-      cart.push({ id: ++lastId, ...action.payload });
+      cart.push({ ...action.payload });
 
       // set updated cart to localStorage
       localStorage.setItem("cart", JSON.stringify(cart));

@@ -1,7 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-let lastId = 0;
-
 const getWishlist = () => {
   const wishlist = localStorage.getItem("wishlist");
   return wishlist ? JSON.parse(wishlist) : [];
@@ -12,7 +10,7 @@ const wishSlice = createSlice({
   initialState: getWishlist,
   reducers: {
     ADD_TO_WISH: (wishlist, action) => {
-      wishlist.push({ id: ++lastId, ...action.payload });
+      wishlist.push({ ...action.payload });
 
       localStorage.setItem("wishlist", JSON.stringify(wishlist));
     },
