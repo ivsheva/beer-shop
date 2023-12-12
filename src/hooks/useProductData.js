@@ -9,7 +9,19 @@ function useProductData(products) {
   const min = Math.min(...prices);
   const max = Math.max(...prices);
 
-  const title = "Crowlers"; // TODO
+  const productGenres = {
+    style: "Style",
+    country: "Country",
+    pack: "Packs",
+    glass: "Glasses",
+    crowler: "Crowlers",
+    voucher: "Vouchers",
+    sale: "Sales",
+  };
+
+  const title = products.some((beer) => beer.type === "main")
+    ? "Craft beers"
+    : productGenres[products[0].type];
 
   const uniqueBrands = brands.filter(
     (item, index, self) =>
