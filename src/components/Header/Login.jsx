@@ -39,6 +39,14 @@ export default Login;
 
 const AccountPopover = () => {
   const { logout } = useAuth0();
+
+  const handleClick = () => {
+    // clear cart and wishlist
+    localStorage.clear();
+
+    logout();
+  };
+
   return (
     <Popover>
       <PopoverTrigger>
@@ -52,11 +60,7 @@ const AccountPopover = () => {
         <PopoverCloseButton />
         <PopoverHeader>My Account</PopoverHeader>
         <PopoverBody>
-          <Button
-            onClick={() => logout()}
-            colorScheme="green"
-            bgColor="darkgreen"
-          >
+          <Button onClick={handleClick} colorScheme="green" bgColor="darkgreen">
             Leave account
           </Button>
         </PopoverBody>
