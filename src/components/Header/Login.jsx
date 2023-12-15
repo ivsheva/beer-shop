@@ -10,16 +10,16 @@ import {
   PopoverContent,
   PopoverHeader,
   PopoverTrigger,
-  Spinner,
   Text,
   VStack,
 } from "@chakra-ui/react";
 import { BiUserCircle } from "react-icons/bi";
+import LoginSkeleton from "../Skeletons/Login/LoginSkeleton";
 
 const Login = () => {
   const { isLoading, isAuthenticated, loginWithRedirect } = useAuth0();
 
-  if (isLoading) return <Spinner />;
+  if (isLoading) return <LoginSkeleton />;
 
   return (
     <VStack spacing="0" cursor="pointer">

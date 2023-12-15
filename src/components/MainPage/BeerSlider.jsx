@@ -3,9 +3,9 @@ import { Box, HStack, Text } from "@chakra-ui/react";
 import { useState } from "react";
 import "swiper/css";
 import "swiper/css/navigation";
-import Slider from "../Products/Slider";
 import useBeersByTag from "../../hooks/useBeersByTag";
-import Loading from "../Other/Loading";
+import Slider from "../Products/Slider";
+import ProductSliderSkeleton from "../Skeletons/ProductPage/ProductSliderSkeleton";
 
 const headings = ["NEW ARRIVALS", "Popular products"];
 
@@ -20,7 +20,7 @@ const BeerSlider = () => {
     setActiveHeading(index);
   };
 
-  if (isLoading || isLoadingPopular) return <Loading />;
+  if (isLoading || isLoadingPopular) return <ProductSliderSkeleton />;
 
   return (
     <Box

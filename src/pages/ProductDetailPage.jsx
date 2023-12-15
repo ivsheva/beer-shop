@@ -3,9 +3,9 @@ import { Box, Button, Image, Input, Link, Show, Text } from "@chakra-ui/react";
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 import { useParams } from "react-router-dom";
 import TrustMark from "../components/MainPage/TrustMark";
-import Loading from "../components/Other/Loading";
 import Description from "../components/ProductPage/Description";
 import DescriptionAccordion from "../components/ProductPage/DescriptionAccordion";
+import ProductDetailPageSkeleton from "../components/Skeletons/ProductPage/ProductDetailPageSkeleton";
 import useBeer from "../hooks/useBeer";
 import useProductDetail from "../hooks/useProductDetails";
 
@@ -13,7 +13,7 @@ const ProductDetailPage = () => {
   const { id } = useParams();
   const { data: product, isLoading } = useBeer(id);
 
-  if (isLoading) return <Loading />;
+  if (isLoading) return <ProductDetailPageSkeleton />;
 
   return (
     <Box

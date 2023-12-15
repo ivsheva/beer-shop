@@ -1,12 +1,12 @@
 import { Box } from "@chakra-ui/react";
-import Loading from "../../components/Other/Loading";
 import ProductPage from "../../components/Products/ProductPage";
 import useBeersByType from "../../hooks/useBeersByType";
+import ProductPageSkeleton from "../../components/Skeletons/ProductPage/ProductPageSkeleton";
 
 const Countries = () => {
   const { data: products, isLoading } = useBeersByType("country");
 
-  if (isLoading) return <Loading />;
+  if (isLoading) return <ProductPageSkeleton />;
 
   return <Box>{products && <ProductPage products={products} />}</Box>;
 };

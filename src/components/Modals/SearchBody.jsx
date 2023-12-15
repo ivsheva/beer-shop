@@ -3,19 +3,22 @@ import { Box, Button, Text } from "@chakra-ui/react";
 import useBeers from "../../hooks/useBeers";
 import usePopularBeers from "../../hooks/usePopularBeers";
 import DrawerCard from "../Drawers/DrawerCard";
-import Loading from "../Other/Loading";
+import ProductSearchSkeleton from "../Skeletons/ProductPage/ProductSearchSkeleton";
 
 const SearchBody = ({ searchText, setSearchText }) => {
   const { data: allProducts, isLoading } = useBeers();
   const { data: popularProducts, isLoadingPopular } = usePopularBeers();
 
-  if (isLoading || isLoadingPopular) return <Loading />;
+  if (isLoading || isLoadingPopular || !popularProducts)
+    return <ProductSearchSkeleton />;
 
   const filteredProducts = searchText
     ? allProducts.filter((product) =>
         product.name.toLowerCase().includes(searchText.toLowerCase().trim())
       )
     : popularProducts;
+
+  console.log(popularProducts);
 
   return (
     <Box>
