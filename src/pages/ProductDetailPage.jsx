@@ -1,6 +1,7 @@
 import { Box, Button, Image, Input, Link, Show, Text } from "@chakra-ui/react";
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 import { useParams } from "react-router-dom";
+import imageNotFound from "../img/img/not-found.jpg";
 import TrustMark from "../components/MainPage/TrustMark";
 import Description from "../components/ProductPage/Description";
 import DescriptionAccordion from "../components/ProductPage/DescriptionAccordion";
@@ -32,7 +33,8 @@ const ProductDetailPage = () => {
 const ProductImage = ({ imageUrl }) => {
   return (
     <Image
-      src={imageUrl}
+      src={imageUrl || imageNotFound}
+      alt="Product image"
       float={{ base: "unset", lg: "left" }}
       maxWidth={{ base: "300px", md: "600px", lg: "500px" }}
       maxHeight="800px"

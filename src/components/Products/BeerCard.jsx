@@ -3,6 +3,7 @@ import { useState } from "react";
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import useProductDetails from "../../hooks/useProductDetails";
+import imageNotFound from "../../img/img/not-found.jpg";
 import { ADD_TO_CART } from "../../store/cartSlice";
 import { ADD_TO_WISH, REMOVE_FROM_WISH } from "../../store/wishlistSlice";
 
@@ -23,7 +24,8 @@ const BeerCard = ({ product, isFull = false }) => {
         minHeight="400px"
       >
         <Image
-          src={product.imageUrl}
+          src={product.imageUrl || imageNotFound}
+          alt="Product Image"
           width="250px"
           height="300px"
           fit="contain"

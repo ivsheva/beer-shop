@@ -1,10 +1,11 @@
 import { Box, Image, Text, useToast } from "@chakra-ui/react";
+import { useContext } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { DisclosureContext } from "../../contexts/DisclosureContext";
+import imageNotFound from "../../img/img/not-found.jpg";
 import { ADD_TO_CART, REMOVE_FROM_CART } from "../../store/cartSlice";
 import { REMOVE_FROM_WISH } from "../../store/wishlistSlice";
-import { useContext } from "react";
-import { DisclosureContext } from "../../contexts/DisclosureContext";
-import { useNavigate } from "react-router-dom";
 
 const DrawerCard = ({
   id,
@@ -75,7 +76,8 @@ const DrawerCard = ({
   return (
     <Box display="flex" padding={{ base: "none", sm: "24px" }}>
       <Image
-        src={img}
+        src={img || imageNotFound}
+        alt="Product Image"
         float="left"
         maxBlockSize="140px"
         fit="cover"

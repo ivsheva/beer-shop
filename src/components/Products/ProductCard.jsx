@@ -1,5 +1,6 @@
 import { Box, Image, Text } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
+import imageNotFound from "../../img/img/not-found.jpg";
 
 const ProductCard = ({ img, genre, title, link }) => {
   return (
@@ -14,7 +15,8 @@ const ProductCard = ({ img, genre, title, link }) => {
         lineHeight="190%"
       >
         <Image
-          src={img}
+          src={img || imageNotFound}
+          alt="Product image"
           minWidth="280px"
           width="100%"
           height={{ base: "400px", sm: "520px" }}
