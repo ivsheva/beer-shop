@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { Box, Text } from "@chakra-ui/react";
 import { useState } from "react";
 import Socials from "./Socials";

@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { Box, Button, Image, Input, Link, Show, Text } from "@chakra-ui/react";
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 import { useParams } from "react-router-dom";

@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { Box, Image, Text } from "@chakra-ui/react";
 
 const ServicePoster = ({ title, img }) => {

@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { Box, Button, Text } from "@chakra-ui/react";
 import useBeers from "../../hooks/useBeers";
 import usePopularBeers from "../../hooks/usePopularBeers";

@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { Box, Image, Text, useToast } from "@chakra-ui/react";
 import { useDispatch, useSelector } from "react-redux";
 import { ADD_TO_CART, REMOVE_FROM_CART } from "../../store/cartSlice";

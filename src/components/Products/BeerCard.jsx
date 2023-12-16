@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { Box, Button, Image, Text, Tooltip } from "@chakra-ui/react";
 import { useState } from "react";
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";

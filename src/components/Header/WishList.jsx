@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { Text, VStack } from "@chakra-ui/react";
 import { useContext } from "react";
 import { AiOutlineHeart } from "react-icons/ai";

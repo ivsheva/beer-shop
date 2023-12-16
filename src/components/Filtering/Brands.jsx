@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { Box, Checkbox, Link, Text } from "@chakra-ui/react";
 import { useState } from "react";
 import { PiCaretDownBold } from "react-icons/pi";

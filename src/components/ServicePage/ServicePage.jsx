@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { Box } from "@chakra-ui/react";
 import ServicePoster from "./ServicePoster";
 import ServicePages from "./ServicePages";

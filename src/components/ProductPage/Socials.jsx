@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { Box, Text } from "@chakra-ui/react";
 import { BsFacebook } from "react-icons/bs";
 import { AiOutlineWhatsApp } from "react-icons/ai";

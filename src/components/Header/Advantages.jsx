@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { Box, HStack, Image, List, ListItem, Text } from "@chakra-ui/react";
 import { AiFillStar } from "react-icons/ai";
 import { LuBox } from "react-icons/lu";
