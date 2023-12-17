@@ -44,20 +44,20 @@ const footerItems = [
       {
         id: 1,
         description: "Register",
-        link: "/account/",
         highlighted: false,
+        clickable: "login",
       },
       {
         id: 2,
         description: "My orders",
-        link: "/account/orders/",
         highlighted: false,
+        clickable: "cart",
       },
       {
         id: 3,
         description: "My wishlist",
-        link: "/account/wishlist",
         highlighted: false,
+        clickable: "wishlist",
       },
     ],
   },

@@ -1,14 +1,9 @@
-import { Box, Text } from "@chakra-ui/react";
-import { Link } from "react-router-dom";
+import { Flex, Text } from "@chakra-ui/react";
+import FooterLink from "./FooterLink";
 
 const FooterBlock = ({ title, email, list }) => {
   return (
-    <Box
-      display="flex"
-      flexDirection="column"
-      marginTop="64px"
-      lineHeight="140%"
-    >
+    <Flex direction="column" marginTop="64px" lineHeight="140%">
       <Text
         fontFamily="Questrial, sans-serif"
         fontSize="15px"
@@ -17,35 +12,23 @@ const FooterBlock = ({ title, email, list }) => {
       >
         {title}
       </Text>
-      <Box display="flex" flexDirection="column" rowGap="4px">
-        {list.map((listItem) => (
-          <Text
-            fontWeight={listItem.highlighted ? "600" : "400"}
-            fontSize="15px"
-            marginBottom={listItem.highlighted ? "8px" : ""}
-            key={listItem.id}
-          >
-            {listItem.link ? (
-              <Link to={listItem.link}>{listItem.description}</Link>
-            ) : (
-              listItem.description
-            )}
-          </Text>
+      <Flex direction="column" rowGap="4px">
+        {list.map((footerItem) => (
+          <FooterLink key={footerItem.id} footerItem={footerItem} />
         ))}
         {email && (
-          <Box
+          <Flex
             marginTop="20px"
-            display="flex"
-            flexDirection="column"
+            direction="column"
             rowGap="4px"
             fontSize="14px"
           >
             <Text>E-mail: {email}</Text>
             <Text>KVK-nummer: 68251262</Text>
-          </Box>
+          </Flex>
         )}
-      </Box>
-    </Box>
+      </Flex>
+    </Flex>
   );
 };
 

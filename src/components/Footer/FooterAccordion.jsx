@@ -1,7 +1,7 @@
 import { Box, Text } from "@chakra-ui/react";
 import { useState } from "react";
 import { PiCaretDownBold } from "react-icons/pi";
-import { Link } from "react-router-dom";
+import FooterLink from "./FooterLink";
 
 const FooterAccordion = ({ title, email, list }) => {
   const [show, setShow] = useState(false);
@@ -25,18 +25,7 @@ const FooterAccordion = ({ title, email, list }) => {
       {show && (
         <Box display="flex" flexDirection="column" margin="24px 0px 32px 24px">
           {list.map((footerItem) => (
-            <Text
-              fontSize="14px"
-              fontWeight={footerItem.highlighted ? "600" : "400"}
-              lineHeight="200%"
-              key={footerItem.id}
-            >
-              {footerItem.link ? (
-                <Link to={footerItem.link}>{footerItem.description}</Link>
-              ) : (
-                footerItem.description
-              )}
-            </Text>
+            <FooterLink key={footerItem.id} footerItem={footerItem} />
           ))}
           {email && (
             <Box
