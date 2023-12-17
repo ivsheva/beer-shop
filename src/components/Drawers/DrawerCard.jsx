@@ -1,39 +1,28 @@
-import { Box, Image, Text, useToast } from "@chakra-ui/react";
-import { useContext } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { Box, Flex, Image, Text, useToast } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
-import { DisclosureContext } from "../../contexts/DisclosureContext";
+import useDisclosure from "../../hooks/useDisclosure";
+import useGeneralProductData from "../../hooks/useGeneralProductData";
 import imageNotFound from "../../img/img/not-found.jpg";
 import { ADD_TO_CART, REMOVE_FROM_CART } from "../../store/cartSlice";
 import { REMOVE_FROM_WISH } from "../../store/wishlistSlice";
 
-const DrawerCard = ({
-  id,
-  img,
-  brand,
-  name,
-  price,
-  quantity = 1,
-  isWishItem = false,
-  isSearchItem = false,
-}) => {
+const DrawerCard = ({ product, isWishItem = false, isSearchItem = false }) => {
+  const { cart, dispatch } = useGeneralProductData();
   const navigate = useNavigate();
-  const dispatch = useDispatch();
   const toast = useToast();
-  const cart = useSelector((state) => state.cart);
   const {
     cartDisclosure,
     wishDisclosure,
     searchDisclosure,
     searchModalDisclosure,
-  } = useContext(DisclosureContext);
+  } = useDisclosure();
 
   const handleDelete = () => {
     if (isWishItem) {
-      dispatch(REMOVE_FROM_WISH(id));
+      dispatch(REMOVE_FROM_WISH(product.id));
       wishDisclosure.onClose();
     } else {
-      dispatch(REMOVE_FROM_CART(id));
+      dispatch(REMOVE_FROM_CART(product.id));
       cartDisclosure.onClose();
     }
     toast({
@@ -45,9 +34,8 @@ const DrawerCard = ({
   };
 
   const handleAdd = () => {
-    const newItem = { id, img, brand, name, price, quantity };
-    if (!cart.some((item) => item.name === newItem.name)) {
-      dispatch(ADD_TO_CART(newItem));
+    if (!cart.some((item) => item.name === product.name)) {
+      dispatch(ADD_TO_CART(product));
       toast({
         title: "Item added",
         status: "success",
@@ -64,7 +52,7 @@ const DrawerCard = ({
   };
 
   const handleNavigate = () => {
-    navigate(`/all-beers/products/${id}`);
+    navigate(`/all-beers/products/${product.id}`);
     if (isWishItem) wishDisclosure.onClose();
     else if (isSearchItem) {
       window.innerWidth >= 768
@@ -74,9 +62,9 @@ const DrawerCard = ({
   };
 
   return (
-    <Box display="flex" padding={{ base: "none", sm: "24px" }}>
+    <Flex padding={{ base: "none", sm: "24px" }}>
       <Image
-        src={img || imageNotFound}
+        src={product.imageUrl || imageNotFound}
         alt="Product Image"
         float="left"
         maxBlockSize="140px"
@@ -86,17 +74,17 @@ const DrawerCard = ({
       />
       <Box fontFamily="Questrial, sans-serif1" marginLeft="32px">
         <Text fontSize="12px" fontWeight="400">
-          {brand}
+          {product.brand}
         </Text>
         <Text fontSize="16px" fontWeight="400">
-          {name}
+          {product.name}
         </Text>
-        <Box marginTop="12px" display="flex" justifyContent="space-between">
-          <Text fontFamily="Work Sans, sans-serif">€{price}</Text>
+        <Flex marginTop="12px" justify="space-between">
+          <Text fontFamily="Work Sans, sans-serif">€{product.price}</Text>
           {isWishItem ||
-            (!isSearchItem && <Text color="black">{quantity}</Text>)}
-        </Box>
-        <Box display="flex" marginTop="4px" color="green" columnGap="20px">
+            (!isSearchItem && <Text color="black">{product.quantity}</Text>)}
+        </Flex>
+        <Flex marginTop="4px" color="green" columnGap="20px">
           {!isSearchItem && (
             <Text
               onClick={handleDelete}
@@ -116,9 +104,9 @@ const DrawerCard = ({
                 Add to Cart
               </Text>
             ))}
-        </Box>
+        </Flex>
       </Box>
-    </Box>
+    </Flex>
   );
 };
 

@@ -1,4 +1,4 @@
-import { Box, Text } from "@chakra-ui/react";
+import { Flex, Text } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 
 const OverView = ({ pathName }) => {
@@ -10,12 +10,12 @@ const OverView = ({ pathName }) => {
   };
 
   return (
-    <Box display="flex" fontSize="14px" color="darkgrey" marginTop="20px">
+    <Flex fontSize="14px" color="darkgrey" marginTop="20px">
       <Link to="/">Back to overview / </Link>
       <Text color="lightblack" marginLeft="2px">
         {transformText(pathName)}
       </Text>
-    </Box>
+    </Flex>
   );
 };
 

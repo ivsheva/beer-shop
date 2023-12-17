@@ -1,4 +1,4 @@
-import { Box, Checkbox, Link, Text } from "@chakra-ui/react";
+import { Checkbox, Flex, Link, Text } from "@chakra-ui/react";
 import { useState } from "react";
 import { PiCaretDownBold } from "react-icons/pi";
 
@@ -8,16 +8,14 @@ const Brands = ({ brands }) => {
   const [isExpanded, setExpanded] = useState(true);
 
   return (
-    <Box
-      display="flex"
-      flexDirection="column"
+    <Flex
+      direction="column"
       width={{ base: "none", lg: "240px", xl: "260px" }}
       marginTop={{ base: "none", lg: "30px" }}
     >
-      <Box
-        display="flex"
-        justifyContent="space-between"
-        alignItems="center"
+      <Flex
+        justify="space-between"
+        align="center"
         paddingY="12px"
         onClick={() => setExpanded((prevExpanded) => !prevExpanded)}
       >
@@ -30,11 +28,11 @@ const Brands = ({ brands }) => {
           Brands
         </Text>
         <PiCaretDownBold size={10} />
-      </Box>
+      </Flex>
       {isExpanded && (
-        <Box display="flex" flexDirection="column" overflowY="scroll">
+        <Flex direction="column" overflowY="scroll">
           {uniqueBrands.map((item) => (
-            <Box key={item.id} display="flex">
+            <Flex key={item.id}>
               <Checkbox
                 size="lg"
                 colorScheme="teal"
@@ -56,11 +54,11 @@ const Brands = ({ brands }) => {
                   {item.brand}
                 </Link>
               </Checkbox>
-            </Box>
+            </Flex>
           ))}
-        </Box>
+        </Flex>
       )}
-    </Box>
+    </Flex>
   );
 };
 

@@ -1,4 +1,4 @@
-import { Box, Text } from "@chakra-ui/react";
+import { Text, Flex } from "@chakra-ui/react";
 import "swiper/css";
 import "swiper/css/autoplay";
 import "swiper/css/navigation";
@@ -9,13 +9,7 @@ import Post from "./Post";
 
 const Posts = () => {
   return (
-    <Box
-      display="flex"
-      flexDirection="column"
-      maxWidth="80%"
-      margin="0 auto"
-      marginTop="84px"
-    >
+    <Flex direction="column" maxWidth="80%" margin="0 auto" marginTop="84px">
       <Text
         fontFamily="Questrial, sans-serif"
         fontSize="20px"
@@ -46,7 +40,7 @@ const Posts = () => {
           </SwiperSlide>
         ))}
       </Swiper>
-    </Box>
+    </Flex>
   );
 };
 

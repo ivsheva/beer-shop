@@ -1,5 +1,5 @@
 import {
-  Box,
+  Flex,
   RangeSlider,
   RangeSliderFilledTrack,
   RangeSliderThumb,
@@ -10,23 +10,17 @@ import { useState } from "react";
 import { PiCaretDownBold } from "react-icons/pi";
 
 const Prices = ({ prices }) => {
-  const { min, max, filteredValues, setFilteredValues } = prices;
-
+  const { filteredValues } = prices;
   const [isExpanded, setExpanded] = useState(true);
 
   const showMin = filteredValues[0];
   const showMax = filteredValues[1];
 
   return (
-    <Box
-      display="flex"
-      flexDirection="column"
-      width={{ base: "none", lg: "240px", xl: "260px" }}
-    >
-      <Box
-        display="flex"
-        justifyContent="space-between"
-        alignItems="center"
+    <Flex direction="column" width={{ base: "none", lg: "240px", xl: "260px" }}>
+      <Flex
+        justify="space-between"
+        align="center"
         paddingY="8px"
         onClick={() => setExpanded((prevExpanded) => !prevExpanded)}
       >
@@ -39,40 +33,48 @@ const Prices = ({ prices }) => {
           Prices
         </Text>
         <PiCaretDownBold size={10} />
-      </Box>
+      </Flex>
       {isExpanded && (
-        <Box display="flex" flexDirection="column">
+        <Flex direction="column">
           <Text
             color="grey"
             fontSize="16px"
             fontWeight="400"
           >{`€${showMin} - €${showMax}`}</Text>
-          <RangeSlider
-            onChange={(event) => setFilteredValues(event)}
-            colorScheme="gray"
-            aria-label={["min", "max"]}
-            min={min}
-            step={0.01}
-            max={max}
-            defaultValue={[0, max]}
-          >
-            <RangeSliderTrack>
-              <RangeSliderFilledTrack />
-            </RangeSliderTrack>
-            <RangeSliderThumb
-              index={0}
-              _focus={{ boxShadow: "none" }}
-              backgroundColor="lightgreen"
-            />
-            <RangeSliderThumb
-              index={1}
-              _focus={{ boxShadow: "none" }}
-              backgroundColor="lightgreen"
-            />
-          </RangeSlider>
-        </Box>
+          <Slider prices={prices} />
+        </Flex>
       )}
-    </Box>
+    </Flex>
+  );
+};
+
+const Slider = ({ prices }) => {
+  const { min, max, setFilteredValues } = prices;
+
+  return (
+    <RangeSlider
+      onChange={(event) => setFilteredValues(event)}
+      colorScheme="gray"
+      aria-label={["min", "max"]}
+      min={min}
+      step={0.01}
+      max={max}
+      defaultValue={[0, max]}
+    >
+      <RangeSliderTrack>
+        <RangeSliderFilledTrack />
+      </RangeSliderTrack>
+      <RangeSliderThumb
+        index={0}
+        _focus={{ boxShadow: "none" }}
+        backgroundColor="lightgreen"
+      />
+      <RangeSliderThumb
+        index={1}
+        _focus={{ boxShadow: "none" }}
+        backgroundColor="lightgreen"
+      />
+    </RangeSlider>
   );
 };
 

@@ -1,4 +1,4 @@
-import { Box, HStack, Text } from "@chakra-ui/react";
+import { Flex, HStack, Text } from "@chakra-ui/react";
 import { useState } from "react";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -11,6 +11,7 @@ const headings = ["NEW ARRIVALS", "Popular products"];
 const BeerSlider = () => {
   const [activeHeading, setActiveHeading] = useState(0);
 
+  // getting products from the server
   const { data: mainProducts, isLoading } = useBeersByTag("slided_main");
   const { data: popularProducts, isLoading: isLoadingPopular } =
     useBeersByTag("slided_popular");
@@ -22,13 +23,7 @@ const BeerSlider = () => {
   if (isLoading || isLoadingPopular) return <ProductSliderSkeleton />;
 
   return (
-    <Box
-      marginTop="72px"
-      display="flex"
-      flexDirection="column"
-      justifyContent="center"
-      alignItems="center"
-    >
+    <Flex marginTop="72px" direction="column" justify="center" align="center">
       <HStack fontWeight="700" fontSize="16 px" marginBottom="48px">
         {headings.map((heading, index) => (
           <Text
@@ -48,7 +43,7 @@ const BeerSlider = () => {
         mainProducts={mainProducts}
         popularProducts={popularProducts}
       />
-    </Box>
+    </Flex>
   );
 };
 

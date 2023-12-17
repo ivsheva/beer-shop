@@ -1,4 +1,4 @@
-import { Box, Image, Link, Text } from "@chakra-ui/react";
+import { Box, Image, Link, Text, Flex } from "@chakra-ui/react";
 import { useState } from "react";
 import { AiOutlineHeart } from "react-icons/ai";
 import { BsBookmark } from "react-icons/bs";
@@ -42,11 +42,11 @@ const Post = ({ img, description, link }) => {
             >
               {description}
             </Text>
-            <Box display="flex" marginTop="20px" gap="16px">
+            <Flex marginTop="20px" gap="16px">
               <AiOutlineHeart color="white" size={24} />
               <FaRegCommentDots color="white" size={24} />
               <BsBookmark color="white" size={24} />
-            </Box>
+            </Flex>
           </Box>
         )}
       </Box>

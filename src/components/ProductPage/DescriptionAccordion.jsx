@@ -1,4 +1,4 @@
-import { Box, Text } from "@chakra-ui/react";
+import { Box, Text, Flex } from "@chakra-ui/react";
 import { useState } from "react";
 import { PiCaretDownBold } from "react-icons/pi";
 import Socials from "./Socials";
@@ -7,17 +7,16 @@ const DescriptionAccordion = ({ title, content = null }) => {
   const [isActive, setIsActive] = useState(true);
 
   return (
-    <Box display="flex" flexDirection="column">
-      <Box
-        display="flex"
+    <Flex direction="column">
+      <Flex
         paddingY="16px"
-        justifyContent="space-between"
+        justify="space-between"
         borderBottom={!isActive ? "1px solid rgba(0, 0, 0, 0.1)" : "none"}
         onClick={() => setIsActive((prevActive) => !prevActive)}
       >
         <Text>{title}</Text>
         <PiCaretDownBold />
-      </Box>
+      </Flex>
       {isActive && (
         <Box
           borderBottom={isActive ? "1px solid rgba(0, 0, 0, 0.1)" : "none"}
@@ -37,7 +36,7 @@ const DescriptionAccordion = ({ title, content = null }) => {
           )}
         </Box>
       )}
-    </Box>
+    </Flex>
   );
 };
 

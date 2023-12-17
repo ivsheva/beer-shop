@@ -1,19 +1,19 @@
-import { Box, Text } from "@chakra-ui/react";
-import { BsFacebook } from "react-icons/bs";
+import { Flex, Text } from "@chakra-ui/react";
 import { AiOutlineWhatsApp } from "react-icons/ai";
+import { BsFacebook } from "react-icons/bs";
 
 const Socials = ({ size }) => {
   return (
-    <Box display="flex" columnGap="16px" justifyContent="center">
-      <Box display="flex" columnGap="8px">
+    <Flex columnGap="16px" justify="center">
+      <Flex columnGap="8px">
         <BsFacebook size={size} />
         <Text>Facebook</Text>
-      </Box>
-      <Box display="flex" columnGap="8px">
+      </Flex>
+      <Flex columnGap="8px">
         <AiOutlineWhatsApp size={size} />
         <Text>Whatsapp</Text>
-      </Box>
-    </Box>
+      </Flex>
+    </Flex>
   );
 };
 

@@ -1,13 +1,14 @@
 /* eslint-disable react/no-unescaped-entities */
-import { Box, Button, Heading, Text } from "@chakra-ui/react";
+import { Button, Flex, Heading, Text } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
+import darkerBg from "../helpers/darkerBg";
 import errorBg from "../img/img/error-bg.jpg";
 
 const ErrorPage = () => {
   const navigate = useNavigate();
 
   return (
-    <Box
+    <Flex
       width="100%"
       position="relative"
       bgImage={errorBg}
@@ -15,24 +16,14 @@ const ErrorPage = () => {
       bgSize="cover"
       bgRepeat="no-repeat"
       bgPosition="center"
-      display="flex"
-      flexDirection="column"
-      justifyContent="center"
-      alignItems="center"
-      _before={{
-        content: '""',
-        position: "absolute",
-        top: 0,
-        left: 0,
-        width: "100%",
-        height: "100%",
-        backgroundColor: "rgba(0, 0, 0, 0.2)",
-      }}
+      direction="column"
+      justify="center"
+      align="center"
+      _before={darkerBg}
     >
-      <Box
+      <Flex
         color="white"
-        display="flex"
-        flexDirection="column"
+        direction="column"
         textAlign="center"
         zIndex="1"
         rowGap="20px"
@@ -58,8 +49,8 @@ const ErrorPage = () => {
         >
           Go back to home
         </Button>
-      </Box>
-    </Box>
+      </Flex>
+    </Flex>
   );
 };
 

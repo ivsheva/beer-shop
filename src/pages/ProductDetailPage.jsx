@@ -1,4 +1,13 @@
-import { Box, Button, Image, Input, Link, Show, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Image,
+  Input,
+  Link,
+  Show,
+  Text,
+  Flex,
+} from "@chakra-ui/react";
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 import { useParams } from "react-router-dom";
 import imageNotFound from "../img/img/not-found.jpg";
@@ -16,17 +25,16 @@ const ProductDetailPage = () => {
   if (isLoading) return <ProductDetailPageSkeleton />;
 
   return (
-    <Box
-      display="flex"
+    <Flex
       width={{ base: "80%", lg: "90%", xl: "60%" }}
       margin="0 auto"
-      flexDirection={{ base: "column", lg: "row" }}
-      justifyContent="center"
-      alignItems={{ base: "center", lg: "unset" }}
+      direction={{ base: "column", lg: "row" }}
+      justify="center"
+      align={{ base: "center", lg: "unset" }}
     >
       <ProductImage imageUrl={product.imageUrl} />
       <ProductBody product={product} />
-    </Box>
+    </Flex>
   );
 };
 
@@ -51,13 +59,12 @@ const ProductBody = ({ product }) => {
     handleAddToWish,
   } = useProductDetail(product);
   return (
-    <Box
-      display="flex"
-      flexDirection="column"
-      alignItems={{ base: "center", lg: "unset" }}
+    <Flex
+      direction="column"
+      align={{ base: "center", lg: "unset" }}
       marginTop="50px"
       marginLeft={{ base: "unset", lg: "60px", xl: "150px", "2xl": "200px" }}
-      flexWrap="wrap"
+      wrap="wrap"
     >
       <ProductInfo product={product} />
       <ProductControl
@@ -80,7 +87,7 @@ const ProductBody = ({ product }) => {
           <DescriptionAccordion title="Share" />
         </Box>
       </Show>
-    </Box>
+    </Flex>
   );
 };
 
@@ -115,7 +122,7 @@ const ProductControl = ({
   handleAddToWish,
 }) => {
   return (
-    <Box display="flex">
+    <Flex>
       <Input
         value={productAmount}
         onChange={(event) => setProductAmount(event.target.value)}
@@ -149,7 +156,7 @@ const ProductControl = ({
       >
         {inWish ? <AiFillHeart size={36} /> : <AiOutlineHeart size={36} />}
       </Button>
-    </Box>
+    </Flex>
   );
 };
 

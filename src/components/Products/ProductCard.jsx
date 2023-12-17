@@ -1,15 +1,14 @@
-import { Box, Image, Text } from "@chakra-ui/react";
+import { Flex, Image, Text } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import imageNotFound from "../../img/img/not-found.jpg";
 
 const ProductCard = ({ img, genre, title, link }) => {
   return (
     <Link to={link}>
-      <Box
-        display="flex"
-        flexDirection="column"
-        justifyContent="center"
-        alignItems="center"
+      <Flex
+        direction="column"
+        justify="center"
+        align="center"
         maxWidth="600px"
         width="100%"
         lineHeight="190%"
@@ -36,7 +35,7 @@ const ProductCard = ({ img, genre, title, link }) => {
         <Text fontWeight="700" marginTop="4px">
           VIEW PRODUCTS
         </Text>
-      </Box>
+      </Flex>
     </Link>
   );
 };

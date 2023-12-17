@@ -1,19 +1,18 @@
-import { Box, Text } from "@chakra-ui/react";
+import { Flex, Text } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import servicePages from "../../data/servicePages";
 import formatToUrl from "../../helpers/formatToUrl";
 
 const ServicePages = ({ activePage }) => {
   return (
-    <Box
-      display="flex"
+    <Flex
       width={{ base: "100%", lg: "70%" }}
       margin="0 auto"
-      flexWrap="wrap"
+      wrap="wrap"
       rowGap="20px"
       columnGap="20px"
       marginTop="20px"
-      justifyContent="center"
+      justify="center"
     >
       {servicePages.map((servicePage) => (
         <Link key={servicePage.id} to={servicePage.link}>
@@ -29,7 +28,7 @@ const ServicePages = ({ activePage }) => {
           </Text>
         </Link>
       ))}
-    </Box>
+    </Flex>
   );
 };
 

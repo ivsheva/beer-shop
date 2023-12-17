@@ -1,13 +1,12 @@
-import { Box } from "@chakra-ui/react";
+import { Flex } from "@chakra-ui/react";
 import productCards from "../../data/productCards";
 import ProductCard from "./ProductCard";
 
 const ProductCards = () => {
   return (
-    <Box
-      display="flex"
-      flexDirection={{ base: "column", lg: "row" }}
-      justifyContent="space-between"
+    <Flex
+      direction={{ base: "column", lg: "row" }}
+      justify="space-between"
       columnGap="20px"
       rowGap="50px"
       width="80%"
@@ -24,7 +23,7 @@ const ProductCards = () => {
           link={productCard.link}
         />
       ))}
-    </Box>
+    </Flex>
   );
 };
 

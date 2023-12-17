@@ -1,12 +1,12 @@
-import { Box, Link, Text } from "@chakra-ui/react";
+import { Flex, Link, Text } from "@chakra-ui/react";
+import darkerBg from "../../helpers/darkerBg";
 import bannerBg from "../../img/img/bg-banner-1.jpg";
 
 const SubscriptionPoster = () => {
   return (
-    <Box
-      display="flex"
-      justifyContent="center"
-      alignItems="center"
+    <Flex
+      justify="center"
+      align="center"
       width="100%"
       height="350px"
       bgImage={bannerBg}
@@ -15,22 +15,12 @@ const SubscriptionPoster = () => {
       bgSize="cover"
       position="relative"
       color="white"
-      _before={{
-        content: '""',
-        position: "absolute",
-        top: 0,
-        left: 0,
-        width: "100%",
-        height: "100%",
-        backgroundColor: "rgba(0, 0, 0, 0.3)",
-        zIndex: "0",
-      }}
+      _before={darkerBg}
     >
-      <Box
-        display="flex"
-        flexDirection="column"
-        justifyContent="center"
-        alignItems="center"
+      <Flex
+        direction="column"
+        justify="center"
+        align="center"
         zIndex="9"
         lineHeight="140%"
         fontFamily="Questrial, sans-serif"
@@ -51,8 +41,8 @@ const SubscriptionPoster = () => {
         >
           And earn our own badge!
         </Link>
-      </Box>
-    </Box>
+      </Flex>
+    </Flex>
   );
 };
 

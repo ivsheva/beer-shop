@@ -1,4 +1,4 @@
-import { Box } from "@chakra-ui/react";
+import { Flex } from "@chakra-ui/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
@@ -7,13 +7,7 @@ import BeerCard from "./BeerCard";
 
 const Slider = ({ goods }) => {
   return (
-    <Box
-      display="flex"
-      justifyContent="center"
-      maxWidth="80%"
-      width="100%"
-      paddingX="16px"
-    >
+    <Flex justify="center" maxWidth="80%" width="100%" paddingX="16px">
       <Swiper
         modules={[Navigation]}
         spaceBetween={100}
@@ -27,7 +21,7 @@ const Slider = ({ goods }) => {
           </SwiperSlide>
         ))}
       </Swiper>
-    </Box>
+    </Flex>
   );
 };
 

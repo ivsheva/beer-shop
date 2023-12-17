@@ -1,17 +1,16 @@
 /* eslint-disable react/no-unescaped-entities */
 
-import { Box, Heading, Image, Text } from "@chakra-ui/react";
+import { Flex, Heading, Image, Text } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import img from "../../img/img/story-bg.jpg";
 
 const Story = () => {
   return (
-    <Box
+    <Flex
       maxWidth={{ base: "100%", md: "80%" }}
-      display="flex"
-      flexDir={{ base: "column", lg: "row" }}
-      justifyContent={{ base: "center", lg: "unset" }}
-      alignItems="center"
+      direction={{ base: "column", lg: "row" }}
+      justify={{ base: "center", lg: "unset" }}
+      align="center"
       margin="0 auto"
       columnGap="60px"
       marginTop="112px"
@@ -23,11 +22,10 @@ const Story = () => {
         fit="cover"
         marginBottom={{ base: "28px", lg: "unset" }}
       />
-      <Box
-        display="flex"
-        flexDirection="column"
-        justifyContent="center"
-        alignItems={{ base: "center", lg: "unset" }}
+      <Flex
+        direction="column"
+        justify="center"
+        align={{ base: "center", lg: "unset" }}
         height="100%"
         lineHeight="200%"
         paddingX={{ base: "14px" }}
@@ -51,8 +49,8 @@ const Story = () => {
             ABOUT BEERDOME
           </Text>
         </Link>
-      </Box>
-    </Box>
+      </Flex>
+    </Flex>
   );
 };
 

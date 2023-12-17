@@ -1,4 +1,4 @@
-import { Box } from "@chakra-ui/react";
+import { Box, Flex } from "@chakra-ui/react";
 import { useLocation } from "react-router-dom";
 import Brands from "./../Filtering/Brands";
 import OverView from "./../Filtering/OverView";
@@ -43,11 +43,7 @@ const ProductPageBody = ({ pathname, productData }) => {
   } = productData;
 
   return (
-    <Box
-      display="flex"
-      width={{ base: "80%", lg: "90%", xl: "80%" }}
-      margin="0 auto"
-    >
+    <Flex width={{ base: "80%", lg: "90%", xl: "80%" }} margin="0 auto">
       <ProductPageFiltering
         pathname={pathname}
         brands={brandFilterData}
@@ -62,7 +58,7 @@ const ProductPageBody = ({ pathname, productData }) => {
         prices={priceFilterData}
         isVoucher={isVoucher}
       />
-    </Box>
+    </Flex>
   );
 };
 

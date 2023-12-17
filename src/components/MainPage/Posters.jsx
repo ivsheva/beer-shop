@@ -1,4 +1,4 @@
-import { Box, HStack, Image, VStack } from "@chakra-ui/react";
+import { HStack, Image, VStack, Flex } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import image1 from "../../img/img/bg-poster-1.jpg";
 import image2 from "../../img/img/bg-poster-2.jpg";
@@ -7,11 +7,10 @@ import image4 from "../../img/img/bg-poster-4.jpg";
 
 const Posters = () => {
   return (
-    <Box
-      display="flex"
-      justifyContent="center"
-      flexDirection={{ base: "column", md: "row" }}
-      alignItems="center"
+    <Flex
+      justify="center"
+      direction={{ base: "column", md: "row" }}
+      align="center"
       width="90%"
       margin="0 auto"
       gap="20px"
@@ -42,7 +41,7 @@ const Posters = () => {
           <Image src={image4} width="100%" fit="cover" />
         </Link>
       </VStack>
-    </Box>
+    </Flex>
   );
 };
 

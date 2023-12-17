@@ -7,13 +7,12 @@ import {
   DrawerOverlay,
   Text,
 } from "@chakra-ui/react";
-import { useContext } from "react";
 import { Link } from "react-router-dom";
-import { DisclosureContext } from "../../contexts/DisclosureContext";
 import navItems from "../../data/navItems";
+import useDisclosure from "../../hooks/useDisclosure";
 
 const NavigationDrawer = () => {
-  const { navigationDisclosure } = useContext(DisclosureContext);
+  const { navigationDisclosure } = useDisclosure();
 
   return (
     <Drawer

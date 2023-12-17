@@ -1,11 +1,10 @@
-import { Box, Text } from "@chakra-ui/react";
+import { Flex, Text } from "@chakra-ui/react";
 import ServiceParagraphs from "./ServiceParagraphs";
 
 const ServiceContent = ({ title, paragraphs }) => {
   return (
-    <Box
-      display="flex"
-      flexDirection="column"
+    <Flex
+      direction="column"
       width={{ base: "60%", lg: "70%", xl: "60%" }}
       margin="0 auto"
       marginTop="20px"
@@ -18,7 +17,7 @@ const ServiceContent = ({ title, paragraphs }) => {
         {title}
       </Text>
       <ServiceParagraphs paragraphs={paragraphs} />
-    </Box>
+    </Flex>
   );
 };
 

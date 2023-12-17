@@ -1,4 +1,4 @@
-import { Box, Text } from "@chakra-ui/react";
+import { Box, Text, Flex } from "@chakra-ui/react";
 import { useState } from "react";
 import Socials from "./Socials";
 
@@ -13,7 +13,7 @@ const Description = ({ description }) => {
       justifyContent="center"
       flexWrap="wrap"
     >
-      <Box display="flex" justifyContent="center">
+      <Flex justify="center">
         <Text
           padding="16px 64px"
           fontWeight={active === 0 ? 600 : 400}
@@ -32,7 +32,7 @@ const Description = ({ description }) => {
         >
           Share
         </Text>
-      </Box>
+      </Flex>
       <Box marginTop="20px">
         {active === 0 ? (
           <Text

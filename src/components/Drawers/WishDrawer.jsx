@@ -10,17 +10,15 @@ import {
   Text,
   useToast,
 } from "@chakra-ui/react";
-import { useContext } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { DisclosureContext } from "../../contexts/DisclosureContext";
+import useDisclosure from "../../hooks/useDisclosure";
+import useGeneralProductData from "../../hooks/useGeneralProductData";
 import { ADD_TO_CART } from "../../store/cartSlice";
 import DrawerCard from "./DrawerCard";
 
 const WishDrawer = () => {
-  const { wishDisclosure } = useContext(DisclosureContext);
-  const dispatch = useDispatch();
-  const wishlist = useSelector((state) => state.wishlist);
-  const cart = useSelector((state) => state.cart);
+  const { wishDisclosure } = useDisclosure();
+  const { cart, wishlist, dispatch } = useGeneralProductData();
+
   const toast = useToast();
   const sum = wishlist
     .reduce((total, item) => total + item.price, 0)
@@ -54,15 +52,7 @@ const WishDrawer = () => {
 
         <DrawerBody>
           {wishlist.map((product) => (
-            <DrawerCard
-              key={product.id}
-              id={product.id}
-              img={product.imageUrl}
-              brand={product.brand}
-              name={product.name}
-              price={product.price}
-              isWishItem={true}
-            />
+            <DrawerCard key={product.id} product={product} isWishItem={true} />
           ))}
         </DrawerBody>
         <DrawerFooter display="flex" flexDirection="column">

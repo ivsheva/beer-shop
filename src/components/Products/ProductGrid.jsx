@@ -6,6 +6,7 @@ import {
   SimpleGrid,
   Text,
   useDisclosure,
+  Flex,
 } from "@chakra-ui/react";
 import { useLocation } from "react-router-dom";
 import useSortedProducts from "../../hooks/useSortedProducts";
@@ -33,11 +34,10 @@ const ProductGrid = ({
   const pathname = useLocation().pathname;
 
   return (
-    <Box
-      display="flex"
-      flexDirection="column"
-      justifyContent="center"
-      alignItems="center"
+    <Flex
+      direction="column"
+      justify="center"
+      align="center"
       width="100%"
       marginTop="50px"
       marginLeft={{ base: "none", lg: "120px", xl: "120px" }}
@@ -56,7 +56,7 @@ const ProductGrid = ({
         setSortBy={setSortBy}
       />
       <GridBody sortedProducts={sortedProducts} />
-    </Box>
+    </Flex>
   );
 };
 

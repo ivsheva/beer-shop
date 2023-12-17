@@ -1,4 +1,4 @@
-import { Box, Button, Image, Text, Tooltip } from "@chakra-ui/react";
+import { Box, Button, Image, Text, Tooltip, Flex } from "@chakra-ui/react";
 import { useState } from "react";
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 import { Link } from "react-router-dom";
@@ -13,12 +13,11 @@ const BeerCard = ({ product, isFull = false }) => {
 
   return (
     <Link to={`products/${product.id}`}>
-      <Box
-        display="flex"
+      <Flex
         position="relative"
-        flexDirection="column"
+        direction="column"
         maxWidth="300px"
-        justifyContent="center"
+        justify="center"
         onMouseEnter={() => setIsHover(true)}
         onMouseLeave={() => setIsHover(false)}
         minHeight="400px"
@@ -38,7 +37,7 @@ const BeerCard = ({ product, isFull = false }) => {
         <ShowWishlist product={product} inWish={inWish} />
         <HoverText product={product} isHover={isHover} isFull={isFull} />
         <DiscountText oldPrice={product.oldPrice} discount={discount} />
-      </Box>
+      </Flex>
     </Link>
   );
 };
@@ -66,14 +65,14 @@ const ProductName = ({ productName }) => {
 
 const PriceText = ({ oldPrice, price }) => {
   return (
-    <Box display="flex" alignItems="center" columnGap="8px">
+    <Flex align="center" columnGap="8px">
       <Text color="red">€{price}</Text>
       {oldPrice && (
         <Text color="green" fontSize="13px" textDecoration="line-through">
           €{oldPrice}
         </Text>
       )}
-    </Box>
+    </Flex>
   );
 };
 
@@ -155,13 +154,7 @@ const HoverText = ({ product, isHover, isFull }) => {
 const DiscountText = ({ oldPrice, discount }) => {
   return (
     oldPrice && (
-      <Box
-        position="absolute"
-        top="20px"
-        display="flex"
-        flexDirection="column"
-        rowGap="6px"
-      >
+      <Flex position="absolute" top="20px" direction="column" rowGap="6px">
         <Text
           display={{ base: "none", md: "block" }}
           color="green"
@@ -175,7 +168,7 @@ const DiscountText = ({ oldPrice, discount }) => {
         <Text textAlign="center" width="45px" color="white" bgColor="green">
           -{discount}%
         </Text>
-      </Box>
+      </Flex>
     )
   );
 };
