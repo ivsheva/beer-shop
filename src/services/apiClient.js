@@ -1,7 +1,12 @@
 import axios from "axios";
 
+const baseURL =
+  import.meta.env.MODE === "development"
+    ? "http://localhost:3001/api/beers"
+    : "https://beer-shop-service.onrender.com/api/beers";
+
 const axiosInstance = axios.create({
-  baseURL: "http://localhost:3001/api/beers",
+  baseURL,
 });
 
 class APIClient {
