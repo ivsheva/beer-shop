@@ -17,11 +17,15 @@ import DescriptionAccordion from "../components/ProductPage/DescriptionAccordion
 import ProductDetailPageSkeleton from "../components/Skeletons/ProductPage/ProductDetailPageSkeleton";
 import useBeer from "../hooks/useBeer";
 import useProductDetail from "../hooks/useProductDetails";
+import useTitle from "../hooks/useTitle";
 import imageNotFound from "../img/img/not-found.jpg";
 
 const ProductDetailPage = () => {
   const { id } = useParams();
   const { data: product, isLoading } = useBeer(id);
+
+  const pageTitle = product ? product.name : "Beer Shop";
+  useTitle(pageTitle); // change page title
 
   if (isLoading) return <ProductDetailPageSkeleton />;
 
@@ -59,6 +63,7 @@ const ProductBody = ({ product }) => {
     handleAddToCart,
     handleAddToWish,
   } = useProductDetail(product);
+
   return (
     <Flex
       direction="column"

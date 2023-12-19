@@ -3,9 +3,12 @@ import { Button, Flex, Heading, Text } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import darkerBg from "../helpers/darkerBg";
 import errorBg from "../img/img/error-bg.jpg";
+import useTitle from "../hooks/useTitle";
 
 const ErrorPage = () => {
   const navigate = useNavigate();
+
+  useTitle("Error");
 
   return (
     <Flex
