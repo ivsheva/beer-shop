@@ -36,8 +36,6 @@ const ProductGrid = ({
   return (
     <Flex
       direction="column"
-      justify="center"
-      align="center"
       width="100%"
       marginTop="50px"
       marginLeft={{ base: "none", lg: "120px", xl: "120px" }}
