@@ -1,22 +1,23 @@
 import {
   Box,
   Button,
+  Flex,
   Image,
-  Input,
   Link,
+  NumberInput,
+  NumberInputField,
   Show,
   Text,
-  Flex,
 } from "@chakra-ui/react";
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 import { useParams } from "react-router-dom";
-import imageNotFound from "../img/img/not-found.jpg";
 import TrustMark from "../components/MainPage/TrustMark";
 import Description from "../components/ProductPage/Description";
 import DescriptionAccordion from "../components/ProductPage/DescriptionAccordion";
 import ProductDetailPageSkeleton from "../components/Skeletons/ProductPage/ProductDetailPageSkeleton";
 import useBeer from "../hooks/useBeer";
 import useProductDetail from "../hooks/useProductDetails";
+import imageNotFound from "../img/img/not-found.jpg";
 
 const ProductDetailPage = () => {
   const { id } = useParams();
@@ -123,18 +124,19 @@ const ProductControl = ({
 }) => {
   return (
     <Flex>
-      <Input
+      <NumberInput
         value={productAmount}
-        onChange={(event) => setProductAmount(event.target.value)}
-        maxWidth="60px"
-        height="50px"
+        onChange={(value) => setProductAmount(Number(value))}
         borderRadius="0"
+        maxWidth="60px"
         textAlign="center"
         borderColor="lightgrey"
         _focus={{ borderColor: "lightgrey", boxShadow: "none" }}
-        type="number"
-        max={99}
-      />
+        min="1"
+        max="100"
+      >
+        <NumberInputField padding="0" height="50px" textAlign="center" />
+      </NumberInput>
       <Button
         colorScheme="red"
         bg="red"
