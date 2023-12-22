@@ -5,7 +5,7 @@ import darkerBg from "../helpers/darkerBg";
 import errorBg from "../img/img/error-bg.jpg";
 import useTitle from "../hooks/useTitle";
 
-const ErrorPage = () => {
+const ErrorPage = ({ errorHeading, errorContent }) => {
   const navigate = useNavigate();
 
   useTitle("Error");
@@ -33,10 +33,10 @@ const ErrorPage = () => {
       >
         <Text>404 ERROR</Text>
         <Heading fontFamily="Questrial, sans-serif" fontSize="48px">
-          Uh oh! I think you're lost
+          {errorHeading}
         </Heading>
         <Text fontWeight="600" paddingX="16px">
-          It seems that the page you are looking for does not exist.
+          {errorContent}
         </Text>
         <Button
           bg="white"
