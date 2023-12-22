@@ -9,6 +9,7 @@ import {
   PopoverContent,
   PopoverHeader,
   PopoverTrigger,
+  Spinner,
   Text,
   VStack,
 } from "@chakra-ui/react";
@@ -37,7 +38,9 @@ const Login = () => {
 export default Login;
 
 const AccountPopover = () => {
-  const { logout } = useAuth0();
+  const { logout, user, isLoading } = useAuth0();
+
+  if (isLoading) return <Spinner />;
 
   const handleClick = () => {
     // clear cart and wishlist
@@ -57,7 +60,7 @@ const AccountPopover = () => {
       <PopoverContent>
         <PopoverArrow />
         <PopoverCloseButton />
-        <PopoverHeader>My Account</PopoverHeader>
+        <PopoverHeader>{user.email}</PopoverHeader>
         <PopoverBody>
           <Button onClick={handleClick} colorScheme="green" bgColor="darkgreen">
             Leave account
