@@ -1,12 +1,12 @@
 import {
   Box,
   Button,
+  Flex,
   Select,
   Show,
   SimpleGrid,
   Text,
   useDisclosure,
-  Flex,
 } from "@chakra-ui/react";
 import { useLocation } from "react-router-dom";
 import useSortedProducts from "../../hooks/useSortedProducts";
@@ -112,26 +112,9 @@ const GridHeader = ({ sortedProducts, sortBy, setSortBy }) => {
         <Text
           display={{ base: "none", md: "block" }}
         >{`${sortedProducts.length} Products`}</Text>
-        <GridSelect />
       </Box>
       <SortSelect sortBy={sortBy} setSortBy={setSortBy} />
     </Box>
-  );
-};
-
-const GridSelect = () => {
-  return (
-    <Select
-      width="72px"
-      height="36px"
-      borderColor="lightgrey"
-      _focus={{ boxShadow: "none", borderColor: "lightgrey" }}
-    >
-      <option value="16">16</option>
-      <option value="36">36</option>
-      <option value="48">48</option>
-      <option value="72">72</option>
-    </Select>
   );
 };
 
