@@ -47,7 +47,7 @@ const Router = () => {
             element={<ProductDetailPage />}
           />
           <Route
-            path="/404"
+            path="not-found"
             element={
               <ErrorPage
                 errorHeading="Uh oh! I think you're lost"
@@ -56,7 +56,7 @@ const Router = () => {
             }
           />
         </Route>
-        <Route path="*" element={<Navigate to="/404" />} />
+        <Route path="*" element={<Navigate to="/not-found" replace />} />
       </Routes>
     </BrowserRouter>
   );
