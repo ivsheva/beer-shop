@@ -1,9 +1,8 @@
-/* eslint-disable react/no-unescaped-entities */
 import { Button, Flex, Heading, Text } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import darkerBg from "../helpers/darkerBg";
-import errorBg from "../img/img/error-bg.jpg";
 import useTitle from "../hooks/useTitle";
+import errorBg from "../img/img/error-bg.jpg";
 
 const ErrorPage = ({ errorHeading, errorContent }) => {
   const navigate = useNavigate();

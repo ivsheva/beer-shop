@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Layout from "./components/Global/Layout";
 import ErrorPage from "./pages/ErrorPage";
 import MainPage from "./pages/MainPage";
@@ -47,7 +47,7 @@ const Router = () => {
           <Route path="service/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="service/i-love-beerdome-sale" element={<Coupon />} />
           <Route
-            path="*"
+            path="/404"
             element={
               <ErrorPage
                 errorHeading="Uh oh! I think you're lost"
@@ -56,6 +56,7 @@ const Router = () => {
             }
           />
         </Route>
+        <Route path="*" element={<Navigate to="/404" />} />
       </Routes>
     </BrowserRouter>
   );
