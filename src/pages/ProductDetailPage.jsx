@@ -10,7 +10,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import TrustMark from "../components/MainPage/TrustMark";
 import Description from "../components/ProductPage/Description";
 import DescriptionAccordion from "../components/ProductPage/DescriptionAccordion";
@@ -22,12 +22,15 @@ import imageNotFound from "../img/img/not-found.jpg";
 
 const ProductDetailPage = () => {
   const { id } = useParams();
-  const { data: product, isLoading } = useBeer(id);
+  const { data: product, isLoading, isError } = useBeer(id);
+  const navigate = useNavigate();
 
   const pageTitle = product ? product.name : "Beer Shop";
   useTitle(pageTitle); // change page title
 
   if (isLoading) return <ProductDetailPageSkeleton />;
+
+  if (isError) navigate("/404");
 
   return (
     <Flex

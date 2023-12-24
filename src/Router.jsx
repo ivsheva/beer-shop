@@ -32,11 +32,6 @@ const Router = () => {
           <Route path="crowlers" element={<Crowlers />} />
           <Route path="gift-vouchers" element={<Vouchers />} />
           <Route path="sale" element={<Sales />} />
-          <Route path="products/:id" element={<ProductDetailPage />} />
-          <Route
-            path=":pageType/products/:id"
-            element={<ProductDetailPage />}
-          />
           <Route path="service/about-us" element={<About />} />
           <Route path="service/faq" element={<Questions />} />
           <Route
@@ -46,6 +41,11 @@ const Router = () => {
           <Route path="service/terms-and-conditions" element={<Conditions />} />
           <Route path="service/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="service/i-love-beerdome-sale" element={<Coupon />} />
+          <Route path="products/:id" element={<ProductDetailPage />} />
+          <Route
+            path=":pageType/products/:id"
+            element={<ProductDetailPage />}
+          />
           <Route
             path="/404"
             element={
