@@ -22,6 +22,7 @@ import WishList from "./WishList";
 const Advantages = () => {
   return (
     <Flex
+      direction={{ xs: "column", sm: "row" }}
       align="center"
       justify="space-between"
       paddingY="14px"
@@ -29,6 +30,7 @@ const Advantages = () => {
       color="#fff"
       fontWeight="500"
       flexWrap="wrap"
+      gap="8px"
     >
       <Features />
       <Rating />
@@ -98,7 +100,7 @@ const LoginControls = () => {
     <HStack
       display="flex"
       margin="auto"
-      columnGap="16px"
+      columnGap="10px"
       marginTop={{ base: "8px", lg: "unset" }}
     >
       <Login />
